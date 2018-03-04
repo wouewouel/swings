@@ -2,13 +2,10 @@
 
 Format : [fait/Ã  faire] TACHE	DurÃ©e (en minutes; remplacer les ??)
 
-Vous pouvez ajouter vos propres tÃ¢ches si vous le jugez utile
-(p.ex. dÃ©composition plus fine).
-
 [V] crÃ©er le JOURNAL                                    	 1
-[V] lire complÃ¨tement le descriptif gÃ©nÃ©ral                  	??
-[V] s'inscrire en binÃ´me                                      	??
-[ ] fusionner les deux projets (y compris les fichiers JOURNAL)	??
+[V] lire complÃ¨tement le descriptif gÃ©nÃ©ral               90
+[V] s'inscrire en binÃ´me                                    1
+[en train ] fusionner les deux projets (y compris les fichiers JOURNAL)	..
 [ ] Makefile                                               	??
 [ ] Vecteur finie (pleinement opÃ©rationnelle et testÃ©e) 	??
 [ ] fichier REPONSES                                         	??
@@ -34,15 +31,15 @@ Vous pouvez ajouter vos propres tÃ¢ches si vous le jugez utile
 Mettez ici ce que vous pensez devoir Ãªtre la ou les 2 prochaines Ã©tapes
 pour chacun. Par exemple :
 
-Ron: debugger les Vecteurs
-Hermione: finir le reste du projet
+Charles: Utiliser Makefile pour décomposer la classe Vecteur
+Ouriel: interface graphique
 
 ======================================================================
 # SUIVI
 
 ## Semaine 2Â :
 
-dÃ©crire ici ce que vous avez fait en semaine 2
+Création de la classe Vecteur ainsi que d'un ensemble de tests pour vérifier la fonctionnabilitée
 
 --------------------------------------------------
 ## Semaine 3Â :

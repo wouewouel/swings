@@ -1,0 +1,25 @@
+*******************************
+
+[Question P1.1] Comment représentez-vous ces vecteurs ? Comment sont-ils organisés : quels attributs ? quelles méthodes ? quels droits d'accès ? 
+
+Ces vecteurs sont représentés par les coordonnés rentrés dans un tableau vector de double.
+	Attributs: 	-"coordonnees" est un tableau de double 							--> partie privée
+
+	Methodes:	-"dimension_ok(Vecteur autre)" renvoie true si les deux vecteurs ont les mêmes dimensions	--> partie privée
+		  	-"dimension_3(Vecteur autre)" renvoie true si les deux vecteurs sont de dimensions 3		--> partie privée
+				-->Ces 2 méthodes lancent une exception dans le cas contraire
+
+			-"augmente(double new_dim)" augmente le vecteur d'une dimension	de valeur "new_dim"		--> partie publique
+			-"set_coord(unsigned int dim, double modif)" vérifie si la dimensions à modifier existe et 	--> partie publique
+			 fait la modif, dans les cas contraire, elle lance une exception				--> partie publique
+			-"affiche()" affiche le coordonnées du vecteur							--> partie publique
+			-"compare(Vecteur autre)" renvoie un booléens pour dire si les vecteurs sont égaux		--> partie publique
+			-"getcoord() const" renvoie le tableau de double "coordonnees"					--> partie publique
+			-"getvalue(size_t i)"crenvoie la valeur numero i des coordonnées				--> partie publique
+
+******************************
+
+[Question P1.2] Quel choix avez vous fait pour les opérations entre vecteurs de dimensions différentes ?
+
+Nous avons créé une fonction que nous appliquons à chaque fois que nous devons faire une certaine opération et qui lance une exception
+de type string (peut être devrions nous mettre une struct pour pouvoir différencier les différentess excpetions à venir...)

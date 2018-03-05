@@ -273,5 +273,5 @@ cout <<endl;									//(0 0 0.9)
 	cout <<"|| ("; vect5.affiche(); cout <<") || au 2 = "<< vect5.norme2() << endl; //5.01
 
 }
-
+ 
 

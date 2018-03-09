@@ -1,4 +1,4 @@
-﻿# PROGRESSION
+# PROGRESSION
 
 Format : [fait/Ã  faire] TACHE	DurÃ©e (en minutes; remplacer les ??)
 
@@ -6,7 +6,7 @@ Format : [fait/Ã  faire] TACHE	DurÃ©e (en minutes; remplacer les ??)
 [V] lire complÃ¨tement le descriptif gÃ©nÃ©ral               90
 [V] s'inscrire en binÃ´me                                    1
 [en train ] fusionner les deux projets (y compris les fichiers JOURNAL)	..
-[ ] Makefile                                               	??
+[V] Makefile                                               	60
 [ ] Vecteur finie (pleinement opÃ©rationnelle et testÃ©e) 	??
 [ ] fichier REPONSES                                         	??
 [ ] Oscillateur                                            	??
@@ -43,7 +43,7 @@ Création de la classe Vecteur ainsi que d'un ensemble de tests pour vérifier l
 
 --------------------------------------------------
 ## Semaine 3Â :
-
+Mise en place du Makefile
 
 
 --------------------------------------------------

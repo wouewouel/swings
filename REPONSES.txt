@@ -15,7 +15,7 @@ Ces vecteurs sont représentés par les coordonnés rentrés dans un tableau vector 
 			-"affiche()" affiche le coordonnées du vecteur							--> partie publique
 			-"compare(Vecteur autre)" renvoie un booléens pour dire si les vecteurs sont égaux		--> partie publique
 			-"getcoord() const" renvoie le tableau de double "coordonnees"					--> partie publique
-			-"getvalue(size_t i)"crenvoie la valeur numero i des coordonnées				--> partie publique
+			-"getvalue(size_t i)" renvoie la valeur numero i des coordonnées				--> partie publique
 
 ******************************
 

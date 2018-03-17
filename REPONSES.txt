@@ -1,4 +1,4 @@
-*******************************
+****************************************************************************************
 
 [Question P1.1] Comment reprÈsentez-vous ces vecteurs ? Comment sont-ils organisÈs : quels attributs ? quelles mÈthodes ? quels droits d'accËs ? 
 
@@ -17,9 +17,24 @@ Ces vecteurs sont reprÈsentÈs par les coordonnÈs rentrÈs dans un tableau vector 
 			-"getcoord() const" renvoie le tableau de double "coordonnees"					--> partie publique
 			-"getvalue(size_t i)" renvoie la valeur numero i des coordonnÈes				--> partie publique
 
-******************************
+****************************************************************************************
 
 [Question P1.2] Quel choix avez vous fait pour les opÈrations entre vecteurs de dimensions diffÈrentes ?
 
 Nous avons crÈÈ une fonction que nous appliquons ‡ chaque fois que nous devons faire une certaine opÈration et qui lance une exception
 de type string (peut Ítre devrions nous mettre une struct pour pouvoir diffÈrencier les diffÈrentess excpetions ‡ venir...)
+
+****************************************************************************************
+
+[Question P4.1] Avez-vous ajouté un constructeur de copie ? Pourquoi (justifiez votre choix) ?
+
+Oui, au cas ou l'on devrait modifier les attributs des vecteurs et que le constructeur de copie standard ne suffise pas.
+
+****************************************************************************************
+
+[Question P4.2] Si l'on souhaitait ajouter un constructeur par coordonnées sphériques (deux angles et une longueur) pour les vecteurs de dimension3,a] que cela impliquerait-il au niveau des attributs de la classe ?b] quelle serait la difficulté majeure (voire l'impossibilité) de sa réalisation en C++ ? (C'est d'ailleurs pour cela qu'on ne vous demande pas defaire un tel constructeur !)
+
+****************************************************************************************
+[Question P4.3] Quels opérateurs avez vous introduits ?
+
+

@@ -5,7 +5,7 @@ Format : [fait/Ã  faire] TACHE	DurÃ©e (en minutes; remplacer les ??)
 [V] crÃ©er le JOURNAL                                    	 1
 [V] lire complÃ¨tement le descriptif gÃ©nÃ©ral               90
 [V] s'inscrire en binÃ´me                                    1
-[en train ] fusionner les deux projets (y compris les fichiers JOURNAL)	..
+[V] fusionner les deux projets (y compris les fichiers JOURNAL)	20
 [V] Makefile                                               	60
 [ ] Vecteur finie (pleinement opÃ©rationnelle et testÃ©e) 	??
 [ ] fichier REPONSES                                         	??
@@ -31,7 +31,7 @@ Format : [fait/Ã  faire] TACHE	DurÃ©e (en minutes; remplacer les ??)
 Mettez ici ce que vous pensez devoir Ãªtre la ou les 2 prochaines Ã©tapes
 pour chacun. Par exemple :
 
-Charles: Utiliser Makefile pour décomposer la classe Vecteur
+Charles: 
 Ouriel: interface graphique
 
 ======================================================================
@@ -39,15 +39,25 @@ Ouriel: interface graphique
 
 ## Semaine 2Â :
 
-Création de la classe Vecteur ainsi que d'un ensemble de tests pour vérifier la fonctionnabilitée
+Ouriel: Création de la classe Vecteur ainsi que d'un ensemble de tests pour vérifier la fonctionnabilitée
+
+Charles: Prise en main de Qt
+
 
 --------------------------------------------------
 ## Semaine 3Â :
-Mise en place du Makefile
+Charles: Mise en place du Makefile
+
+Ouriel: Prise en main de qt
 
 
 --------------------------------------------------
 ## Semaine 4Â :
+
+Charles: surcharge des opérateurs
+
+Ouriel: Oscillateur
+
 
 
 

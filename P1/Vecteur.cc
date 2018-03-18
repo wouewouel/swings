@@ -158,11 +158,7 @@ using namespace std;
 		v*=scalaire;
 		return v;
 	}
-	
-
-			
-
-	
+		
 	
 	
  

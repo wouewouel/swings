@@ -1,21 +1,21 @@
-# PROGRESSION
+﻿# PROGRESSION
 
-Format : [fait/Ã  faire] TACHE	DurÃ©e (en minutes; remplacer les ??)
+Format : [fait/à faire] TACHE	Durée (en minutes)
 
-[V] crÃ©er le JOURNAL                                    	 1
-[V] lire complÃ¨tement le descriptif gÃ©nÃ©ral               90
-[V] s'inscrire en binÃ´me                                    1
+[V] créer le JOURNAL                                            1
+[V] lire complétement le descriptif général                     90
+[V] s'inscrire en binome                                   	1
 [V] fusionner les deux projets (y compris les fichiers JOURNAL)	20
 [V] Makefile                                               	60
-[ ] Vecteur finie (pleinement opÃ©rationnelle et testÃ©e) 	??
-[ ] fichier REPONSES                                         	??
-[ ] Oscillateur                                            	??
-[ ] intÃ©grateur d'Euler-Cromer                            	??
+[V] Vecteur finie (pleinement opérationnelle et testé)  	??
+[V] fichier REPONSES                                         	??
+[V] Oscillateur                                            	??
+[ ] intégrateur d'Euler-Cromer                            	??
 [ ] Pendule                                               	??
 [ ] Ressort                                               	??
 [ ] Systeme                                               	??
 [ ] exerciceP10                                           	??
-[ ] graphisme: cadre gÃ©nÃ©ral                              	??
+[ ] graphisme: cadre général                              	??
 [ ] graphisme: Pendule                                     	??
 [ ] OscillateurCouple                                     	??
 [ ] PenduleDouble                                         	??
@@ -28,16 +28,13 @@ Format : [fait/Ã  faire] TACHE	DurÃ©e (en minutes; remplacer les ??)
 ======================================================================
 # A FAIRE (PROCHAINE ETAPE)
 
-Mettez ici ce que vous pensez devoir Ãªtre la ou les 2 prochaines Ã©tapes
-pour chacun. Par exemple :
-
 Charles: 
-Ouriel: interface graphique
+Ouriel: 
 
 ======================================================================
 # SUIVI
 
-## Semaine 2Â :
+## Semaine 2 :
 
 Ouriel: Création de la classe Vecteur ainsi que d'un ensemble de tests pour vérifier la fonctionnabilitée
 
@@ -45,21 +42,19 @@ Charles: Prise en main de Qt
 
 
 --------------------------------------------------
-## Semaine 3Â :
+## Semaine 3 :
+
 Charles: Mise en place du Makefile
 
 Ouriel: Prise en main de qt
 
 
 --------------------------------------------------
-## Semaine 4Â :
+## Semaine 4 :
 
 Charles: surcharge des opérateurs
 
 Ouriel: Oscillateur
-
-
-
 
 --------------------------------------------------
 ## Semaine 5Â :

@@ -19,21 +19,22 @@ Vecteur vect4(4);      // le vecteur nul en 4D
 
 cout << "Vecteur 1 : "<< vect1 << endl;
 cout << "Vecteur 2 : " << vect2 << endl;
+cout << "Vecteur 3 : " << vect3 << endl;
 cout << "Vecteur 4 : " << vect4 << endl;
 
 cout << "Le vecteur 1 est ";
 if (vect1 == vect2) {
-    cout << "Ã©gal au";
+    cout << "‚gal au";
 } else {
-    cout << "diffÃ©rent du";
+    cout << "diff‚rent du";
 }
 cout << " vecteur 2," << endl << " et est ";
 if (vect1 != vect3) {
-    cout << "diffÃ©rent du";
+    cout << "diff‚rent du";
 } else {
-    cout << "Ã©gal au";
+    cout << "‚gal au";
 }
-cout << " vecteur 3." << endl;
+cout << " vecteur 3. \n" << endl;
 cout<<(vect1^vect2)<<endl;
 cout<<(vect2^vect1)<<endl;
 cout<<vect1+vect2<<endl;
@@ -45,4 +46,5 @@ cout<<vect1*6<<endl;
 cout<<6*vect1<<endl;
 cout<<vect1*vect2<<endl;
 cout<<vect2*vect1<<endl;
+
 }

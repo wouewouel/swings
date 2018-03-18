@@ -131,11 +131,11 @@ using namespace std;
 		
 	
 	ostream& operator<<(ostream& out,Vecteur vect){ //operateur affichage
-		cout<<"(";
+		out<<"(";
 		for(size_t i(0);i<vect.getcoord().size()-1;++i){
 			cout<<vect.getvalue(i)<<"; ";
 		}
-		cout<<vect.getvalue(vect.getcoord().size()-1)<<")"<<endl;
+		out<<vect.getvalue(vect.getcoord().size()-1)<<")"<<endl;
 		return out;
 	}
 	

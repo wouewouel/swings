@@ -52,13 +52,15 @@ Oui, au cas ou l'on devrait modifier les constructeurs pour se rappeler de modif
 
 
 [Question P4.2] Si l'on souhaitait ajouter un constructeur par coordonnÈes sphÈriques (deux angles et une longueur) pour les vecteurs de dimension3,
-a] que cela impliquerait-il au niveau des attributs de la classe ?
+a] que cela impliquerait-il au niveau des attributs de la classe ?	
 
 Les attributs de la classe seraient des approximations
 b] quelle serait la difficultÈ majeure (voire l'impossibilitÈ) de sa rÈalisation en C++ ? 
-  (C'est d'ailleurs pour cela qu'on ne vous demande pas defaire un tel constructeur !)
+  (C'est d'ailleurs pour cela qu'on ne vous demande pas de faire un tel constructeur !)
 
-La machine devra calculer les nombreux vecteurs en temps réel en fonction des angles et les vecteurs peuvent être erronés du fait de l'accumulation des approximations.
+
+
+La machine devra calculer les nombreux vecteurs en temps réel en fonction des angles et les vecteurs peuvent eêtre erronés du fait de l'accumulation des approximations.
 
 
 
@@ -68,22 +70,32 @@ La machine devra calculer les nombreux vecteurs en temps réel en fonction des an
 
 Vecteur& operator+=(const Vecteur& autre); //addition entre deux vecteurs
 		
+
 Vecteur& operator-=(const Vecteur& autre); //on fait vecteur actuel - autre
 		
+
 Vecteur operator-();//renvoie l'oppose du vecteur
 			
+
 Vecteur& operator*=(double scalaire);//multiplication scalaire
 		
+
 double operator*(Vecteur autre);//produit scalaire
 		
-Vecteur operator^(const Vecteur& autre); //renvoie le produit vectoriel
+
+Vecteur operator^(const Vecteur& autre); //renvoie le produit 
+vectoriel
 
 const Vecteur operator+(Vecteur,Vecteur const&); //addition
 	
+
 const Vecteur operator-(Vecteur,Vecteur const&); //soustravtion
 	
+
 const Vecteur operator*(double scalaire,Vecteur v); //multiplication scalaire a gauche
 	
+
 const Vecteur operator*(Vecteur v,double scalaire); //multiplication scalaire a droite
+
 
 std::ostream& operator <<(std::ostream& out,Vecteur v); //operateur d'affichage

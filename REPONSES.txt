@@ -60,7 +60,7 @@ Les attributs de la classe seraient des approximations
 
 
 
-La machine devra calculer les nombreux vecteurs en temps réel en fonction des angles et les vecteurs peuvent eêtre erronés du fait de l'accumulation des approximations.
+La machine devra calculer les nombreux vecteurs en temps reel en fonction des angles et les vecteurs peuvent eêtre errones du fait de l'accumulation des approximations.
 
 
 
@@ -99,3 +99,18 @@ const Vecteur operator*(Vecteur v,double scalaire); //multiplication scalaire a 
 
 
 std::ostream& operator <<(std::ostream& out,Vecteur v); //operateur d'affichage
+
+
+****************************************************************************************
+[Question P6.1] Comment avez vous conÁu votre classe Integrateur ? 
+
+La classe Integrateur ne possede qu'une methode  < integre(Oscillateur& O, double t, double dt) > dans l'interface, par ailleurs cette methode n'est pas definie a proprement parler mais est simplement declarer car nous nous en servirons plus tard pour le polymorphisme il me semble.
+
+****************************************************************************************
+[Question P6.2] Quelle est la relation entre les classes Integrateur et IntegrateurEulerCromer ? 
+
+IntegrateurEulerCromer  et une sous classe de la super classe Integrateur.
+Ici on dÈfinit explicitement la fonction <integre...> et on a rajouter une fonction < affiche_evol(Oscillateur O) > qui permet de simplifier le programme de test. 
+
+****************************************************************************************
+

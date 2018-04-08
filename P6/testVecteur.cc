@@ -24,27 +24,42 @@ cout << "Vecteur 4 : " << vect4 << endl;
 
 cout << "Le vecteur 1 est ";
 if (vect1 == vect2) {
-    cout << "‚gal au";
+    cout << "egal au";
 } else {
-    cout << "diff‚rent du";
+    cout << "different du";
 }
 cout << " vecteur 2," << endl << " et est ";
 if (vect1 != vect3) {
-    cout << "diff‚rent du";
+    cout << "different du";
 } else {
-    cout << "‚gal au";
+    cout << "egal au";
 }
 cout << " vecteur 3. \n" << endl;
-cout<<(vect1^vect2)<<endl;
-cout<<(vect2^vect1)<<endl;
-cout<<vect1+vect2<<endl;
-cout<<vect2+vect1<<endl;
-cout<<vect1-vect2<<endl;
-cout<<vect2-vect1<<endl;
-cout<<-vect1<<endl;
-cout<<vect1*6<<endl;
-cout<<6*vect1<<endl;
-cout<<vect1*vect2<<endl;
-cout<<vect2*vect1<<endl;
+
+cout << "Le vecteur 1 est ";
+try {
+	if (vect1 == vect4) {
+		cout << "egal au";
+	} else {
+		cout << "different du";
+		} 
+	cout << "vecteur 4";
+	}
+catch(string err){
+	cerr <<"incompatible avec l'operation == car erreur : \n"
+		 << err << endl << endl;
+	}
+
+cout<<"(vect1^vect2) ="<<(vect1^vect2)<<endl;
+cout<<"(vect2^vect1) ="<<(vect2^vect1)<<endl;
+cout<<"vect1+vect2 ="<<vect1+vect2<<endl;
+cout<<"vect2+vect1 ="<<vect2+vect1<<endl;
+cout<<"vect1-vect2 ="<<vect1-vect2<<endl;
+cout<<"vect2-vect1 ="<<vect2-vect1<<endl;
+cout<<"-vect1 ="<<-vect1<<endl;
+cout<<"vect1*6 ="<<vect1*6<<endl;
+cout<<"6*vect1 ="<<6*vect1<<endl;
+cout<<"vect1*vect2 ="<<vect1*vect2<<endl;
+cout<<"vect2*vect1 ="<<vect2*vect1<<endl;
 
 }

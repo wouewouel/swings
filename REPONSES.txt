@@ -60,7 +60,7 @@ Les attributs de la classe seraient des approximations
 
 
 
-La machine devra calculer les nombreux vecteurs en temps réel en fonction des angles et les vecteurs peuvent eêtre erronés du fait de l'accumulation des approximations.
+La machine devra calculer les nombreux vecteurs en temps reel en fonction des angles et les vecteurs peuvent eêtre errones du fait de l'accumulation des approximations.
 
 
 

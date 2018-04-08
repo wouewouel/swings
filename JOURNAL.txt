@@ -1,13 +1,13 @@
 # PROGRESSION
 
-Format : [fait/à faire] TACHE	Durée (en minutes)
+Format : [fait/à faire] TACHE	Duree (en minutes)
 
-[V] créer le JOURNAL                                            1
-[V] lire complétement le descriptif général                     90
+[V] ceer le JOURNAL                                            1
+[V] lire completement le descriptif general                     90
 [V] s'inscrire en binome                                   	1
 [V] fusionner les deux projets (y compris les fichiers JOURNAL)	20
 [V] Makefile                                               	60
-[V] Vecteur finie (pleinement opérationnelle et testé)  	??
+[V] Vecteur finie (pleinement operationnelle et teste)  	??
 [V] fichier REPONSES                                         	??
 [V] Oscillateur                                            	??
 [V] intégrateur d'Euler-Cromer                            	??
@@ -36,7 +36,7 @@ Ouriel:
 
 ## Semaine 2 :
 
-Ouriel: Création de la classe Vecteur ainsi que d'un ensemble de tests pour vérifier la fonctionnabilitée
+Ouriel: Creation de la classe Vecteur ainsi que d'un ensemble de tests pour verifier la fonctionnabilitee
 
 Charles: Prise en main de Qt
 
@@ -57,13 +57,10 @@ Charles: Surcharge des opérateurs
 Ouriel: Oscillateur
 
 --------------------------------------------------
-## Semaine 5Â :
-
+## Semaine 5 :
 Charles: Creation de differents Oscillateurs( Ressort/Pendule)
 
 Ouriel: Creation de la classe integrateur ainsi que de la sous classe integrateurEulerCromer accompagnee de tests
-
-
 --------------------------------------------------
 ## Semaine 6Â :
 

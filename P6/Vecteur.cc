@@ -60,7 +60,17 @@ using namespace std;
 	double Vecteur::norme() const {
 			return sqrt(norme2());
 			}
-	Vecteur Vecteur::normalise(){}
+	Vecteur Vecteur::normalise(){
+		double norm(norme());
+		if (norm!=0){
+		for(size_t i(0);i<coordonnees.size();++i){
+			coordonnees[i]/=norm;
+		}
+	}else{
+		cerr<<"Impossible de normaliser le vecteur nul"<<endl;
+	}
+		return *this;
+	}
 	//Surchage operateurs
 	//===============================================================================================
 	Vecteur& Vecteur::operator+=(const Vecteur& autre) { //addition

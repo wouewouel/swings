@@ -1,5 +1,6 @@
 #pragma once
 #include "Oscillateur.h"
+#include "Vecteur.h"
  
 class Ressort:public Oscillateur{
 	private:
@@ -7,7 +8,7 @@ class Ressort:public Oscillateur{
 	double m; //masse
 	double k; //constante de raideur
 	double lambda; //frottement fluide au point de rotation
-	Vecteur A={1,0,0}; //vecteur unitaire de dimension 3
+	Vecteur A; //vecteur unitaire de dimension 3
 	
 	public:
 	
@@ -19,9 +20,8 @@ class Ressort:public Oscillateur{
 	
 	Vecteur get_A();
 	
-	Ressort(double m,double k,double lambda,Vecteur a={1,0,0},Vecteur P={'a',1},Vecteur Q={'a',1}):Oscillateur(P,Q),m(m),k(k),lambda(lambda){
-		//remplacer par une fonction qui normalise a
-		A=a;
+	Ressort(double m,double k,double lambda,Vecteur a={2,0,2},Vecteur P={'a',1},Vecteur Q={'a',1}):Oscillateur(P,Q),m(m),k(k),lambda(lambda){
+		A=a.normalise();//necessaire de normaliser a?
 	}
 	
 	Vecteur equation_evolution(double t)const;

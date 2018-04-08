@@ -23,7 +23,7 @@ class Vecteur{
 		Vecteur(char a,double x):coordonnees({x}){}; //constructeur vecteur dimension 1 j ai mis un char pour eviter le conflit 
 		                                            //avec le premier constructeur, mais il faut trouver une solution                                                        
 		
-		Vecteur(double x,double y):coordonnees({x,y}){}; //constructeur vecteur en dimension 2
+		Vecteur(char a,char b,double x,double y):coordonnees({x,y}){}; //constructeur vecteur en dimension 2 a modifier
 		
 		Vecteur(double x,double y,double z):coordonnees({x,y,z}){}; //constructeur vecteur R3
 		

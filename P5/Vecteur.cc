@@ -41,10 +41,31 @@ using namespace std;
 	vector <double> Vecteur::getcoord() const { //on renvoie toutes les coordonnées d'un objet de la classe Vecteur
 			return coordonnees;
 			}
+			
 	double Vecteur::getvalue(size_t i) const { //on renvoie la coordonnées numero i d'un objet de la classe Vecteur
 			return coordonnees[i];
-			}		
-			
+			}	
+				
+	
+		
+		
+	double Vecteur::norme2() const { //on utilise norme2 pour faciliter le calcul de la norme
+			double result(0);
+			for (auto value : coordonnees){
+				result += pow(value,2);
+				}
+			return result;
+			} 			
+		
+	double Vecteur::norme() const {
+			return sqrt(norme2());
+			}
+	Vecteur Vecteur::normalise(){
+		->this*=1/(->this.norme());
+		return ->this;
+	}
+	//Surchage operateurs
+	//===============================================================================================
 	Vecteur& Vecteur::operator+=(const Vecteur& autre) { //addition
 			if(dimension_ok(autre)){
 				for(size_t i(0); i < coordonnees.size() ; ++i){
@@ -96,19 +117,6 @@ using namespace std;
 				}
 			return result;
 			}
-		
-		
-	double Vecteur::norme2() const { //on utilise norme2 pour faciliter le calcul de la norme
-			double result(0);
-			for (auto value : coordonnees){
-				result += pow(value,2);
-				}
-			return result;
-			} 			
-		
-	double Vecteur::norme() const {
-			return sqrt(norme2());
-			}
 	
 	bool Vecteur:: operator==(Vecteur autre){ // operateur comparaison egal
 		if (not(dimension_ok(autre))){return false;}
@@ -159,7 +167,7 @@ using namespace std;
 		return v;
 	}
 		
-	
+	//===============================================================================================
 	
  
 

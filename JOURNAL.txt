@@ -1,4 +1,4 @@
-﻿# PROGRESSION
+# PROGRESSION
 
 Format : [fait/à faire] TACHE	Durée (en minutes)
 
@@ -10,9 +10,9 @@ Format : [fait/à faire] TACHE	Durée (en minutes)
 [V] Vecteur finie (pleinement opérationnelle et testé)  	??
 [V] fichier REPONSES                                         	??
 [V] Oscillateur                                            	??
-[ ] intégrateur d'Euler-Cromer                            	??
-[ ] Pendule                                               	??
-[ ] Ressort                                               	??
+[V] intégrateur d'Euler-Cromer                            	??
+[V] Pendule                                               	??
+[V] Ressort                                               	??
 [ ] Systeme                                               	??
 [ ] exerciceP10                                           	??
 [ ] graphisme: cadre général                              	??
@@ -52,13 +52,16 @@ Ouriel: Prise en main de qt
 --------------------------------------------------
 ## Semaine 4 :
 
-Charles: surcharge des opérateurs
+Charles: Surcharge des opérateurs
 
 Ouriel: Oscillateur
 
 --------------------------------------------------
 ## Semaine 5Â :
 
+Charles: Creation de differents Oscillateurs( Ressort/Pendule)
+
+Ouriel: Creation de la classe integrateur ainsi que de la sous classe integrateurEulerCromer accompagnee de tests
 
 
 --------------------------------------------------

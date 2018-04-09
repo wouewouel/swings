@@ -5,7 +5,7 @@
 using namespace std;
 
 
-		Vecteur Oscillateur::equation_evolution(double t) const {  // utiliser Vecteur const en retour ?//pourquoi un size t?
+		Vecteur Oscillateur::equation_evolution(double t) const {  
 			Vecteur evol = (P + Q )* t;
 			return evol;			  // modifie P et Q indirectement non ?
 		}
@@ -15,7 +15,7 @@ using namespace std;
 		Vecteur Oscillateur::getQ() const {return Q;}
 		
 		void Oscillateur::setP(Vecteur const& V){
-			if(V.getcoord().size() <= P.getcoord().size() ){//pourquoi pas une comparaison==
+			if(V.getcoord().size() <= P.getcoord().size() ){
 				P = V;
 			}else {
 				throw string("le vecteur ne possede pas autant de dimension(s) !");

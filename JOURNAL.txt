@@ -1,4 +1,4 @@
-# PROGRESSION
+﻿# PROGRESSION
 
 Format : [fait/à faire] TACHE	Duree (en minutes)
 
@@ -7,10 +7,10 @@ Format : [fait/à faire] TACHE	Duree (en minutes)
 [V] s'inscrire en binome                                   	1
 [V] fusionner les deux projets (y compris les fichiers JOURNAL)	20
 [V] Makefile                                               	60
-[V] Vecteur finie (pleinement operationnelle et teste)  	??
-[V] fichier REPONSES                                         	??
-[V] Oscillateur                                            	??
-[V] intégrateur d'Euler-Cromer                            	??
+[V] Vecteur finie (pleinement operationnelle et teste)  	180+
+[V] fichier REPONSES                                         	15
+[V] Oscillateur                                            	120
+[V] intégrateur d'Euler-Cromer                            	180+
 [V] Pendule                                               	??
 [V] Ressort                                               	??
 [ ] Systeme                                               	??

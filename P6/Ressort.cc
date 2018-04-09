@@ -33,5 +33,5 @@ std::ostream& operator<<(std::ostream& out,Ressort ressort){
 	out<<setw(col2)<<"Q(vecteur vitesse):"<<setw(col1)<<ressort.getQ()<<endl;
 	
 	return out;
-};
+}
 	

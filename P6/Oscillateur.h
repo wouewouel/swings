@@ -11,8 +11,9 @@ class Oscillateur {
 	
 	public:
 	
-		Oscillateur(unsigned int n=1) :  P(n), Q(n) {} //	Constructeur qui intitialise P et Q à des vect de n dim de 0//on peut faire =1 pour mettre en
-		                                             //valeur par defaut
+		Oscillateur(unsigned int n=1) :  P(n), Q(n) {}  //	Constructeur qui intitialise P et Q à des vect de n dim de 0
+														//  on peut faire =1 pour mettre en
+		                                                //  valeur par defaut
 		Oscillateur(double a, double b, double c,                          //Oscillateur de dimension 3
 					double x, double y, double z) : P(a,b,c) , Q(x,y,z) {} // donnes a,b,c a P et x,y,z a Q
 		

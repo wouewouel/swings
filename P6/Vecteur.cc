@@ -10,7 +10,7 @@ using namespace std;
 			if(coordonnees.size() == (autre.getcoord()).size() ){
 				return true;
 			}else {
-				string Err_dim("Les deux vecteurs ont des dimensions différentes !");
+				string Err_dim("Les deux vecteurs ont des dimensions differentes !");
 				throw Err_dim;
 				//je ne sais pas si on doit mettre un return false ou pas 
 				}

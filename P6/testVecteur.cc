@@ -44,7 +44,7 @@ try {
 	cout << "vecteur 4";
 	}
 catch(string err){
-	cerr <<"incompatible avec l'operation == car erreur : \n"
+	cerr <<"vect1 et vect4 incompatiblent avec l'operation == car erreur : \n"
 		 << err << endl << endl;
 	}
 cout<<"vect1^vect2= "<<(vect1^vect2)<<endl; //test produit vectoriel
@@ -67,4 +67,7 @@ cout<<"v3= "<<v3<<endl;
 Vecteur v4(1,2,3);
 cout<<v4.normalise()<<endl;// test normalise
 cout<<v4;
+
+int i;
+cin >>i;
 }

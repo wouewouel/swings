@@ -18,7 +18,7 @@ int main()
 	W.affiche_evol(O2);
 	
 	string cas3 ("vitesse0.txt");
-	Oscillateur O3(1,1,0, 0,0,0);
+	Oscillateur O3(1,1,0, 0,0,0); 
 	W.affiche_evol(O3);
 	
 	int i;

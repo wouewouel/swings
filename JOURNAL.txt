@@ -1,4 +1,4 @@
-﻿# PROGRESSION
+# PROGRESSION
 
 Format : [fait/à faire] TACHE	Duree (en minutes)
 
@@ -58,7 +58,7 @@ Ouriel: Oscillateur
 
 --------------------------------------------------
 ## Semaine 5 :
-Charles: Creation de differents Oscillateurs( Ressort/Pendule)
+Charles: Creation de differents Oscillateurs( Ressort/Pendule)/ quelques retouches sur les autres fichiers
 
 Ouriel: Creation de la classe integrateur ainsi que de la sous classe integrateurEulerCromer accompagnee de tests
 --------------------------------------------------

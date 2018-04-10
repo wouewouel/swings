@@ -1,4 +1,4 @@
-****************************************************************************************
+**********************************************************************************************************************************************************************************
 
 
 [Question P1.1] Comment représentez-vous ces vecteurs ? Comment sont-ils organisés : quels attributs ? quelles méthodes ? quels droits d'accès ? 
@@ -26,7 +26,7 @@ Methodes:	-"dimension_ok(Vecteur autre)" renvoie true si les deux vecteurs ont l
 						-"getcoord() const" renvoie le tableau de double "coordonnees"					--> partie publique
 						-"getvalue(size_t i)" renvoie la valeur numero i des coordonnées				--> partie publique
 
-****************************************************************************************
+**********************************************************************************************************************************************************************************
 
 
 [Question P1.2] Quel choix avez vous fait pour les opérations entre vecteurs de dimensions différentes ?
@@ -38,7 +38,7 @@ de type string (peut être devrions nous mettre une struct pour pouvoir différenc
 
 
 
-****************************************************************************************
+**********************************************************************************************************************************************************************************
 
 
 [Question P4.1] Avez-vous ajouté un constructeur de copie ? Pourquoi (justifiez votre choix) ?
@@ -48,7 +48,7 @@ de type string (peut être devrions nous mettre une struct pour pouvoir différenc
 Oui, au cas ou l'on devrait modifier les constructeurs pour se rappeler de modifier les constructeurs de copie, si le constructeur de copie par dŽfaut devient inefficace.
 
 
-****************************************************************************************
+**********************************************************************************************************************************************************************************
 
 
 [Question P4.2] Si l'on souhaitait ajouter un constructeur par coordonnées sphériques (deux angles et une longueur) pour les vecteurs de dimension3,
@@ -64,7 +64,7 @@ La machine devra calculer les nombreux vecteurs en temps reel en fonction des an
 
 
 
-****************************************************************************************
+**********************************************************************************************************************************************************************************
 
 [Question P4.3] Quels opérateurs avez vous introduits ?
 
@@ -100,17 +100,23 @@ const Vecteur operator*(Vecteur v,double scalaire); //multiplication scalaire a 
 
 std::ostream& operator <<(std::ostream& out,Vecteur v); //operateur d'affichage
 
-****************************************************************************************
+**********************************************************************************************************************************************************************************
+
 [Question P6.1] Comment avez vous conçu votre classe Integrateur ? 
 
 La classe Integrateur ne possede qu'une methode  < integre(Oscillateur& O, double t, double dt) > dans l'interface, par ailleurs cette methode n'est pas definie a proprement parler mais est simplement declarer car nous nous en servirons plus tard pour le polymorphisme il me semble.
 
-****************************************************************************************
+**********************************************************************************************************************************************************************************
+
 [Question P6.2] Quelle est la relation entre les classes Integrateur et IntegrateurEulerCromer ? 
 
 IntegrateurEulerCromer  et une sous classe de la super classe Integrateur.
 Ici on définit explicitement la fonction <integre...> et on a rajouter une fonction < affiche_evol(Oscillateur O) > qui permet de simplifier le programme de test. 
 
-****************************************************************************************
+**********************************************************************************************************************************************************************************
 
+[Question P7.1] Comment se situent ces classes par rapport ˆ la classe Oscillateur dŽfinie la semaine passŽe ?
 
+Les pendules et les ressorts sont des oscillateurs, ainsi la classe Pendule et la classe Ressort sont toutes les deux des sous classes de la super classe Oscillateur.
+
+**********************************************************************************************************************************************************************************

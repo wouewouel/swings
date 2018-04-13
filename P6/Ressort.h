@@ -1,6 +1,5 @@
 #pragma once
 #include "Oscillateur.h"
-#include "Vecteur.h"
  
 class Ressort:public Oscillateur{
 	private:

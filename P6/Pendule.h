@@ -18,6 +18,8 @@ class Pendule:public Oscillateur{
 	double get_lambda();
 	
 	Vecteur equation_evolution(double t);
+	
+	virtual void dessine()const override{};
 };
 
 std::ostream& operator<<(std::ostream& out,Pendule pendule);

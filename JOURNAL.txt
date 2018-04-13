@@ -11,8 +11,8 @@ Format : [fait/à faire] TACHE	Duree (en minutes)
 [V] fichier REPONSES                                         	15
 [V] Oscillateur                                            	120
 [V] intégrateur d'Euler-Cromer                            	180+
-[V] Pendule                                               	??
-[V] Ressort                                               	??
+[V] Pendule                                               	90+
+[V] Ressort                                               	90+
 [ ] Systeme                                               	??
 [ ] exerciceP10                                           	??
 [ ] graphisme: cadre général                              	??

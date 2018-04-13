@@ -1,8 +1,9 @@
 #pragma once
 #include "Vecteur.h"
+#include "Dessinable.h"
 
 
-class Oscillateur {
+class Oscillateur:public Dessinable {
 				
 	protected:
 		Vecteur P; //Parametre
@@ -36,6 +37,8 @@ class Oscillateur {
 		void setP(Vecteur const&); 
 			
 		void setQ(Vecteur const&);
+		
+		virtual void dessine()const override{}
 	
 	};
 	

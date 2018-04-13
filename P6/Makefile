@@ -22,11 +22,11 @@ testVecteur:	testVecteur.o	Vecteur.o
 
 #============================================================================================
 
-Oscillateur.o:	Oscillateur.cc	Oscillateur.h	Vecteur.h
+Oscillateur.o:	Oscillateur.cc	Oscillateur.h	Vecteur.h	Dessinable.h
 
-testOscillateur.o:	testOscillateur.cc	Oscillateur.h	Vecteur.h
+testOscillateur.o:	testOscillateur.cc	Oscillateur.h	Vecteur.h Dessinable.h
 
-testOscillateur:	testOscillateur.o	Oscillateur.o	Vecteur.o
+testOscillateur:	testOscillateur.o	Oscillateur.o	Vecteur.o 
 #============================================================================================
 
 Integrateur.o:	Integrateur.cc	Integrateur.h	Oscillateur.h	Vecteur.h 
@@ -50,4 +50,7 @@ Ressort.o:	Ressort.cc	Ressort.h	Oscillateur.h	Vecteur.h
 testRessort.o:	testRessort.cc	Ressort.h	Oscillateur.h	Vecteur.h
 
 testRessort:	testRessort.o	Ressort.o	Oscillateur.o	Vecteur.o
+
+#============================================================================================
+
 

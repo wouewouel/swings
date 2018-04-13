@@ -25,6 +25,8 @@ class Ressort:public Oscillateur{
 	}
 	
 	Vecteur equation_evolution(double t)const;
+	
+	virtual void dessine()const override{};
 };
 	std::ostream& operator<<(std::ostream& out,Ressort r);
 	

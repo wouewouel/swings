@@ -2,7 +2,7 @@
 #include "SupportADessin.h"
 class Dessinable{
 	private:
-		SupportADessin support;
+		SupportADessin* support;
 	public:
-		  virtual void dessine() override;
+		  virtual void dessine()const =0;
 	};

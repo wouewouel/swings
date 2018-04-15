@@ -126,4 +126,21 @@ Les pendules et les ressorts sont des oscillateurs, ainsi la classe Pendule et l
 
 La methode dessine() est une methode virtuelle pure car tous les differents objets devront la redefinir.
 **********************************************************************************************************************************************************************************
+La classe Systeme devra avoir une collections de différents oscillateurs possibles dont nous invoquerons, au travers de l'intégrateur, les « fonctions f » de sorte que chacun réagisse suivant ses caractéristiques propres. 
+[Question P8.2] Quelle est la bonne façon de le faire dans un cadre de programmation orientée-objet ? 
+
+Nous allons créer un tableau de pointeur sur Oscillateur pour verifier la deuxieme condition du polymorphisme.
+**********************************************************************************************************************************************************************************
+[Question P8.3] A quoi faut-il faire attention pour les classes contenant des pointeurs ? Quelles solutions peut-on envisager ? 
+
+Il faut bien liberer ces pointeurs une fois l'utilisation terminee, on utilisera donc un destructeur adequat.
+**********************************************************************************************************************************************************************************
+[Question P8.4] Comment représentez vous la classe Systeme ?
+Expliquez votre conception (attributs, interface, ...). 
+
+Il s'agit d'une sous classe de la super classe Dessinable,
+elle possede un tableau de pointeurs sur des oscillateurs en prive,
+ainsi que la definition de la methode <dessine()>
+**********************************************************************************************************************************************************************************
+
 

@@ -1,10 +1,10 @@
-#pragma once
-#include "SupportADessin"
+//#pragma once
+#include "SupportADessin.h"
 
 class TextViewer:public SupportADessin{
 	public:
-	virtual void dessine();
-	virtual void dessine(Pendule const&);
-	virtual void dessine(Ressort const&);
-	virtual void dessine(Systeme const&);
-}
+	virtual void dessine() override;
+	virtual void dessine(Pendule const& p);
+	virtual void dessine(Ressort const& r); 
+	virtual void dessine(Systeme const& s);
+};

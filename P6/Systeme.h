@@ -2,20 +2,15 @@
 #include <vector>
 #include "Oscillateur.h"
 #include "Dessinable.h"
-
+#include <memory>
 class Systeme : public Dessinable{
 	
 	private:
-		std::vector <Oscillateur*>systeme;
+		std::vector <std::unique_ptr<Oscillateur>>systeme;
 	public:
-		virtual void dessine()const override{
-			for(auto const& element:systeme){
-				element->dessine();
-			}
-		}
-	void evolue(){
-		for(auto const& element:systeme){
-			element->equation_evolution();
-		}
-	}
+		void ajoute(Oscillateur* o);
+		
+		virtual void dessine()const override;
+			
+		void evolue(double t);
 };

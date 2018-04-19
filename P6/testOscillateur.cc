@@ -13,8 +13,8 @@ int main ()
 	affiche_get(O,t);
 	
 	affiche_set(O);
-	Vecteur P('a','b',1,2);
-	Vecteur Q('a','b',3,4);
+	Vecteur P(1,2);
+	Vecteur Q(3,4);
 	Oscillateur O1(P,Q);
 	affiche_get(O1,5);
 	//affiche_set(O1); Revoir la def de affiche_set

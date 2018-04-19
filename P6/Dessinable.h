@@ -1,8 +1,12 @@
 #pragma once
 #include "SupportADessin.h"
 class Dessinable{
-	private:
+	protected:
 		SupportADessin* support;
 	public:
-		  virtual void dessine()const =0;
+		Dessinable(SupportADessin* support):support(support){}
+		
+		virtual ~Dessinable(){}
+		
+		virtual void dessine()const =0;
 	};

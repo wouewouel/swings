@@ -20,10 +20,10 @@ class Vecteur{
 		Vecteur(unsigned int dimension=1):coordonnees(dimension,0){}; //constructeur vecteur nul, on mettra une dimension 
 															    	  //egale a 1 si l'utilisateur oublie d'indiquer la dimension
 		
-		Vecteur(char a,double x):coordonnees({x}){}; //constructeur vecteur dimension 1 j ai mis un char pour eviter le conflit 
+		Vecteur(std::string a,double x):coordonnees({x}){}; //constructeur vecteur dimension 1 j ai mis un char pour eviter le conflit 
 		                                            //avec le premier constructeur, mais il faut trouver une solution                                                        
 		
-		Vecteur(char a,char b,double x,double y):coordonnees({x,y}){}; //constructeur vecteur en dimension 2 a modifier
+		Vecteur(double x,double y):coordonnees({x,y}){}; //constructeur vecteur en dimension 2
 		
 		Vecteur(double x,double y,double z):coordonnees({x,y,z}){}; //constructeur vecteur R3
 		

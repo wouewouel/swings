@@ -9,7 +9,8 @@ class Pendule:public Oscillateur{
 	
 	public:
 	
-	Pendule(double m,double L,double lambda,double P=1,double Q=1):Oscillateur(P,Q),m(m),L(L),lambda(lambda){}//P et Q sont en dimension 1
+	Pendule(double m,double L,double lambda,double P=1,double Q=1,SupportADessin* vue=nullptr):
+	Oscillateur(P,Q,vue),m(m),L(L),lambda(lambda){}//P et Q sont en dimension 1
 	
 	double get_m();
 	
@@ -19,7 +20,7 @@ class Pendule:public Oscillateur{
 	
 	Vecteur equation_evolution(double t);
 	
-	virtual void dessine()const override{};
+	virtual void dessine()const override{support->dessine(*this);};
 };
 
 std::ostream& operator<<(std::ostream& out,Pendule pendule);

@@ -19,13 +19,14 @@ class Ressort:public Oscillateur{
 	
 	Vecteur get_A();
 	
-	Ressort(double m,double k,double lambda,Vecteur a={2,0,2},Vecteur P={'a',1},Vecteur Q={'a',1}):Oscillateur(P,Q),m(m),k(k),lambda(lambda){
+	Ressort(double m,double k,double lambda,Vecteur a={2,0,2},Vecteur P={'a',1},Vecteur Q={'a',1},SupportADessin* vue=nullptr):
+	Oscillateur(P,Q,vue),m(m),k(k),lambda(lambda){
 		A=a.normalise();//necessaire de normaliser a?
 	}
 	
 	Vecteur equation_evolution(double t)const;
 	
-	virtual void dessine()const override{};
+	virtual void dessine()const override{support->dessine(*this);};
 };
 	std::ostream& operator<<(std::ostream& out,Ressort r);
 	

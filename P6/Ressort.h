@@ -24,7 +24,7 @@ class Ressort:public Oscillateur{
 		A=a.normalise();//necessaire de normaliser a?
 	}
 	
-	Vecteur equation_evolution(double t)const;
+	virtual Vecteur equation_evolution(double t)const override;
 	
 	virtual void dessine()const override{support->dessine(*this);};
 };

@@ -12,7 +12,7 @@ CXXFLAGS += -g                      # pour debugger
 # LDFLAGS  += -pg                   # pour profiler
 # CXXFLAGS += -O2                   # pour optimiser la vitesse
 
-all:	testVecteur	testOscillateur	TestIntegrateur	testPendule	testRessort
+all:	testVecteur	testOscillateur	TestIntegrateur	testPendule	testRessort	ExerciceP9
 
 Vecteur.o:	Vecteur.cc	Vecteur.h
 
@@ -20,14 +20,14 @@ testVecteur.o:	testVecteur.cc	Vecteur.h
 
 testVecteur:	testVecteur.o	Vecteur.o
 
-#============================================================================================
+#=======================================================================================================================================================
 
 Oscillateur.o:	Oscillateur.cc	Oscillateur.h	Vecteur.h	Dessinable.h
 
 testOscillateur.o:	testOscillateur.cc	Oscillateur.h	Vecteur.h Dessinable.h
 
 testOscillateur:	testOscillateur.o	Oscillateur.o	Vecteur.o 
-#============================================================================================
+#=======================================================================================================================================================
 
 Integrateur.o:	Integrateur.cc	Integrateur.h	Oscillateur.h	Vecteur.h 
 
@@ -35,7 +35,7 @@ TestIntegrateur.o:	TestIntegrateur.cc	Integrateur.h	Oscillateur.h	Vecteur.h
 
 TestIntegrateur:	TestIntegrateur.o	Integrateur.o	Oscillateur.o	Vecteur.o
  
-#============================================================================================
+#=======================================================================================================================================================
 
 Pendule.o:	Pendule.cc	Pendule.h	Oscillateur.h	Vecteur.h
 
@@ -43,7 +43,7 @@ testPendule.o:	testPendule.cc	Pendule.h	Oscillateur.h	Vecteur.h
 
 testPendule:	testPendule.o	Pendule.o	Oscillateur.o	Vecteur.o
 
-#============================================================================================
+#=======================================================================================================================================================
 
 Ressort.o:	Ressort.cc	Ressort.h	Oscillateur.h	Vecteur.h
 
@@ -51,6 +51,15 @@ testRessort.o:	testRessort.cc	Ressort.h	Oscillateur.h	Vecteur.h
 
 testRessort:	testRessort.o	Ressort.o	Oscillateur.o	Vecteur.o
 
-#============================================================================================
+#=======================================================================================================================================================
+
+Textviewer.o:	TextViewer.cc	TextViewer.h	Ressort.h	Pendule.h	Systeme.h	Integrateur.h	Oscillateur.h	Vecteur.h	SupportADessin.h
+
+ExerciceP9.o:	ExerciceP9.cc TextViewer.cc	TextViewer.h	Ressort.h	Pendule.h	Systeme.h	Integrateur.h	Oscillateur.h	Vecteur.o
+
+ExerciceP9:	 	TextViewer.o	 Ressort.o	Pendule.o	Systeme.o	Integrateur.o	Oscillateur.o	Vecteur.o ExerciceP9.o
+
+#=======================================================================================================================================================	
+
 
 

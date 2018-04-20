@@ -6,12 +6,12 @@
 
 class Integrateur {
 	public: 
-		void integre(Oscillateur& O, double t, double dt) {};
+		virtual void integre(Oscillateur& O, double t, double dt)=0;
 	};
 
 class IntegrateurEulerCromer : public Integrateur {
 	public:
-		void integre(Oscillateur& O, double t, double dt);
+		virtual void integre(Oscillateur& O, double t, double dt)override;
 		
 		void affiche_evol(Oscillateur O) const;
 	};

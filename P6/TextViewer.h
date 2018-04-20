@@ -1,6 +1,8 @@
 //#pragma once
 #include "SupportADessin.h"
 
+
+
 class TextViewer:public SupportADessin{
 	public:
 	virtual void dessine() override;

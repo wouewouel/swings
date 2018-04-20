@@ -28,7 +28,7 @@ class Oscillateur:public Dessinable {
 			}
 			};//revoir plus tard pour etre sur que dimP=dimQ
 								
-		Vecteur equation_evolution(double t) const;
+		virtual Vecteur equation_evolution(double t) const;
 	
 		Vecteur getP() const ;
 	

@@ -18,7 +18,7 @@ class Pendule:public Oscillateur{
 	
 	double get_lambda();
 	
-	Vecteur equation_evolution(double t);
+	virtual Vecteur equation_evolution(double t) const override;
 	
 	virtual void dessine()const override{support->dessine(*this);};
 };

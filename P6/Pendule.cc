@@ -8,7 +8,7 @@
 using namespace std;
 double g(9.81);
 Vecteur Pendule::equation_evolution(double t)const{
-	Vecteur retour={'a',(-g/L)*sin(P.getvalue(0))-lambda*(Q.getvalue(0))/(m*L*L)};
+	Vecteur retour={"a",(-g/L)*sin(P.getvalue(0))-lambda*(Q.getvalue(0))/(m*L*L)};
 	return retour;
 }
 
@@ -24,7 +24,7 @@ std::ostream& operator<<(std::ostream& out,Pendule pendule){
 	out<<"##Pendule"<<endl;
 	out<<setw(col2)<<"masse(m):"<<setw(col1)<<pendule.get_m()<<endl;
 	out<<setw(col2)<<"Longueur(L):"<<setw(col1)<<pendule.get_L()<<endl;
-	out<<setw(col2)<<"Frottement(lambda):"<<setw(col1)<<pendule.get_lambda()<<endl;
+	out<<setw(col2)<<"Frottement(lambda):"<<setw(col1)<<pendule.get_lambda()<<endl<<endl;
 	out<<setw(col2)<<"P(vecteur position):"<<setw(col1)<<pendule.getP()<<endl;
 	out<<setw(col2)<<"Q(vecteur vitesse):"<<setw(col1)<<pendule.getQ()<<endl;
 	return out;

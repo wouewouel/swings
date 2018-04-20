@@ -19,7 +19,7 @@ class Ressort:public Oscillateur{
 	
 	Vecteur get_A();
 	
-	Ressort(double m,double k,double lambda,Vecteur a={2,0,2},Vecteur P={'a',1},Vecteur Q={'a',1},SupportADessin* vue=nullptr):
+	Ressort(double m,double k,double lambda,Vecteur a={1,0,0},Vecteur P={"a",1},Vecteur Q={"a",1},SupportADessin* vue=nullptr):
 	Oscillateur(P,Q,vue),m(m),k(k),lambda(lambda){
 		A=a.normalise();//necessaire de normaliser a?
 	}

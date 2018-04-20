@@ -63,7 +63,7 @@ Charles: Creation de differents Oscillateurs( Ressort/Pendule)/ quelques retouch
 Ouriel: Creation de la classe integrateur ainsi que de la sous classe integrateurEulerCromer accompagnee de tests
 --------------------------------------------------
 ## Semaine 6Â :
-
+Charles et Ouriel: Mise en place des différentes classes necessaire, mise en place des test pour le textviewer
 
 
 --------------------------------------------------

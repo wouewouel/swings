@@ -15,6 +15,9 @@ using namespace std;
 		cout << r;
 		} 
 
-//	void TextViewer::dessine(Systeme const& s){} 	que mettre dedans ?
-
-
+    void TextViewer::dessine(Systeme const& s){}  //que mettre dedans ?
+  //  void TextViewer::dessine(Systeme const& s){ //une version possible
+  //		s.dessine();
+  //	}
+  //mais je pense que c'est inutile puisque le dessin d'un systeme n'est pas lie au support mais au support de ses oscillateurs
+  //il faudrait demander a un assistant

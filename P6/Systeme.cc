@@ -2,6 +2,7 @@
 #include <vector>
 #include "Systeme.h"
 
+
 using namespace std;
 
 void Systeme::ajoute(Oscillateur* o){
@@ -16,8 +17,8 @@ void Systeme::ajoute(Oscillateur* o){
 			}
 		}
 		
-	void Systeme::evolue(double t){
+	void Systeme::evolue(double t,double dt){
 		for(auto const& element:systeme){
-			element->equation_evolution(t);
+			integrateur.integre(*element,t,dt);
 		}
 	}

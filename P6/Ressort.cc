@@ -6,10 +6,10 @@
 using namespace std;
 
 Vecteur Ressort::equation_evolution(double t)const{ //rendre plus jolie cette fonction plus tard
-	Vecteur g(0,0,9.81);
+	Vecteur g(0,0,-9.81);
 	double scalaire(g*A);
 	Vecteur v={"a",scalaire};
-	Vecteur evol=(-k/m)*P-(lambda/m)*Q+v;
+	Vecteur evol=-(k/m)*P-(lambda/m)*Q+v;
 	return evol;
 }
 
@@ -20,6 +20,16 @@ double Ressort::get_k(){return k;}
 double Ressort::get_lambda(){return lambda;}
 
 Vecteur Ressort::get_A(){return A;}
+
+void Ressort::testevolution(double dt,double tfinal){
+	IntegrateurEulerCromer integrateur;
+	for(double t(0);t<=tfinal;t+=dt){
+		cout<<endl<<"t= "<<t<<endl;
+		cout<<"#Parametre "<<P<<endl;
+		cout<<"#Vitesse "<<Q<<endl;
+		integrateur.integre(*this,t,dt);
+	}
+}
 	
 std::ostream& operator<<(std::ostream& out,Ressort ressort){
 	constexpr int col1(5);

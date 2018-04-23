@@ -1,5 +1,6 @@
 #pragma once
 #include "Oscillateur.h"
+#include "Integrateur.h"
  
 class Ressort:public Oscillateur{
 	private:
@@ -25,6 +26,9 @@ class Ressort:public Oscillateur{
 	}
 	
 	virtual Vecteur equation_evolution(double t)const override;
+	
+	void testevolution(double dt,double tlimite);
+		
 	
 	virtual void dessine()const override{support->dessine(*this);};
 };

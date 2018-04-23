@@ -1,5 +1,6 @@
 #pragma once
 #include "Oscillateur.h"
+#include "Integrateur.h"
 
 class Pendule:public Oscillateur{
 	private:
@@ -17,6 +18,8 @@ class Pendule:public Oscillateur{
 	double get_L();
 	
 	double get_lambda();
+	
+	void testevolution(double dt,double tfinal);
 	
 	virtual Vecteur equation_evolution(double t) const override;
 	

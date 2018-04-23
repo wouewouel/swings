@@ -18,6 +18,16 @@ double Pendule::get_L(){return L;}
 
 double Pendule::get_lambda(){return lambda;}
 
+void Pendule::testevolution(double dt,double tfinal){
+	IntegrateurEulerCromer integrateur;
+	for(double t(0);t<=tfinal;t+=dt){
+		cout<<endl<<"t= "<<t<<endl;
+		cout<<"#Parametre "<<P<<endl;
+		cout<<"#Vitesse "<<Q<<endl;
+		integrateur.integre(*this,t,dt);
+	}
+}
+
 std::ostream& operator<<(std::ostream& out,Pendule pendule){
 	constexpr int col1(5);
 	constexpr int col2(20);

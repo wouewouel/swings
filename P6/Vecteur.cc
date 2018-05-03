@@ -94,7 +94,7 @@ using namespace std;
 	Vecteur Vecteur::operator-(){ //oppose
 		Vecteur v(0);
 		for(size_t i(0); i < coordonnees.size() ; ++i){
-			v.augmente(coordonnees[i]);
+			v.augmente(-coordonnees[i]);
 		}
 		return v;
 	}

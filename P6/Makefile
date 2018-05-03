@@ -53,7 +53,7 @@ TestRessort:	TestRessort.o	Ressort.o	Oscillateur.o	Vecteur.o	Integrateur.o
 
 #=======================================================================================================================================================
 
-Textviewer.o:	TextViewer.cc	TextViewer.h	Ressort.h	Pendule.h	Systeme.h	Integrateur.h	Oscillateur.h	Vecteur.h	SupportADessin.h
+TextViewer.o:	TextViewer.cc	TextViewer.h	Ressort.h	Pendule.h	Systeme.h	Integrateur.h	Oscillateur.h	Vecteur.h	SupportADessin.h
 
 ExerciceP9.o:	ExerciceP9.cc	TextViewer.h	Ressort.h	Pendule.h	Systeme.h	Integrateur.h	Oscillateur.h	Vecteur.o
 

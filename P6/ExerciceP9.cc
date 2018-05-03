@@ -4,7 +4,9 @@
 #include "Pendule.h"
 #include "Systeme.h"
 #include "Integrateur.h"
+#include "constantes.h"
 #include <cmath>
+
 
 
 using namespace std;

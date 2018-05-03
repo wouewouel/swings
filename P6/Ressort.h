@@ -12,14 +12,7 @@ class Ressort:public Oscillateur{
 	
 	public:
 	
-	double get_m();
-	
-	double get_k();
-	
-	double get_lambda();
-	
-	Vecteur get_A();
-	
+	void affiche(std::ostream& out);
 	Ressort(double m,double k,double lambda,Vecteur a={1,0,0},Vecteur P={"a",1},Vecteur Q={"a",1},SupportADessin* vue=nullptr):
 	Oscillateur(P,Q,vue),m(m),k(k),lambda(lambda){
 		A=a.normalise();//necessaire de normaliser a?

@@ -13,11 +13,7 @@ class Pendule:public Oscillateur{
 	Pendule(double m,double L,double lambda,double P=1,double Q=1,SupportADessin* vue=nullptr):
 	Oscillateur(P,Q,vue),m(m),L(L),lambda(lambda){}//P et Q sont en dimension 1 donc on les initialise avec des double
 	                                               //le constructeur d'oscillateur les convertira en vecteur
-	double get_m();
-	
-	double get_L();
-	
-	double get_lambda();
+	void affiche(std::ostream& out);
 	
 	void testevolution(double dt,double tfinal);
 	

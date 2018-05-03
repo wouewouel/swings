@@ -43,7 +43,7 @@ try {
 	cout << "vecteur 4";
 	}
 catch(string err){
-	cerr <<"vect1 et vect4 incompatiblent avec l'operation == car erreur : \n"
+	cerr <<"vect1 et vect4 incompatibles avec l'operation == car erreur : \n"
 		 << err << endl << endl;
 	}
 cout<<"vect1^vect2= "<<(vect1^vect2)<<endl; //test produit vectoriel
@@ -57,8 +57,8 @@ cout<<"vect1*6= "<<vect1*6<<endl; //test multiplication scalaire a droite
 cout<<"6*vect1= "<<6*vect1<<endl; //test multiplication scalaire a gauche
 cout<<"vect1*vect2= "<<vect1*vect2<<endl; //test produit scalaire
 cout<<"vect2*vect1= "<<vect2*vect1<<endl; //
-Vecteur v('a',1); //test vecteur a une dimension
-Vecteur v2('a',0);
+Vecteur v("a",1); //test vecteur a une dimension
+Vecteur v2("a",0);
 cout<<"v+v2= "<<v+v2<<endl;
 Vecteur v3;
 v3.set_coord(1,2); //test de set_coord
@@ -67,6 +67,7 @@ Vecteur v4(1,2,3);
 cout<<v4.normalise()<<endl;// test normalise
 cout<<v4;
 
-int i;
+
+int i; //revoir pas mal d erreur
 cin >>i;
 }

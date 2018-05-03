@@ -47,7 +47,7 @@ class Vecteur{
 		
 		Vecteur& operator-=(const Vecteur& autre); //on fait vecteur actuel - autre
 		
-		Vecteur operator-();//renvoie l'oppose du vecteur
+		const Vecteur operator-()const;//renvoie l'oppose du vecteur
 			
 		Vecteur& operator*=(double scalaire);//multiplication scalaire
 		

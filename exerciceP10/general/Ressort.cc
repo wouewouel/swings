@@ -13,13 +13,17 @@ Vecteur Ressort::equation_evolution(double t)const{ //rendre plus jolie cette fo
 	return evol;
 }
 
-double Ressort::get_m(){return m;}
-
-double Ressort::get_k(){return k;}
-
-double Ressort::get_lambda(){return lambda;}
-
-Vecteur Ressort::get_A(){return A;}
+void Ressort::affiche(std::ostream& out){
+	constexpr int col1(5);
+	constexpr int col2(20);
+	out<<"##Ressort"<<endl;
+	out<<setw(col2)<<"Raideur (k):"<<setw(col1)<<k<<endl;
+	out<<setw(col2)<<"Masse (m):"<<setw(col1)<<m<<endl;
+	out<<setw(col2)<<"Frottement (lambda):"<<setw(col1)<<lambda<<endl<<endl;
+	out<<setw(col2)<<"A(vecteur unitaire de l'axe):"<<setw(col1)<<A<<endl;
+	out<<setw(col2)<<"P(vecteur position):"<<setw(col1)<<P<<endl;
+	out<<setw(col2)<<"Q(vecteur vitesse):"<<setw(col1)<<Q<<endl;
+}
 
 void Ressort::testevolution(double dt,double tfinal){
 	IntegrateurEulerCromer integrateur;
@@ -32,16 +36,7 @@ void Ressort::testevolution(double dt,double tfinal){
 }
 	
 std::ostream& operator<<(std::ostream& out,Ressort ressort){
-	constexpr int col1(5);
-	constexpr int col2(20);
-	out<<"##Ressort"<<endl;
-	out<<setw(col2)<<"Raideur (k):"<<setw(col1)<<ressort.get_k()<<endl;
-	out<<setw(col2)<<"Masse (m):"<<setw(col1)<<ressort.get_m()<<endl;
-	out<<setw(col2)<<"Frottement (lambda):"<<setw(col1)<<ressort.get_lambda()<<endl<<endl;
-	out<<setw(col2)<<"A(vecteur unitaire de l'axe):"<<setw(col1)<<ressort.get_A()<<endl;
-	out<<setw(col2)<<"P(vecteur position):"<<setw(col1)<<ressort.getP()<<endl;
-	out<<setw(col2)<<"Q(vecteur vitesse):"<<setw(col1)<<ressort.getQ()<<endl;
-	
+	ressort.affiche(out);
 	return out;
 }
 	

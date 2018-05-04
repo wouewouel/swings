@@ -11,6 +11,19 @@ Vecteur Pendule::equation_evolution(double t)const{
     Vecteur retour={(-g/L)*sin(P.getvalue(0))-lambda*(Q.getvalue(0))/(m*L*L)};
 	return retour;
 }
+<<<<<<< HEAD:exerciceP10/general/Pendule.cc
+=======
+void Pendule::affiche(ostream& out){
+	constexpr int col1(5);
+	constexpr int col2(20);
+	out<<"##Pendule"<<endl;
+	out<<setw(col2)<<"masse(m):"<<setw(col1)<<m<<endl;
+	out<<setw(col2)<<"Longueur(L):"<<setw(col1)<<L<<endl;
+	out<<setw(col2)<<"Frottement(lambda):"<<setw(col1)<<lambda<<endl<<endl;
+	out<<setw(col2)<<"P(vecteur position):"<<setw(col1)<<P<<endl;
+	out<<setw(col2)<<"Q(vecteur vitesse):"<<setw(col1)<<Q<<endl;
+}
+>>>>>>> 16d5e9010090ef5cc21580dd1a005b12fb84c2dc:P6/Pendule.cc
 
 void Pendule::testevolution(double dt,double tfinal){
 	IntegrateurEulerCromer integrateur;
@@ -23,13 +36,6 @@ void Pendule::testevolution(double dt,double tfinal){
 }
 
 std::ostream& operator<<(std::ostream& out,Pendule pendule){
-	constexpr int col1(5);
-	constexpr int col2(20);
-	out<<"##Pendule"<<endl;
-	out<<setw(col2)<<"masse(m):"<<setw(col1)<<pendule.get_m()<<endl;
-	out<<setw(col2)<<"Longueur(L):"<<setw(col1)<<pendule.get_L()<<endl;
-	out<<setw(col2)<<"Frottement(lambda):"<<setw(col1)<<pendule.get_lambda()<<endl<<endl;
-	out<<setw(col2)<<"P(vecteur position):"<<setw(col1)<<pendule.getP()<<endl;
-	out<<setw(col2)<<"Q(vecteur vitesse):"<<setw(col1)<<pendule.getQ()<<endl;
+	pendule.affiche(out);
 	return out;
 }

@@ -15,7 +15,6 @@ using namespace std;
 int main ()
 {
         SupportADessin* text(new TextViewer(cout));
-		
 		Vecteur a1(1,0,0);
         Vecteur P1(1);
         Vecteur Q1(1);
@@ -23,9 +22,9 @@ int main ()
 		Oscillateur* p1(new Pendule(5,2,1,5,8,text));
         IntegrateurEulerCromer integrateur;
         Systeme s(text,integrateur);
-
         s.ajoute(r1);
         s.ajoute(p1);
+
         r1->dessine();
         p1->dessine();
 

@@ -21,4 +21,7 @@ class Systeme : public Dessinable{
         virtual void dessine()const ;
 			
 		void evolue(double t,double dt);
+
+        std::vector<std::unique_ptr<Oscillateur>> get_systeme() const;
+
 };

@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "Oscillateur.h"
 #include "Integrateur.h"
 #include "support_a_dessin.h"
@@ -27,8 +28,12 @@ class Pendule:public Oscillateur{
     void testevolution(double dt,double tfinal);
 	
     virtual Vecteur equation_evolution(double t) const override;
+
+    void affiche(std::ostream& out);
 	
-    virtual void dessine()const override{support->dessine(*this);};
+    virtual void dessine()const override{support->dessine(*this);}
+
+    void set_support(SupportADessin* const& S) {support=S;}
 };
 
 std::ostream& operator<<(std::ostream& out,Pendule pendule);

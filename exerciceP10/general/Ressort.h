@@ -30,8 +30,10 @@ class Ressort:public Oscillateur {
 	
 	void testevolution(double dt,double tlimite);
 		
-	
+    void affiche(std::ostream& out);
+
 	virtual void dessine()const override{support->dessine(*this);};
 };
-	std::ostream& operator<<(std::ostream& out,Ressort r);
+
+std::ostream& operator<<(std::ostream& out,Ressort r);
 	

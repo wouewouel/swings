@@ -6,13 +6,13 @@
 #include "Pendule.h"
 
 using namespace std;
+
 double g(9.81);
 Vecteur Pendule::equation_evolution(double t)const{
     Vecteur retour={(-g/L)*sin(P.getvalue(0))-lambda*(Q.getvalue(0))/(m*L*L)};
 	return retour;
 }
-<<<<<<< HEAD:exerciceP10/general/Pendule.cc
-=======
+
 void Pendule::affiche(ostream& out){
 	constexpr int col1(5);
 	constexpr int col2(20);
@@ -23,7 +23,6 @@ void Pendule::affiche(ostream& out){
 	out<<setw(col2)<<"P(vecteur position):"<<setw(col1)<<P<<endl;
 	out<<setw(col2)<<"Q(vecteur vitesse):"<<setw(col1)<<Q<<endl;
 }
->>>>>>> 16d5e9010090ef5cc21580dd1a005b12fb84c2dc:P6/Pendule.cc
 
 void Pendule::testevolution(double dt,double tfinal){
 	IntegrateurEulerCromer integrateur;

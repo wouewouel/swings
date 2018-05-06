@@ -2,6 +2,7 @@
 #include "text_viewer.h"
 #include "Ressort.h"
 #include "Pendule.h"
+#include "Systeme.h"
 
 using namespace std;
 
@@ -13,16 +14,10 @@ using namespace std;
         flot << r;
         }
 
-    void TextViewer::dessine(Systeme const& a_dessiner){}  //que mettre dedans ?
-  //  void TextViewer::dessine(Systeme const& s){ //une version possible
-  //      a_dessiner.dessine();
-  //	}
+    void TextViewer::dessine(Systeme const& a_dessiner){
+        a_dessiner.dessine();
+    }
 
-   /* il y avait déja
-    void TextViewer::dessine(Contenu const& a_dessiner)
-    {
-    flot << a_dessiner.infos() << std::endl;
-    }*/
 
   //mais je pense que c'est inutile puisque le dessin d'un systeme n'est pas lie au support mais au support de ses oscillateurs
   //il faudrait demander a un assistant

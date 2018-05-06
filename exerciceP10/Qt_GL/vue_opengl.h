@@ -23,8 +23,6 @@ class VueOpenGL : public SupportADessin {
   void translate(double x, double y, double z);
   void rotate(double angle, double dir_x, double dir_y, double dir_z);
   
-
-
   //************************************************************************//
   virtual void dessine(Pendule const& P) override;
   virtual void dessine(Ressort const& R) override;

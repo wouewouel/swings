@@ -2,12 +2,34 @@
 #include <QTimerEvent>
 #include <QMatrix4x4>
 #include "glwidget.h"
+#include "Vecteur.h"
+#include "Oscillateur.h"
+#include "Systeme.h"
+#include "Integrateur.h"
+#include "Ressort.h"
+#include "Pendule.h"
 
 // ======================================================================
 void GLWidget::initializeGL()
 {
   vue.init();
   timerId = startTimer(20);
+  Vecteur a1(1,0,0);
+  Vecteur P1(1);
+  Vecteur Q1(1);
+  Oscillateur* r1(new Ressort(4,2,1,a1,P1,Q1,&vue));
+  Oscillateur* p1(new Pendule(5,2,1,5,8,&vue));
+  IntegrateurEulerCromer integrateur;
+  Systeme s(&vue,integrateur);
+ // s.ajoute(r1);
+  s.ajoute(p1);
+
+  /*Oui, mais non. Il faudrait bien "copier" le support du système dans celui des oscillateurs,
+   * mais surtout pas une copie profonde. En effet, tu ne devrais avoir qu'une seule instance
+   * de VueOpenGL (ou TextViewer) dans ton programme. Si tu commence à faire des copies profondes,
+   * cela voudrait dire que chaque oscillateur serait dessiné sur une fenêtre différente, elle même
+   * différente de celle du système ? C'est pas vraiment ce que l'on veut. Tu fais simplement une
+   * copie de surface du pointeur support et ça suffit. */
 }
 
 // ======================================================================

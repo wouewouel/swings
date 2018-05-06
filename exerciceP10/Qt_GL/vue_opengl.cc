@@ -10,12 +10,14 @@ void VueOpenGL::dessine(Systeme const& a_dessiner)
     matrice.translate(0.0, 0.0, -2.0);
     prog.setUniformValue("vue_modele", matrice_vue);
 
-
+    for(auto const& oscill : a_dessiner.get_systeme()){
+        oscill->dessine(); //A TSHEEEEEEQUE
+    }
 }
 //**********************************************************//
 void VueOpenGL::dessine(Pendule const& P)  {
 
-    prog.setUniformValue("vue_modele", matrice_vue);
+   // prog.setUniformValue("vue_modele", matrice_vue);
 
 glBegin(GL_LINES);
   prog.setAttributeValue(CouleurId, 1.0, 0.0, 0.0); // rouge
@@ -24,8 +26,6 @@ glBegin(GL_LINES);
   prog.setAttributeValue(CouleurId, 0.0, 1.0, 0.0); // vert
   prog.setAttributeValue(SommetId,  0.0, -P.get_L()*cos(P.get_P())*9.81, P.get_L()*sin(P.get_P()));
 glEnd();
-
-
 
 }
 //**********************************************************//

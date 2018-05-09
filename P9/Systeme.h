@@ -13,7 +13,7 @@ class Systeme : public Dessinable{
 		
 	public:
 		Systeme(SupportADessin* vue,IntegrateurEulerCromer integrateur):Dessinable(vue),systeme(0),integrateur(integrateur){}
-		
+
 		void ajoute(Oscillateur* o);
 		
 		virtual void dessine()const override;

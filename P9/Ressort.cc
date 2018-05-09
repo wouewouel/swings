@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <string>
 #include <iomanip>
 #include "Ressort.h"
@@ -13,7 +12,7 @@ Vecteur Ressort::equation_evolution(double t)const{ //rendre plus jolie cette fo
 	return evol;
 }
 
-void Ressort::affiche(std::ostream& out){
+void Ressort::affiche(std::ostream& out)const{
 	constexpr int col1(5);
 	constexpr int col2(20);
 	out<<"##Ressort"<<endl;
@@ -35,7 +34,7 @@ void Ressort::testevolution(double dt,double tfinal){
 	}
 }
 	
-std::ostream& operator<<(std::ostream& out,Ressort ressort){
+ostream& operator<<(ostream& out,Ressort const& ressort){
 	ressort.affiche(out);
 	return out;
 }

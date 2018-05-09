@@ -10,11 +10,11 @@ class Vecteur{
 	
 		std::vector<double> coordonnees;
 				
-		bool dimension_3(Vecteur autre) const; //on teste ici si les deux vecteurs sont de dimensions 3
+		bool dimension_3(Vecteur const& autre) const; //on teste ici si les deux vecteurs sont de dimensions 3
 			
 	public:
 	
-		bool dimension_ok(Vecteur autre) const; // On teste ici si les dimensions sont bonnes//signaler son passage en public
+		bool dimension_ok(Vecteur const& autre) const; // On teste ici si les dimensions sont bonnes//signaler son passage en public
 												// a Ouriel pour les oscillateurs
 		
 		Vecteur(unsigned int dimension=1):coordonnees(dimension,0){}; //constructeur vecteur nul, on mettra une dimension 
@@ -37,9 +37,9 @@ class Vecteur{
 		
 		double getvalue(size_t i) const ; //on renvoie la coordonnées numero i d'un objet de la classe Vecteur
 		
-		bool operator==(Vecteur autre);//operateur comparaison egal
+		bool operator==(Vecteur const& autre);//operateur comparaison egal
 		
-		bool operator!=(Vecteur autre);//operateur comparaison different
+		bool operator!=(Vecteur const& autre);//operateur comparaison different
 		
 		std::vector <double> getcoord() const ; //on renvoie toutes les coordonnées d'un objet de la classe Vecteur
 		

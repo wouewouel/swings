@@ -3,6 +3,7 @@
 class Pendule;
 class Ressort;
 class Systeme;
+class DoubleRessort;
 
 class SupportADessin{
 	public:
@@ -16,4 +17,6 @@ class SupportADessin{
 	virtual void dessine(Ressort const&) = 0;
 	
 	virtual void dessine(Systeme const&) = 0;
+	
+	virtual void dessine(DoubleRessort const&) = 0;
 };

@@ -12,7 +12,7 @@ class Ressort:public Oscillateur{
 	
 	public:
 	
-	void affiche(std::ostream& out);
+	void affiche(std::ostream& out)const;
 	Ressort(double m,double k,double lambda,Vecteur a={1,0,0},Vecteur P={"a",1},Vecteur Q={"a",1},SupportADessin* vue=nullptr):
 	Oscillateur(P,Q,vue),m(m),k(k),lambda(lambda){
 		A=a.normalise();//necessaire de normaliser a?
@@ -25,5 +25,5 @@ class Ressort:public Oscillateur{
 	
 	virtual void dessine()const override{support->dessine(*this);};
 };
-	std::ostream& operator<<(std::ostream& out,Ressort r);
+	std::ostream& operator<<(std::ostream& out,Ressort const& r);
 	

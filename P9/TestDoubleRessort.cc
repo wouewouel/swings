@@ -11,5 +11,7 @@ int main()
 	Vecteur Q(0.13,0.15);
 	DoubleRessort doubleressort(1,1,1,1,1,1,a,P,Q);
 	cout<<doubleressort;
+	int i;
+	cin >>i;
 	return 0;
 }

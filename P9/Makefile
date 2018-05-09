@@ -12,7 +12,7 @@ CXXFLAGS += -g                      # pour debugger
 # LDFLAGS  += -pg                   # pour profiler
 # CXXFLAGS += -O2                   # pour optimiser la vitesse
 
-all:	TestVecteur	TestOscillateur	TestIntegrateur	TestPendule	TestRessort	ExerciceP9
+all:	TestVecteur	TestOscillateur	TestIntegrateur	TestPendule	TestRessort	ExerciceP9 TestDoubleRessort
 
 Vecteur.o:	Vecteur.cc	Vecteur.h
 
@@ -53,12 +53,19 @@ TestRessort:	TestRessort.o	Ressort.o	Oscillateur.o	Vecteur.o	Integrateur.o
 
 #=======================================================================================================================================================
 
-TextViewer.o:	TextViewer.cc	TextViewer.h	Ressort.h	Pendule.h	Systeme.h	Integrateur.h	Oscillateur.h	Vecteur.h	SupportADessin.h
+DoubleRessort.o:	DoubleRessort.cc	DoubleRessort.h	Oscillateur.h	Vecteur.h	Integrateur.h
 
-ExerciceP9.o:	ExerciceP9.cc	TextViewer.h	Ressort.h	Pendule.h	Systeme.h	Integrateur.h	Oscillateur.h	Vecteur.o
+TestDoubleRessort.o:	TestDoubleRessort.cc	DoubleRessort.h	Oscillateur.h	Vecteur.h	Integrateur.h
 
-ExerciceP9:	ExerciceP9.o	TextViewer.o	Ressort.o	Pendule.o	Systeme.o	Integrateur.o	Oscillateur.o	Vecteur.o	
+TestDoubleRessort:	TestDoubleRessort.o	DoubleRessort.o	Oscillateur.o	Vecteur.o	Integrateur.o
 
+#=======================================================================================================================================================
+Textviewer.o:	TextViewer.cc	TextViewer.h	DoubleRessort.h	Ressort.h	Pendule.h	Systeme.h	Integrateur.h	Oscillateur.h	Vecteur.h	SupportADessin.h
+
+ExerciceP9.o:	ExerciceP9.cc	TextViewer.h	DoubleRessort.h	Ressort.h	Pendule.h	Systeme.h	Integrateur.h	Oscillateur.h	Vecteur.o
+
+ExerciceP9:	ExerciceP9.o	TextViewer.o	DoubleRessort.o	Ressort.o	Pendule.o	Systeme.o	Integrateur.o	Oscillateur.o	Vecteur.o	
+ 
 #=======================================================================================================================================================	
 
 

@@ -31,17 +31,24 @@ int main ()
 		s.dessine();
 		s.evolue(5,0.2);
 		s.dessine();
+		
 		Systeme s2(text,integrateur);
 		Vecteur a2(0.8,0,0.6);
-		Vecteur P2("a",0.18);
-		Vecteur Q2("a",0);
-		Oscillateur* ressort2(new Ressort(0.25,0.33,0.15,a2,P2,Q2,text));
-		Oscillateur* pendule2(new Pendule(1,1,0,M_PI/2,0,text));
-		s2.ajoute(ressort2);
-		s2.ajoute(pendule2);
-		double dt(0.01);
-		for(double t(0);t<=0.03;t+=dt){
-			cout<<"t= "<<t<<endl;
+ 		Vecteur P2("a",0.18);
+ 		Vecteur Q2("a",0);
+		Vecteur P3(0.14,0.13);
+		Vecteur Q3(0.12,0.11);
+		
+ 		Oscillateur* ressort2(new Ressort(0.25,0.33,0.15,a2,P2,Q2,text));
+ 		Oscillateur* pendule2(new Pendule(1,1,0,M_PI/2,0,text));
+		Oscillateur* doubleressort(new DoubleRessort(1,1,1,1,1,1,a2,P3,Q3,text));
+ 		
+ 		s2.ajoute(ressort2);
+ 		s2.ajoute(pendule2);
+		s2.ajoute(doubleressort);
+ 		double dt(0.01);
+ 		for(double t(0);t<=0.03;t+=dt){
+ 			cout<<"t= "<<t<<endl;
 			s2.dessine();
 			s2.evolue(t,dt);
 		}

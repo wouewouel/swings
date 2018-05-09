@@ -13,7 +13,7 @@ class Pendule:public Oscillateur{
 	Pendule(double m,double L,double lambda,double P=1,double Q=1,SupportADessin* vue=nullptr):
 	Oscillateur(P,Q,vue),m(m),L(L),lambda(lambda){}//P et Q sont en dimension 1 donc on les initialise avec des double
 	                                               //le constructeur d'oscillateur les convertira en vecteur
-	void affiche(std::ostream& out);
+	void affiche(std::ostream& out)const;
 	
 	void testevolution(double dt,double tfinal);
 	
@@ -22,4 +22,4 @@ class Pendule:public Oscillateur{
 	virtual void dessine()const override{support->dessine(*this);};
 };
 
-std::ostream& operator<<(std::ostream& out,Pendule pendule);
+std::ostream& operator<<(std::ostream& out,Pendule const& pendule);

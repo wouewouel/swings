@@ -6,7 +6,7 @@
 using namespace std;
 
 
-	bool Vecteur::dimension_ok(Vecteur autre) const { // On teste ici si les dimensions sont bonnes
+	bool Vecteur::dimension_ok(Vecteur const& autre) const { // On teste ici si les dimensions sont bonnes
 			if(coordonnees.size() == (autre.getcoord()).size() ){
 				return true;
 			}else {
@@ -16,13 +16,13 @@ using namespace std;
 				}
 			}
 			
-	bool Vecteur::dimension_3(Vecteur autre) const { //on teste ici si les deux vecteurs sont de dimensions 3
+	bool Vecteur::dimension_3(Vecteur const& autre) const { //on teste ici si les deux vecteurs sont de dimensions 3
 			if((coordonnees.size() == 3) and (autre.getcoord().size()==3)){
 				return true;
 			}else {
 				string Err_3("Les deux vecteurs ne sont pas de dimensions 3 !");
 				throw Err_3;
-				return false;//je ne sais pas si on doit mettre un return false ou pas 
+				//jamais de return.. après throw car ça continu jamais apres
 				}
 			}			
 	
@@ -126,7 +126,7 @@ using namespace std;
 			return result;
 			}
 	
-	bool Vecteur:: operator==(Vecteur autre){ // operateur comparaison egal
+	bool Vecteur:: operator==(Vecteur const& autre){ // operateur comparaison egal
 		if (not(dimension_ok(autre))){return false;}
 			for(size_t i(0); i < coordonnees.size() ; ++i){
 				if(coordonnees[i] != (autre.getcoord())[i]){
@@ -135,7 +135,7 @@ using namespace std;
 				}
 		return true;
 			}
-	bool Vecteur::operator!=(Vecteur autre){ //operateur comparaison different
+	bool Vecteur::operator!=(Vecteur const& autre){ //operateur comparaison different
 		return not(*this==autre);
 			}
 		

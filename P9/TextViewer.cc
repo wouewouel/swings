@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void TextViewer::dessine() {}; //	que mettre dedans ?
+void TextViewer::dessine() {} //	que mettre dedans ?
 		
 	void TextViewer::dessine(Pendule const& p){
 		cout << p;

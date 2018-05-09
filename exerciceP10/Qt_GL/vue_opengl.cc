@@ -2,29 +2,32 @@
 #include "vertex_shader.h" // Identifiants Qt de nos différents attributs
 #include "Systeme.h"
 #include "Pendule.h"
+#include "glsphere.h"
 
 // ======================================================================
 void VueOpenGL::dessine(Systeme const& a_dessiner)
 {
     QMatrix4x4 matrice;
-    matrice.translate(0.0, 0.0, -2.0);
     prog.setUniformValue("vue_modele", matrice_vue);
+    matrice.translate(0.0, -2.0, -4.0);
 
-    for(auto const& oscill : a_dessiner.get_systeme()){
-        oscill->dessine(); //A TSHEEEEEEQUE
-    }
+    dessineAxes(matrice); // dessine le repère principal
+    matrice.translate(1, 2, 3);
+    dessineSphere(matrice, 0.0, 0.0);
+
+    a_dessiner.dessine();
+
 }
 //**********************************************************//
 void VueOpenGL::dessine(Pendule const& P)  {
 
-   // prog.setUniformValue("vue_modele", matrice_vue);
 
 glBegin(GL_LINES);
   prog.setAttributeValue(CouleurId, 1.0, 0.0, 0.0); // rouge
   prog.setAttributeValue(SommetId,  0.0, 0.0, 0.0);
 
   prog.setAttributeValue(CouleurId, 0.0, 1.0, 0.0); // vert
-  prog.setAttributeValue(SommetId,  0.0, -P.get_L()*cos(P.get_P())*9.81, P.get_L()*sin(P.get_P()));
+  prog.setAttributeValue(SommetId,  0.0, -P.get_L()*cos(P.get_P()), P.get_L()*sin(P.get_P()));
 glEnd();
 
 }

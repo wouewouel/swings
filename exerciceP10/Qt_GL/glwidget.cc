@@ -14,6 +14,7 @@ void GLWidget::initializeGL()
 {
   vue.init();
   timerId = startTimer(20);
+
   Vecteur a1(1,0,0);
   Vecteur P1(1);
   Vecteur Q1(1);
@@ -59,7 +60,7 @@ void GLWidget::resizeGL(int width, int height)
 void GLWidget::paintGL()
 {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  c.dessine();
+  vue.dessine(c);
 }
 
 

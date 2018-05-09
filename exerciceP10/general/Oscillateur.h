@@ -42,7 +42,7 @@ class Oscillateur:public Dessinable {
 			
 		void setQ(Vecteur const&);
 		
-		virtual void dessine()const override{}
+        virtual void dessine()const override{}
 	
 	};
 	

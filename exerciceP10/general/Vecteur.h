@@ -17,10 +17,9 @@ class Vecteur{
 		bool dimension_ok(Vecteur autre) const; // On teste ici si les dimensions sont bonnes//signaler son passage en public
 												// a Ouriel pour les oscillateurs
 		
-		Vecteur(unsigned int dimension=1):coordonnees(dimension,0){}; //constructeur vecteur nul, on mettra une dimension 
-															    	  //egale a 1 si l'utilisateur oublie d'indiquer la dimension
+        Vecteur():coordonnees(1,0){}; //constructeur vecteur nul de dimension 1
 		
-		Vecteur(std::string a,double x):coordonnees({x}){}; //constructeur vecteur dimension 1 j ai mis un char pour eviter le conflit 
+        Vecteur(double x):coordonnees({x}){}; //constructeur vecteur dimension 1 j ai mis un char pour eviter le conflit
 		                                            //avec le premier constructeur, mais il faut trouver une solution                                                        
 		
 		Vecteur(double x,double y):coordonnees({x,y}){}; //constructeur vecteur en dimension 2
@@ -47,7 +46,7 @@ class Vecteur{
 		
 		Vecteur& operator-=(const Vecteur& autre); //on fait vecteur actuel - autre
 		
-		const Vecteur operator-()const;//renvoie l'oppose du vecteur
+        const Vecteur operator-() const;//renvoie l'oppose du vecteur
 			
 		Vecteur& operator*=(double scalaire);//multiplication scalaire
 		

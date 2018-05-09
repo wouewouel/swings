@@ -11,7 +11,7 @@ Vecteur Pendule::equation_evolution(double t)const{
 	Vecteur retour={"a",(-g/L)*sin(P.getvalue(0))-lambda*(Q.getvalue(0))/(m*L*L)};
 	return retour;
 }
-void Pendule::affiche(ostream& out)const{
+void Pendule::affiche(ostream& out){
 	constexpr int col1(5);
 	constexpr int col2(20);
 	out<<"##Pendule"<<endl;
@@ -32,7 +32,7 @@ void Pendule::testevolution(double dt,double tfinal){
 	}
 }
 
-std::ostream& operator<<(std::ostream& out,Pendule const& pendule){
+std::ostream& operator<<(std::ostream& out,Pendule pendule){
 	pendule.affiche(out);
 	return out;
 }

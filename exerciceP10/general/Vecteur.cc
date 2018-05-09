@@ -12,7 +12,7 @@ using namespace std;
 			}else {
 				string Err_dim("Les deux vecteurs ont des dimensions differentes !");
 				throw Err_dim;
-				//je ne sais pas si on doit mettre un return false ou pas 
+                //on ne return pas false car l'execution ne reprends jamais apres le throw
 				}
 			}
 			
@@ -22,14 +22,13 @@ using namespace std;
 			}else {
 				string Err_3("Les deux vecteurs ne sont pas de dimensions 3 !");
 				throw Err_3;
-				return false;//je ne sais pas si on doit mettre un return false ou pas 
-				}
+                //on ne return pas false car l'execution ne reprends jamais apres le throw
+                }
 			}			
 	
 	void Vecteur::augmente(double new_dim) {
 			coordonnees.push_back (new_dim); 
 			}
-			
 	void Vecteur::set_coord(size_t dim, double modif){
 			if(dim <= coordonnees.size() ){
 				coordonnees[dim-1] = modif;
@@ -92,7 +91,7 @@ using namespace std;
 			return *this;
 			}
 			
-	const Vecteur Vecteur::operator-()const{ //oppose
+    const Vecteur Vecteur::operator-()const { //oppose
 		Vecteur v(0);
 		for(size_t i(0); i < coordonnees.size() ; ++i){
 			v.augmente(-coordonnees[i]);
@@ -136,7 +135,7 @@ using namespace std;
 		return true;
 			}
 	bool Vecteur::operator!=(Vecteur autre){ //operateur comparaison different
-		return not(*this==autre);
+        return not(*this==autre);
 			}
 		
 	

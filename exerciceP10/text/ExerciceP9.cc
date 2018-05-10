@@ -1,6 +1,7 @@
 #include <iostream>
 #include "text_viewer.h"
 #include "Ressort.h"
+#include "DoubleRessort.h"
 #include "Pendule.h"
 #include "Systeme.h"
 #include "Integrateur.h"
@@ -35,10 +36,14 @@ int main ()
         Vecteur a2(0.8,0,0.6);
         Vecteur P2(0.18);
         Vecteur Q2(0);
+        Vecteur P3(0.14,0.13);                                                     //oulaaaaa
+        Vecteur Q3(0.12,0.11);                                                     //oulaaaaa
         Oscillateur* ressort2(new Ressort(0.25,0.33,0.15,a2,P2,Q2,text));
         Oscillateur* pendule2(new Pendule(1,1,0,M_PI/2,0,text));
+        Oscillateur* doubleressort(new DoubleRessort(1,1,1,1,1,1,a2,P3,Q3,text));  //oulaaaaa
         s2.ajoute(ressort2);
         s2.ajoute(pendule2);
+        s2.ajoute(doubleressort);                                                  //oulaaaaa
         double dt(0.01);
         for(double t(0);t<=0.03;t+=dt){
             cout<<"t= "<<t<<endl;

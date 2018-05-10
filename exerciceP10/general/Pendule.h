@@ -33,7 +33,6 @@ class Pendule:public Oscillateur{
 	
     virtual void dessine()const override{support->dessine(*this);}
 
-    void set_support(SupportADessin* const& S) {support=S;}
-};
+   };
 
 std::ostream& operator<<(std::ostream& out,Pendule pendule);

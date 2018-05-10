@@ -43,6 +43,8 @@ class Oscillateur:public Dessinable {
 		void setQ(Vecteur const&);
 		
         virtual void dessine()const override{}
+
+        void set_support(SupportADessin* const& S) {support=S;}
 	
 	};
 	

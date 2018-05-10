@@ -21,4 +21,6 @@ HEADERS += \
     ../general/Pendule.h \
     ../general/Integrateur.h \
     ../general/constantes.h \
-    ../general/Oscillateur.h
+    ../general/Oscillateur.h \
+    ../general/DoubleRessort.h
+

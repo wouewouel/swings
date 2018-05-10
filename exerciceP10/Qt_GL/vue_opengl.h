@@ -26,6 +26,8 @@ class VueOpenGL : public SupportADessin {
   //************************************************************************//
   virtual void dessine(Pendule const& P) override;
   virtual void dessine(Ressort const& R) override;
+  virtual void dessine(DoubleRessort const& dr) override;
+
   //************************************************************************//
 
   // méthode utilitaire offerte pour simplifier

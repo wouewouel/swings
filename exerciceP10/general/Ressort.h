@@ -13,13 +13,15 @@ class Ressort:public Oscillateur {
 	
 	public:
 	
-	double get_m();
+    double get_m() const {return m;}
 	
-	double get_k();
+    double get_k()const {return k;}
 	
-	double get_lambda();
+    double get_lambda()const {return lambda;}
 	
-	Vecteur get_A();
+    double get_A()const {return A.norme();}
+
+    double get_P() const {return P.getvalue(0); } //utile pour la partie graphique
 	
     Ressort(double m,double k,double lambda,Vecteur a={1,0,0},Vecteur P={1},Vecteur Q={1},SupportADessin* vue=nullptr)
         : Oscillateur(P,Q,vue),m(m),k(k),lambda(lambda){
@@ -33,6 +35,7 @@ class Ressort:public Oscillateur {
     void affiche(std::ostream& out);
 
 	virtual void dessine()const override{support->dessine(*this);};
+
 };
 
 std::ostream& operator<<(std::ostream& out,Ressort r);

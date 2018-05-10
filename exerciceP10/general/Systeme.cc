@@ -9,9 +9,11 @@ using namespace std;
 
 void Systeme::ajoute(Oscillateur* o){
 	if(o!=nullptr){
+        o->set_support(support);
 		systeme.push_back(unique_ptr<Oscillateur>(o));
 	}
 }
+
 
 	void Systeme::dessine()const{
 			for(auto const& element:systeme){

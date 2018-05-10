@@ -2,6 +2,8 @@
 #include "vertex_shader.h" // Identifiants Qt de nos différents attributs
 #include "Systeme.h"
 #include "Pendule.h"
+#include "Ressort.h"
+#include "DoubleRessort.h"
 #include "glsphere.h"
 
 // ======================================================================
@@ -9,18 +11,13 @@ void VueOpenGL::dessine(Systeme const& a_dessiner)
 {
     QMatrix4x4 matrice;
     prog.setUniformValue("vue_modele", matrice_vue);
-    matrice.translate(0.0, -2.0, -4.0);
 
-    dessineAxes(matrice); // dessine le repère principal
-    matrice.translate(1, 2, 3);
-    dessineSphere(matrice, 0.0, 0.0);
-
+    //dessineAxes(matrice); // dessine le repère principal
     a_dessiner.dessine();
 
 }
 //**********************************************************//
 void VueOpenGL::dessine(Pendule const& P)  {
-
 
 glBegin(GL_LINES);
   prog.setAttributeValue(CouleurId, 1.0, 0.0, 0.0); // rouge
@@ -30,11 +27,37 @@ glBegin(GL_LINES);
   prog.setAttributeValue(SommetId,  0.0, -P.get_L()*cos(P.get_P()), P.get_L()*sin(P.get_P()));
 glEnd();
 
+QMatrix4x4 matrice;
+matrice.translate(0.0, -P.get_L()*cos(P.get_P()), P.get_L()*sin(P.get_P()));
+matrice.scale(0.2);
+glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); // passe en mode "fil de fer"
+ dessineSphere(matrice, 1.0, 1.0, 0.0);
 }
 //**********************************************************//
 
-void VueOpenGL::dessine(Ressort const& R)  {}
+void VueOpenGL::dessine(Ressort const& R)  {
 
+    glBegin(GL_LINES);
+      prog.setAttributeValue(CouleurId, 1.0, 0.0, 1.0); //couleur
+      prog.setAttributeValue(SommetId,  0.0, 0.0, 0.0);
+
+      prog.setAttributeValue(CouleurId, 1.0, 1.0, 0.0); //couleur
+      prog.setAttributeValue(SommetId,  -R.get_P()*R.get_A(), 0.0, 0.0);
+    glEnd();
+}
+
+// ======================================================================
+
+void VueOpenGL::dessine(DoubleRessort const& dr) {
+
+    glBegin(GL_LINES);
+      prog.setAttributeValue(CouleurId, 0.0, 0.0, 1.0); //couleur
+      prog.setAttributeValue(SommetId,  0.0, 0.0, 0.0);
+
+      prog.setAttributeValue(CouleurId, 0.0, 0.0, 1.0); //couleur
+      prog.setAttributeValue(SommetId,  0.0, dr.get_P(), 0.0);
+    glEnd();
+}
 
 // ======================================================================
 void VueOpenGL::init()

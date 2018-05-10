@@ -3,6 +3,7 @@
 #include "Ressort.h"
 #include "Pendule.h"
 #include "Systeme.h"
+#include "DoubleRessort.h"
 
 using namespace std;
 
@@ -14,10 +15,11 @@ using namespace std;
         flot << r;
         }
 
+    void TextViewer::dessine(DoubleRessort const& dr){
+        flot << dr;
+      }
+
     void TextViewer::dessine(Systeme const& a_dessiner){
-        a_dessiner.dessine();
-    }
+       a_dessiner.dessine();
+      }
 
-
-  //mais je pense que c'est inutile puisque le dessin d'un systeme n'est pas lie au support mais au support de ses oscillateurs
-  //il faudrait demander a un assistant

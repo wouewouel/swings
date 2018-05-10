@@ -11,7 +11,8 @@ SOURCES = \
     Ressort.cc \
     constantes.cc \
     Integrateur.cc \
-    Systeme.cc
+    Systeme.cc \
+    DoubleRessort.cc
 
 HEADERS += \
     Vecteur.h \
@@ -22,4 +23,5 @@ HEADERS += \
     dessinable.h \
     support_a_dessin.h \
     Systeme.h \
-    constantes.h
+    constantes.h \
+    DoubleRessort.h

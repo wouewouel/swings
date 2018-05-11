@@ -16,8 +16,8 @@ int main ()
 		SupportADessin* text(new TextViewer());
 		
 		Vecteur a1(1,0,0);
-		Vecteur P1("a",1);
-		Vecteur Q1("a",1);
+		Vecteur P1(1.0);
+		Vecteur Q1(1.0);
 		Oscillateur* r1(new Ressort(4,2,1,a1,P1,Q1,text));
 		Oscillateur* p1(new Pendule(5,2,1,5,8,text));
 		IntegrateurEulerCromer integrateur;
@@ -34,8 +34,8 @@ int main ()
 		
 		Systeme s2(text,integrateur);
 		Vecteur a2(0.8,0,0.6);
- 		Vecteur P2("a",0.18);
- 		Vecteur Q2("a",0);
+ 		Vecteur P2(0.18);
+ 		Vecteur Q2(0.0);
 		Vecteur P3(0.14,0.13);
 		Vecteur Q3(0.12,0.11);
 		

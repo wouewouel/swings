@@ -22,7 +22,7 @@ class DoubleRessort:public Oscillateur{
 	void affiche(std::ostream& out)const;
 		
 		DoubleRessort(double m1,double k1,double m2,double k2,double k3,double lambda,
-		Vecteur a={1,0,0},Vecteur P={"a",1},Vecteur Q={"a",1},SupportADessin* vue=nullptr)://Q et P doivent etre en dimension 2
+		Vecteur a={1,0,0},Vecteur P={1.0,0},Vecteur Q={1.0,0},SupportADessin* vue=nullptr)://Q et P doivent etre en dimension 2
 		Oscillateur(P,Q,vue),m1(m1),k1(k1),m2(m2),k2(k2),k3(k3),lambda(lambda){
 			A=a.normalise();
 		}

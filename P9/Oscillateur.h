@@ -12,13 +12,11 @@ class Oscillateur:public Dessinable {
 	
 	public:
 	
-		Oscillateur(unsigned int n=1,SupportADessin* vue=nullptr) :Dessinable(vue), P(n), Q(n) {}  //	Constructeur qui intitialise P et Q à des vect de n dim de 0
-														//  on peut faire =1 pour mettre en
-		                                                //  valeur par defaut
+		
 		Oscillateur(double a, double b, double c,                          //Oscillateur de dimension 3
 					double x, double y, double z,SupportADessin* vue=nullptr) :Dessinable(vue), P(a,b,c) , Q(x,y,z) {} // donnes a,b,c a P et x,y,z a Q
 		
-		Oscillateur(double a,double x,SupportADessin* vue=nullptr): Dessinable(vue),P("a",a),Q("a",x){} // Oscillateur de dimension 1 ( a corriger plus tard)
+		Oscillateur(double a,double x,SupportADessin* vue=nullptr): Dessinable(vue),P(a),Q(x){} // Oscillateur de dimension 1 ( a corriger plus tard)
 		
 		Oscillateur(Vecteur P,Vecteur Q,SupportADessin* vue=nullptr):Dessinable(vue),P(P),Q(Q){
 			if (!(P.dimension_ok(Q))){
@@ -39,6 +37,7 @@ class Oscillateur:public Dessinable {
 		void setQ(Vecteur const&);
 		
 		virtual void dessine()const override{}
+		
 	
 	};
 	

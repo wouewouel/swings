@@ -1,47 +1,47 @@
 **********************************************************************************************************************************************************************************
 
 
-[Question P1.1] Comment reprÈsentez-vous ces vecteurs ? Comment sont-ils organisÈs : quels attributs ? quelles mÈthodes ? quels droits d'accËs ? 
+[Question P1.1] Comment representez-vous ces vecteurs ? Comment sont-ils organises : quels attributs ? quelles methodes ? quels droits d'acces ? 
 
 
 
-Ces vecteurs sont reprÈsentÈs par les coordonnÈs rentrÈs dans un tableau vector de double.
+Ces vecteurs sont representes par les coordonnes rentres dans un tableau vector de double.
 	
-Attributs: 	-"coordonnees" est un tableau de double 							--> partie privÈe
+Attributs: 	-"coordonnees" est un tableau de double 							--> partie privee
 
 	
 
-Methodes:	-"dimension_ok(Vecteur autre)" renvoie true si les deux vecteurs ont les mÍmes dimensions	--> partie privÈe
-		  				-"dimension_3(Vecteur autre)" renvoie true si les deux vecteurs sont de dimensions 3		--> partie privÈe
-						-->Ces 2 mÈthodes lancent une exception dans le cas contraire
+Methodes:	-"dimension_ok(Vecteur autre)" renvoie true si les deux vecteurs ont les memes dimensions	--> partie privee
+		  				-"dimension_3(Vecteur autre)" renvoie true si les deux vecteurs sont de dimensions 3		--> partie privee
+						-->Ces 2 methodes lancent une exception dans le cas contraire
 
 			
 		
 		-"augmente(double new_dim)" augmente le vecteur d'une dimension	de valeur "new_dim"		--> partie publique
 
-		-"set_coord(unsigned int dim, double modif)" vÈrifie si la dimensions ‡ modifier existe et 	--> partie publique
+		-"set_coord(unsigned int dim, double modif)" verifie si la dimensions a modifier existe et 	--> partie publique
 			 			 fait la modif, dans les cas contraire, elle lance une exception				--> partie publique
-						-"affiche()" affiche le coordonnÈes du vecteur							--> partie publique
-						-"compare(Vecteur autre)" renvoie un boolÈens pour dire si les vecteurs sont Ègaux		--> partie publique
+						-"affiche()" affiche le coordonnees du vecteur							--> partie publique
+						-"compare(Vecteur autre)" renvoie un booleens pour dire si les vecteurs sont egaux		--> partie publique
 						-"getcoord() const" renvoie le tableau de double "coordonnees"					--> partie publique
-						-"getvalue(size_t i)" renvoie la valeur numero i des coordonnÈes				--> partie publique
+						-"getvalue(size_t i)" renvoie la valeur numero i des coordonnees				--> partie publique
 
 **********************************************************************************************************************************************************************************
 
 
-[Question P1.2] Quel choix avez vous fait pour les opÈrations entre vecteurs de dimensions diffÈrentes ?
+[Question P1.2] Quel choix avez vous fait pour les operations entre vecteurs de dimensions differentes ?
 
 
 
-Nous avons crÈÈ une fonction que nous appliquons ‡ chaque fois que nous devons faire une certaine opÈration et qui lance une exception
-de type string (peut Ítre devrions nous mettre une struct pour pouvoir diffÈrencier les diffÈrentess excpetions ‡ venir...)
+Nous avons cree une fonction que nous appliquons a chaque fois que nous devons faire une certaine operation et qui lance une exception
+de type string (peut etre devrions nous mettre une struct pour pouvoir differencier les differentes exceptions a venir...)
 
 
 
 **********************************************************************************************************************************************************************************
 
 
-[Question P4.1] Avez-vous ajoutÈ un constructeur de copie ? Pourquoi (justifiez votre choix) ?
+[Question P4.1] Avez-vous ajoute un constructeur de copie ? Pourquoi (justifiez votre choix) ?
 
 
 
@@ -51,11 +51,11 @@ Oui, au cas ou l'on devrait modifier les constructeurs pour se rappeler de modif
 **********************************************************************************************************************************************************************************
 
 
-[Question P4.2] Si l'on souhaitait ajouter un constructeur par coordonnÈes sphÈriques (deux angles et une longueur) pour les vecteurs de dimension3,
+[Question P4.2] Si l'on souhaitait ajouter un constructeur par coordonnees spheriques (deux angles et une longueur) pour les vecteurs de dimension3,
 a] que cela impliquerait-il au niveau des attributs de la classe ?	
 
 Les attributs de la classe seraient des approximations
-b] quelle serait la difficultÈ majeure (voire l'impossibilitÈ) de sa rÈalisation en C++ ? 
+b] quelle serait la difficultÈ majeure (voire l'impossibilite) de sa rÈalisation en C++ ? 
   (C'est d'ailleurs pour cela qu'on ne vous demande pas de faire un tel constructeur !)
 
 
@@ -66,7 +66,7 @@ La machine devra calculer les nombreux vecteurs en temps reel en fonction des an
 
 **********************************************************************************************************************************************************************************
 
-[Question P4.3] Quels opÈrateurs avez vous introduits ?
+[Question P4.3] Quels operateurs avez vous introduits ?
 
 Vecteur& operator+=(const Vecteur& autre); //addition entre deux vecteurs
 		
@@ -89,7 +89,7 @@ vectoriel
 const Vecteur operator+(Vecteur,Vecteur const&); //addition
 	
 
-const Vecteur operator-(Vecteur,Vecteur const&); //soustravtion
+const Vecteur operator-(Vecteur,Vecteur const&); //soustraction
 	
 
 const Vecteur operator*(double scalaire,Vecteur v); //multiplication scalaire a gauche
@@ -102,39 +102,46 @@ std::ostream& operator <<(std::ostream& out,Vecteur v); //operateur d'affichage
 
 **********************************************************************************************************************************************************************************
 
-[Question P6.1] Comment avez vous conÁu votre classe Integrateur ? 
+[Question P6.1] Comment avez vous concu votre classe Integrateur ? 
 
-La classe Integrateur ne possede qu'une methode  < integre(Oscillateur& O, double t, double dt) > dans l'interface, par ailleurs cette methode n'est pas definie a proprement parler mais est simplement declarer car nous nous en servirons plus tard pour le polymorphisme il me semble.
+La classe Integrateur ne possede qu'une methode  < integre(Oscillateur& O, double t, double dt) > dans l'interface, par ailleurs cette methode n'est pas definie a proprement parler mais est simplement declaree car nous nous en servirons plus tard pour le polymorphisme.
 
 **********************************************************************************************************************************************************************************
 
 [Question P6.2] Quelle est la relation entre les classes Integrateur et IntegrateurEulerCromer ? 
 
 IntegrateurEulerCromer  et une sous classe de la super classe Integrateur.
-Ici on dÈfinit explicitement la fonction <integre...> et on a rajouter une fonction < affiche_evol(Oscillateur O) > qui permet de simplifier le programme de test. 
+Ici on definit explicitement la fonction <integre(...)> et on a rajoute une fonction < affiche_evol(Oscillateur O) > qui permet de simplifier le programme de test. 
 
 **********************************************************************************************************************************************************************************
 
-[Question P7.1] Comment se situent ces classes par rapport a la classe Oscillateur définie la semaine passée ?
+[Question P7.1] Comment se situent ces classes par rapport a la classe Oscillateur définie la semaine passee ?
 
 
 
 Les pendules et les ressorts sont des oscillateurs, ainsi la classe Pendule et la classe Ressort sont toutes les deux des sous classes de la super classe Oscillateur.
 
 **********************************************************************************************************************************************************************************
-[Question P8.1] En termes de POO, quelle est donc la nature de la mÈthode dessine() ? 
+
+[Question P8.1] En termes de POO, quelle est donc la nature de la methode dessine() ? 
 
 La methode dessine() est une methode virtuelle pure car tous les differents objets devront la redefinir.
+
 **********************************************************************************************************************************************************************************
-La classe Systeme devra avoir une collections de diffÈrents oscillateurs possibles dont nous invoquerons, au travers de l'intÈgrateur, les ´ fonctions f ª de sorte que chacun rÈagisse suivant ses caractÈristiques propres. 
+
+La classe Systeme devra avoir une collections de differents oscillateurs possibles dont nous invoquerons, au travers de l'intÈgrateur, les ´ fonctions f ª de sorte que chacun rÈagisse suivant ses caractÈristiques propres. 
 [Question P8.2] Quelle est la bonne faÁon de le faire dans un cadre de programmation orientÈe-objet ? 
 
 Nous allons crÈer un tableau de pointeur sur Oscillateur pour verifier la deuxieme condition du polymorphisme.
+
 **********************************************************************************************************************************************************************************
+
 [Question P8.3] A quoi faut-il faire attention pour les classes contenant des pointeurs ? Quelles solutions peut-on envisager ? 
 Il faut bien liberer ces pointeurs une fois l'utilisation terminee, et faire attention que chaque pointeur pointe sur un unique oscillateur. 
 On utilisera donc des unique_ptr.
+
 **********************************************************************************************************************************************************************************
+
 [Question P8.4] Comment reprÈsentez vous la classe Systeme ?
 Expliquez votre conception (attributs, interface, ...). 
 
@@ -142,8 +149,22 @@ Il s'agit d'une sous classe de la super classe Dessinable,
 elle possede un tableau de pointeurs sur des oscillateurs en prive,
 ainsi que la definition de la methode <dessine()>
 Elle possède aussi une méthode évolue qui fait avancer chaque oscillateur d'un pas de temps ainsi qu'une méthode ajoute pour ajouter un pointeur vers un oscillateur au tableau des pointeurs.
+
 **********************************************************************************************************************************************************************************
+
 [Question P11.1] Comment representez-vous ces nouveaux oscillateurs ? Ou s'incrivent-ils dans votre conception ? 
 
 On implemente le nouvel oscillateur "Double ressort".
+
+**********************************************************************************************************************************************************************************
+
+[Question P12.1] Comment implémentez-vous la possibilité de tracer les trajectoires dans l'espace des phases ? 
+
+
+**********************************************************************************************************************************************************************************
+
+[Question P13.1] Où cela s'intègre-t-il dans votre projet/conception ? Quels changements cela engendre ? 
+
+
+**********************************************************************************************************************************************************************************
 

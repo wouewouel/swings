@@ -20,9 +20,9 @@ using namespace std;
 	}
 
 	Vecteur DoubleRessort::equation_evolution(double t)const {
-		Vecteur retour(2);
-		retour.set_coord(1,(-lambda/m1)*getQ().getvalue(0)-((k1+k3)/m1)*getP().getvalue(0)+(k3/m1)*getP().getvalue(1));
-		retour.set_coord(2,(-lambda/m2)*getQ().getvalue(1)-((k2+k3)/m2)*getP().getvalue(1)+(k3/m2)*getP().getvalue(0));
+		double a((-lambda/m1)*getQ().getvalue(0)-((k1+k3)/m1)*getP().getvalue(0)+(k3/m1)*getP().getvalue(1));
+		double b((-lambda/m2)*getQ().getvalue(1)-((k2+k3)/m2)*getP().getvalue(1)+(k3/m2)*getP().getvalue(0));
+		Vecteur retour(a,b);
 		return retour;
 	}
 		

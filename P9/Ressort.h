@@ -13,7 +13,7 @@ class Ressort:public Oscillateur{
 	public:
 	
 	void affiche(std::ostream& out)const;
-	Ressort(double m,double k,double lambda,Vecteur a={1,0,0},Vecteur P={"a",1},Vecteur Q={"a",1},SupportADessin* vue=nullptr):
+	Ressort(double m,double k,double lambda,Vecteur a={1,0,0},Vecteur P={1},Vecteur Q={1},SupportADessin* vue=nullptr):
 	Oscillateur(P,Q,vue),m(m),k(k),lambda(lambda){
 		A=a.normalise();//necessaire de normaliser a?
 	}

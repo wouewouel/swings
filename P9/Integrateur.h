@@ -15,4 +15,15 @@ class IntegrateurEulerCromer : public Integrateur {
 		
 		void affiche_evol(Oscillateur O) const;
 	};
+class IntegrateurNewmark : public Integrateur{
+	private:
+	Vecteur q;
+	Vecteur r;
+	Vecteur s;
+	double parametre=0.000001;
+	public:
+	virtual void integre(Oscillateur& O,double t,double dt) override;
+	
+	void affiche_evol(Oscillateur O) const;
+	};
 

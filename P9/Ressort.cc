@@ -7,7 +7,7 @@ using namespace std;
 	Vecteur Ressort::equation_evolution(double t)const{ //rendre plus jolie cette fonction plus tard
 		Vecteur g(0,0,-9.81);
 		double scalaire(g*A);
-		Vecteur v={"a",scalaire};
+		Vecteur v={scalaire};
 		Vecteur evol=-(k/m)*P-(lambda/m)*Q+v;
 		return evol;
 	}

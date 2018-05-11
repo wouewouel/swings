@@ -8,7 +8,7 @@
 using namespace std;
 double g(9.81);
 Vecteur Pendule::equation_evolution(double t)const{
-	Vecteur retour={"a",(-g/L)*sin(P.getvalue(0))-lambda*(Q.getvalue(0))/(m*L*L)};
+	Vecteur retour={(-g/L)*sin(P.getvalue(0))-lambda*(Q.getvalue(0))/(m*L*L)};
 	return retour;
 }
 void Pendule::affiche(ostream& out)const{

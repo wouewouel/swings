@@ -6,10 +6,11 @@ using namespace std;
 
 
 		Vecteur Oscillateur::equation_evolution(double t) const {  
-			Vecteur evol = (P + Q )* t;
-			return evol;			  // modifie P et Q indirectement non ?
+			//Vecteur evol = (P + Q )* t;
+			//return evol;			  // modifie P et Q indirectement non ?
+			Vecteur g(0,-9.81);
+			return g;
 		}
-		
 		Vecteur Oscillateur::getP() const {return P;}
 		
 		Vecteur Oscillateur::getQ() const {return Q;}

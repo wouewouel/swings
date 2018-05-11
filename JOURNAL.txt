@@ -1,0 +1,102 @@
+# PROGRESSION
+
+Format : [fait/à faire] TACHE	Duree (en minutes)
+
+[V] ceer le JOURNAL                                            1
+[V] lire completement le descriptif general                     90
+[V] s'inscrire en binome                                   	1
+[V] fusionner les deux projets (y compris les fichiers JOURNAL)	20
+[V] Makefile                                               	60
+[V] Vecteur finie (pleinement operationnelle et teste)  	180+
+[V] fichier REPONSES                                         	15
+[V] Oscillateur                                            	120
+[V] intégrateur d'Euler-Cromer                            	180+
+[V] Pendule                                               	90+
+[V] Ressort                                               	90+
+[V] Systeme                                               	??
+[V] exerciceP10                                           	??
+[ ] graphisme: cadre général                              	??
+[ ] graphisme: Pendule                                     	??
+[V] OscillateurCouple                                     	??
+[ ] PenduleDouble                                         	??
+[ ] espace des phases                                     	??
+[ ] integrateur Newmark                                   	??
+[ ] fichier CONCEPTION                                         	??
+[ ] fichier README                                        	??
+[ ] fichier NOMS                                        	??
+
+======================================================================
+# A FAIRE (PROCHAINE ETAPE)
+
+Charles: 
+Ouriel: 
+
+======================================================================
+# SUIVI
+
+## Semaine 2 :
+
+Ouriel: Creation de la classe Vecteur ainsi que d'un ensemble de tests pour verifier la fonctionnabilitee
+
+Charles: Prise en main de Qt
+
+
+--------------------------------------------------
+## Semaine 3 :
+
+Charles: Mise en place du Makefile
+
+Ouriel: Prise en main de qt
+
+
+--------------------------------------------------
+## Semaine 4 :
+
+Charles: Surcharge des opérateurs
+
+Ouriel: Oscillateur
+
+--------------------------------------------------
+## Semaine 5 :
+Charles: Creation de differents Oscillateurs( Ressort/Pendule)/ quelques retouches sur les autres fichiers
+
+Ouriel: Creation de la classe integrateur ainsi que de la sous classe integrateurEulerCromer accompagnee de tests
+--------------------------------------------------
+## Semaine 6Â :
+Charles et Ouriel: Mise en place des différentes classes necessaire, mise en place des test pour le textviewer
+
+
+--------------------------------------------------
+## Semaine 7Â :
+
+
+
+--------------------------------------------------
+## Semaine 8Â :
+
+
+
+--------------------------------------------------
+## Semaine 9Â :
+
+
+
+--------------------------------------------------
+## Semaine 10Â :
+
+
+
+--------------------------------------------------
+## Semaine 11Â :
+
+
+
+--------------------------------------------------
+## Semaine 12Â :
+
+
+
+--------------------------------------------------
+## Semaine 13Â :
+
+

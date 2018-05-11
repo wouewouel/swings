@@ -27,4 +27,4 @@ HEADERS += \
 RESOURCES += \
     resource.qrc
 
-#LIBS += -lOpengl32
+LIBS += -lOpengl32

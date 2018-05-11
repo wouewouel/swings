@@ -3,7 +3,6 @@
 #include <string>
 #include <cmath>
 #include "Pendule.h"
-#include "constantes.h"
 using namespace std;
 
 int main ()

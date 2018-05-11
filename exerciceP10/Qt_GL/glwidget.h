@@ -28,10 +28,10 @@ public:
 
       Oscillateur* r1(new Ressort(0.25,0.33,0.15,a2,P2,Q2,&vue));
       Oscillateur* p1(new Pendule(1,1,0,M_PI/2,0,&vue));
-      Oscillateur* dr(new DoubleRessort(1,1,1,1,1,1,a2,P3,Q3,&vue));  //oulaaaaa
+      Oscillateur* dr(new DoubleRessort(1,1,1,1,1,0.01,a2,P3,Q3,&vue));  //oulaaaaa
 
-      c.ajoute(r1);
-      c.ajoute(p1);
+      //c.ajoute(r1);
+    //  c.ajoute(p1);
       c.ajoute(dr);
 
       //C'est ici qu'on initialise le système (ça ne marche pas si on le met dans init()..

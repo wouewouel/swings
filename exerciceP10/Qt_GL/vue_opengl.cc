@@ -9,26 +9,26 @@
 // ======================================================================
 void VueOpenGL::dessine(Systeme const& a_dessiner)
 {
-    QMatrix4x4 matrice;
     prog.setUniformValue("vue_modele", matrice_vue);
-
-    //dessineAxes(matrice); // dessine le repère principal
     a_dessiner.dessine();
-
+//J'aimerai pouvoir translater la matrice_vue pour chque oscilateur
 }
 //**********************************************************//
 void VueOpenGL::dessine(Pendule const& P)  {
+
+  QMatrix4x4 matrice;
+  dessineAxes(matrice); // dessine le repère principal
 
 glBegin(GL_LINES);
   prog.setAttributeValue(CouleurId, 1.0, 0.0, 0.0); // rouge
   prog.setAttributeValue(SommetId,  0.0, 0.0, 0.0);
 
   prog.setAttributeValue(CouleurId, 0.0, 1.0, 0.0); // vert
-  prog.setAttributeValue(SommetId,  0.0, -P.get_L()*cos(P.get_P()), P.get_L()*sin(P.get_P()));
+  prog.setAttributeValue(SommetId,  P.get_L()*sin(P.get_P()), -P.get_L()*cos(P.get_P()), 0.0);
 glEnd();
 
-QMatrix4x4 matrice;
-matrice.translate(0.0, -P.get_L()*cos(P.get_P()), P.get_L()*sin(P.get_P()));
+
+matrice.translate(P.get_L()*sin(P.get_P()), -P.get_L()*cos(P.get_P()), 0.0);
 matrice.scale(0.2);
 glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); // passe en mode "fil de fer"
  dessineSphere(matrice, 1.0, 1.0, 0.0);
@@ -36,6 +36,9 @@ glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); // passe en mode "fil de fer"
 //**********************************************************//
 
 void VueOpenGL::dessine(Ressort const& R)  {
+
+    QMatrix4x4 matrice;
+    dessineAxes(matrice); // dessine le repère principal
 
     glBegin(GL_LINES);
       prog.setAttributeValue(CouleurId, 1.0, 0.0, 1.0); //couleur
@@ -50,13 +53,50 @@ void VueOpenGL::dessine(Ressort const& R)  {
 
 void VueOpenGL::dessine(DoubleRessort const& dr) {
 
-    glBegin(GL_LINES);
+    prog.setUniformValue("vue_modele", matrice_vue);
+
+    glBegin(GL_LINES);                                                          //première boule
       prog.setAttributeValue(CouleurId, 0.0, 0.0, 1.0); //couleur
       prog.setAttributeValue(SommetId,  0.0, 0.0, 0.0);
 
       prog.setAttributeValue(CouleurId, 0.0, 0.0, 1.0); //couleur
-      prog.setAttributeValue(SommetId,  0.0, dr.get_P(), 0.0);
+      prog.setAttributeValue(SommetId,  dr.get_L1()+dr.get_P1(),0.0,  0.0);
     glEnd();
+
+    QMatrix4x4 matrice;
+    matrice.translate(dr.get_L1()+dr.get_P1(), 0.0, 0.0);
+    matrice.scale(0.05);
+    dessineSphere(matrice, 1.0, 0.0, 0.0);
+     //******************************************************************//
+    prog.setUniformValue("vue_modele", matrice_vue);
+
+    glBegin(GL_LINES);                                                          //deuxième boule
+       prog.setAttributeValue(CouleurId, 0.0, 1.0, 0.0); //couleur
+       prog.setAttributeValue(SommetId,  dr.get_L1()+dr.get_P1(),0.0, 0.0);
+
+       prog.setAttributeValue(CouleurId, 0.0, 1.0, 0.0); //couleur
+       prog.setAttributeValue(SommetId,  dr.get_L1()+dr.get_L2()-dr.get_P2(),0.0,0.0);
+     glEnd();
+
+     matrice.setToIdentity();
+     matrice.translate(dr.get_L1()+dr.get_L2()-dr.get_P2(),0.0,0.0);
+     matrice.scale(0.05);
+     dessineSphere(matrice, 1.0, 0.0, 0.0);
+     //******************************************************************//
+     prog.setUniformValue("vue_modele", matrice_vue);
+
+     glBegin(GL_LINES);                                                          //Troisième point
+       prog.setAttributeValue(CouleurId, 1.0, 0.0, 0.0); //couleur
+       prog.setAttributeValue(SommetId,  dr.get_L1()+dr.get_L2()-dr.get_P2(),0.0,0.0);
+
+       prog.setAttributeValue(CouleurId, 1.0, 0.0, 0.0); //couleur
+       prog.setAttributeValue(SommetId,  dr.get_L1()+dr.get_L2()+dr.get_L3(),0.0,0.0);
+       glEnd();
+
+     matrice.translate(dr.get_L1()+dr.get_L2()+dr.get_L3(),0.0,0.0);
+
+     //******************************************************************//
+
 }
 
 // ======================================================================
@@ -123,8 +163,8 @@ void VueOpenGL::initializePosition()
   // position initiale
   matrice_vue.setToIdentity();
   matrice_vue.translate(0.0, 0.0, -4.0);
-  matrice_vue.rotate(60.0, 0.0, 1.0, 0.0);
-  matrice_vue.rotate(45.0, 0.0, 0.0, 1.0);
+ // matrice_vue.rotate(60.0, 0.0, 1.0, 0.0);
+ // matrice_vue.rotate(45.0, 0.0, 0.0, 1.0);
 }
 
 // ======================================================================

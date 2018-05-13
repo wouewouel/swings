@@ -12,9 +12,11 @@ class Pendule:public Oscillateur{
 	
 	public:
 	
-	Pendule(double m,double L,double lambda,double P=1,double Q=1,SupportADessin* vue=nullptr):
-	Oscillateur(P,Q,vue),m(m),L(L),lambda(lambda){}//P et Q sont en dimension 1 donc on les initialise avec des double
-	                                               //le constructeur d'oscillateur les convertira en vecteur
+    Pendule(double m,double L,double lambda,double P=1,double Q=1,SupportADessin* vue=nullptr,
+            double xo=0 ,double yo=2.0,double zo=0) //point de vue pour le dessin
+        :	Oscillateur(P,Q,vue,xo,yo,zo),m(m),L(L),lambda(lambda){}
+                                        //P et Q sont en dimension 1 donc on les initialise avec des double
+                                        //le constructeur d'oscillateur les convertira en vecteur
     double get_P() const {return P.getvalue(0); }
 
     double get_Q()const {return Q.getvalue(0);}

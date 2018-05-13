@@ -23,8 +23,9 @@ class Ressort:public Oscillateur {
 
     double get_P() const {return P.getvalue(0); } //utile pour la partie graphique
 	
-    Ressort(double m,double k,double lambda,Vecteur a={1,0,0},Vecteur P={1},Vecteur Q={1},SupportADessin* vue=nullptr)
-        : Oscillateur(P,Q,vue),m(m),k(k),lambda(lambda){
+    Ressort(double m,double k,double lambda,Vecteur a={1,0,0},Vecteur P={1},Vecteur Q={1},
+            SupportADessin* vue=nullptr,double xo=-2 ,double yo=-2.0,double zo=0) //point de vue pour le dessin
+        : Oscillateur(P,Q,vue,xo,yo,zo),m(m),k(k),lambda(lambda){
         A=a.normalise();//necessaire de normaliser a?
         }
 	

@@ -1,7 +1,7 @@
 #pragma once
 #include "Oscillateur.h"
 #include "Integrateur.h"
- 
+
 class Ressort:public Oscillateur{
 	private:
 	

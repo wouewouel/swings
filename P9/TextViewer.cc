@@ -14,12 +14,10 @@ void TextViewer::dessine() {} //	que mettre dedans ?
 		cout<<r;
 		} 
 
-    void TextViewer::dessine(Systeme const& s){}  //que mettre dedans ?
-	  //  void TextViewer::dessine(Systeme const& s){ //une version possible
-	  //		s.dessine();
-	  //	}
-	  //mais je pense que c'est inutile puisque le dessin d'un systeme n'est pas lie au support mais au support de ses oscillateurs
-	  //il faudrait demander a un assistant
+    void TextViewer::dessine(Systeme const& s){
+	   		s.dessine();
+	  	}
+	  //Il faut bien que le système fasse appel au différentes fonctions dessine de ses oscillateurs
 	  void TextViewer::dessine(DoubleRessort const& dr){
 			cout<< dr;
 		}

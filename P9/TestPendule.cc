@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <cmath>
+#include "constantes.h"
 #include "Pendule.h"
 using namespace std;
 

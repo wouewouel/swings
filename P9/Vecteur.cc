@@ -5,18 +5,7 @@
 #include "Vecteur.h"
 using namespace std;
 
-
-	bool Vecteur::dimension_ok(Vecteur const& autre) const { // On teste ici si les dimensions sont bonnes
-			if(coordonnees.size() == (autre.getcoord()).size() ){
-				return true;
-			}else {
-				string Err_dim("Les deux vecteurs ont des dimensions differentes !");
-				throw Err_dim;
-				//je ne sais pas si on doit mettre un return false ou pas 
-				}
-			}
-			
-	bool Vecteur::dimension_3(Vecteur const& autre) const { //on teste ici si les deux vecteurs sont de dimensions 3
+	bool Vecteur::dimension_3(Vecteur const& autre) const { //On teste ici si les deux vecteurs sont de dimensions 3
 			if((coordonnees.size() == 3) and (autre.getcoord().size()==3)){
 				return true;
 			}else {
@@ -24,13 +13,23 @@ using namespace std;
 				throw Err_3;
 				//jamais de return.. après throw car ça continu jamais apres
 				}
-			}			
+			}		
+
+	bool Vecteur::dimension_ok(Vecteur const& autre) const { //On teste ici si les dimensions sont bonnes
+			if(coordonnees.size() == (autre.getcoord()).size() ){
+				return true;
+			}else {
+				string Err_dim("Les deux vecteurs ont des dimensions differentes !");
+				throw Err_dim;
+				//je ne sais pas si on doit mettre un return false ou pas 
+				}
+			}	
 	
-	void Vecteur::augmente(double new_dim) {
+	void Vecteur::augmente(double new_dim) {				//On rajoute une dimension
 			coordonnees.push_back (new_dim); 
 			}
 			
-	void Vecteur::set_coord(size_t dim, double modif){
+	void Vecteur::set_coord(size_t dim, double modif){		//On modifie la coordonnee indiquee
 			if(dim <= coordonnees.size() ){
 				coordonnees[dim-1] = modif;
 			}else {
@@ -39,18 +38,15 @@ using namespace std;
 				}
 			}		
 	
-	vector <double> Vecteur::getcoord() const { //on renvoie toutes les coordonnées d'un objet de la classe Vecteur
+	vector <double> Vecteur::getcoord() const {	 			//On renvoie toutes les coordonnées d'un objet de la classe Vecteur
 			return coordonnees;
 			}
 			
-	double Vecteur::getvalue(size_t i) const { //on renvoie la coordonnées numero i d'un objet de la classe Vecteur
+	double Vecteur::getvalue(size_t i) const { 				//On renvoie la coordonnées numero i d'un objet de la classe Vecteur
 			return coordonnees[i];
-			}	
-				
-	
+			}
 		
-		
-	double Vecteur::norme2() const { //on utilise norme2 pour faciliter le calcul de la norme
+	double Vecteur::norme2() const {						//On utilise norme2 pour faciliter le calcul de la norme
 			double result(0);
 			for (auto value : coordonnees){
 				result += pow(value,2);
@@ -58,23 +54,39 @@ using namespace std;
 			return result;
 			} 			
 		
-	double Vecteur::norme() const {
+	double Vecteur::norme() const {							//Norme du vecteur grace a norme2
 			return sqrt(norme2());
 			}
-	Vecteur Vecteur::normalise(){
+			
+	Vecteur Vecteur::normalise(){							//Retourne le vecteur normalise du vecteur
 		double norm(norme());
+		Vecteur retour;
+		retour=*this;
 		if (norm!=0){
 		for(size_t i(0);i<coordonnees.size();++i){
-			coordonnees[i]/=norm;
+			retour.set_coord(i+1,retour.getvalue(i)/norm);
 		}
 	}else{
 		cerr<<"Impossible de normaliser le vecteur nul"<<endl;
 	}
-		return *this;
+		return retour;
 	}
 	//Surchage operateurs
 	//===============================================================================================
-	Vecteur& Vecteur::operator+=(const Vecteur& autre) { //addition
+	bool Vecteur:: operator==(Vecteur const& autre){ 		//Operateur comparaison egal
+		if (not(dimension_ok(autre))){return false;}
+			for(size_t i(0); i < coordonnees.size() ; ++i){
+				if(coordonnees[i] != (autre.getcoord())[i]){
+					return false;
+					}
+				}
+		return true;
+			}
+	bool Vecteur::operator!=(Vecteur const& autre){			//Operateur comparaison different
+		return not(*this==autre);
+			}
+		
+	Vecteur& Vecteur::operator+=(const Vecteur& autre) {	//Addition entre deux vecteurs
 			if(dimension_ok(autre)){
 				for(size_t i(0); i < coordonnees.size() ; ++i){
 					coordonnees[i]+=autre.getvalue(i);
@@ -83,7 +95,7 @@ using namespace std;
 			return *this;
 			}
 	
-	Vecteur& Vecteur::operator-=(const Vecteur& autre) { //soustraction
+	Vecteur& Vecteur::operator-=(const Vecteur& autre) {	//Soustraction entre deux vecteurs
 			if(dimension_ok(autre)){
 				for(size_t i(0); i < coordonnees.size() ; ++i){
 					coordonnees[i]-=autre.getvalue(i);
@@ -92,21 +104,21 @@ using namespace std;
 			return *this;
 			}
 			
-	const Vecteur Vecteur::operator-()const{ //oppose
+	const Vecteur Vecteur::operator-()const{ 				//Renvoie l'oppose du vecteur
 		Vecteur v(0);
 		for(size_t i(0); i < coordonnees.size() ; ++i){
 			v.augmente(-coordonnees[i]);
 		}
 		return v;
 	}
-	Vecteur& Vecteur::operator*=(double scalaire){	//multiplication scalaire
+	Vecteur& Vecteur::operator*=(double scalaire){			//Multiplication scalaire
 		for(size_t i(0); i < coordonnees.size() ; ++i){
 					coordonnees[i]*=scalaire;
 					}
 			return *this;			
 		}
 	
-	double Vecteur::operator*(Vecteur autre){ //produit scalaire
+	double Vecteur::operator*(Vecteur autre){ 				//Produit scalaire
 		double result(0);
 			if(dimension_ok(autre)){
 				for(size_t i(0); i < coordonnees.size() ; ++i){
@@ -116,7 +128,7 @@ using namespace std;
 			return result;			
 			}
 	
-	Vecteur Vecteur::operator^(const Vecteur& autre){ //renvoie le produit vectoriel
+	Vecteur Vecteur::operator^(const Vecteur& autre){		//Renvoie le produit vectoriel
 		Vecteur result(0);
 			if (dimension_ok(autre) and dimension_3(autre)){
 					result.augmente(coordonnees[1]*autre.getvalue(2)-coordonnees[2]*autre.getvalue(1)); //(U2*V3 - U3*V2)
@@ -126,21 +138,7 @@ using namespace std;
 			return result;
 			}
 	
-	bool Vecteur:: operator==(Vecteur const& autre){ // operateur comparaison egal
-		if (not(dimension_ok(autre))){return false;}
-			for(size_t i(0); i < coordonnees.size() ; ++i){
-				if(coordonnees[i] != (autre.getcoord())[i]){
-					return false;
-					}
-				}
-		return true;
-			}
-	bool Vecteur::operator!=(Vecteur const& autre){ //operateur comparaison different
-		return not(*this==autre);
-			}
-		
-	
-	ostream& operator<<(ostream& out,Vecteur vect){ //operateur affichage
+	ostream& operator<<(ostream& out,Vecteur vect){			//Operateur affichage
 		out<<"(";
 		for(size_t i(0);i<vect.getcoord().size()-1;++i){
 			cout<<vect.getvalue(i)<<"; ";
@@ -149,26 +147,25 @@ using namespace std;
 		return out;
 	}
 	
-	const Vecteur operator+(Vecteur v,Vecteur const& autre){ // operateur addition
+	const Vecteur operator+(Vecteur v,Vecteur const& autre){//Operateur addition
 		v+=autre;
 		return v;
 	}
 	
-	const Vecteur operator-(Vecteur v,Vecteur const& autre){ // operateur soustraction
+	const Vecteur operator-(Vecteur v,Vecteur const& autre){//Operateur soustraction
 		v-=autre;
 		return v;
 	}
 	
-	const Vecteur operator*(Vecteur v,double scalaire){ //multiplication scalaire a gauche
+	const Vecteur operator*(double scalaire,Vecteur v){		//Multiplication scalaire a gauche
 		v*=scalaire;
 		return v;
 	}
 	
-	const Vecteur operator*(double scalaire,Vecteur v){ //multiplication scalaire a droite
+	const Vecteur operator*(Vecteur v,double scalaire){		//Multiplication scalaire a droite
 		v*=scalaire;
 		return v;
 	}
-		
 	//===============================================================================================
 	
  

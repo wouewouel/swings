@@ -4,15 +4,7 @@
 #include "Ressort.h"
 using namespace std;
 
-	Vecteur Ressort::equation_evolution(double t)const{ //rendre plus jolie cette fonction plus tard
-		Vecteur g(0,0,-9.81);
-		double scalaire(g*A);
-		Vecteur v={scalaire};
-		Vecteur evol=-(k/m)*P-(lambda/m)*Q+v;
-		return evol;
-	}
-
-	void Ressort::affiche(std::ostream& out)const{
+	void Ressort::affiche(std::ostream& out)const{						//Methode affichage des attributs du double ressort
 		constexpr int col1(5);
 		constexpr int col2(20);
 		out<<"##Ressort"<<endl;
@@ -24,7 +16,15 @@ using namespace std;
 		out<<setw(col2)<<"Q(vecteur vitesse):"<<setw(col1)<<Q<<endl;
 	}
 
-	void Ressort::testevolution(double dt,double tfinal){
+	Vecteur Ressort::equation_evolution(double t)const{					//Fonction qui renvoie le vecteur de l'equation d'evolution
+		Vecteur g(0,0,-9.81);
+		Vecteur v={g*A};
+		Vecteur evol=-(k/m)*P-(lambda/m)*Q+v;
+		return evol;
+	}
+
+	
+	void Ressort::testevolution(double dt,double tfinal){				//Fonction qui teste l'equation d'evolution
 		IntegrateurEulerCromer integrateur;
 		for(double t(0);t<=tfinal;t+=dt){
 			cout<<endl<<"t= "<<t<<endl;
@@ -34,7 +34,7 @@ using namespace std;
 		}
 	}
 		
-	std::ostream& operator<<(std::ostream& out,Ressort const& ressort){
+	std::ostream& operator<<(std::ostream& out,Ressort const& ressort){	//Surchage operateur affichage
 		ressort.affiche(out);
 		return out;
 	}

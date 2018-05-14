@@ -7,11 +7,8 @@
 
 using namespace std;
 double g(9.81);
-Vecteur Pendule::equation_evolution(double t)const{
-	Vecteur retour={(-g/L)*sin(P.getvalue(0))-lambda*(Q.getvalue(0))/(m*L*L)};
-	return retour;
-}
-void Pendule::affiche(ostream& out)const{
+
+void Pendule::affiche(ostream& out)const{							//Methode affichage des attributs du double ressort
 	constexpr int col1(5);
 	constexpr int col2(20);
 	out<<"##Pendule"<<endl;
@@ -22,7 +19,12 @@ void Pendule::affiche(ostream& out)const{
 	out<<setw(col2)<<"Q(vecteur vitesse):"<<setw(col1)<<Q<<endl;
 }
 
-void Pendule::testevolution(double dt,double tfinal){
+Vecteur Pendule::equation_evolution(double t)const{					//Fonction qui renvoie le vecteur de l'equation d'evolution
+	Vecteur retour={(-g/L)*sin(P.getvalue(0))-lambda*(Q.getvalue(0))/(m*L*L)};
+	return retour;
+}
+
+void Pendule::testevolution(double dt,double tfinal){				//Fonction qui teste l'equation d'evolution
 	IntegrateurEulerCromer integrateur;
 	for(double t(0);t<=tfinal;t+=dt){
 		cout<<endl<<"t= "<<t<<endl;
@@ -32,7 +34,7 @@ void Pendule::testevolution(double dt,double tfinal){
 	}
 }
 
-std::ostream& operator<<(std::ostream& out,Pendule const& pendule){
+std::ostream& operator<<(std::ostream& out,Pendule const& pendule){	//Surchage operateur affichage
 	pendule.affiche(out);
 	return out;
 }

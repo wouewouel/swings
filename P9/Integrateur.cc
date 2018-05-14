@@ -4,13 +4,13 @@ using namespace std;
 
 
 		void IntegrateurEulerCromer::integre(Oscillateur& O, double t, double dt){
-			O.setQ(O.getQ() + dt * O.equation_evolution(t) );
+			O.setQ(O.getQ() + dt * O.equation_evolution(t) );			//Methode d'integration
 			O.setP(O.getP() + dt * O.getQ()                 );
 		}		
 
 		void IntegrateurEulerCromer::affiche_evol(Oscillateur O ) const {
-			
-			cout << "====================================== \n"
+																		//Methode qui teste la
+			cout << "====================================== \n"			//methode integre
 				 << endl
 				 << O 
 				 << endl ;
@@ -22,8 +22,10 @@ using namespace std;
 						 << O.getP() ;
 				}
 			}
+			
+			
 		void IntegrateurNewmark::integre(Oscillateur& O,double t,double dt){
-			Vecteur P(O.getP());
+			Vecteur P(O.getP());										//Methode d'integration
 			Vecteur Q(O.getQ());
 			s=O.equation_evolution(t);
 			Vecteur condition;
@@ -36,8 +38,8 @@ using namespace std;
 			}while (condition.norme()>=parametre);
 		}
 		
-		void IntegrateurNewmark::affiche_evol(Oscillateur O ) const {
-			cout << "====================================== \n"
+		void IntegrateurNewmark::affiche_evol(Oscillateur O ) const {	//Methode qui teste la
+			cout << "====================================== \n"			//methode integre
 				 << endl
 				 << O;
 			double dt(0.01);

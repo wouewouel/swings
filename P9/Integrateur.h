@@ -4,26 +4,35 @@
 
 
 
-class Integrateur {
+class Integrateur {															//Classe abstraite
 	public: 
-		virtual void integre(Oscillateur& O, double t, double dt)=0;
+		virtual void integre(Oscillateur& O, double t, double dt)=0;		//Methode d'integration virtuelle pure
+	
+		virtual ~Integrateur(){};
 	};
+	
 
 class IntegrateurEulerCromer : public Integrateur {
 	public:
-		virtual void integre(Oscillateur& O, double t, double dt)override;
+		virtual void integre(Oscillateur& O, double t, double dt)override;	//Methode d'integration
 		
-		void affiche_evol(Oscillateur O) const;
-	};
+		void affiche_evol(Oscillateur O) const;								//Methode qui teste la
+	};																		//methode integre
+	
+	
 class IntegrateurNewmark : public Integrateur{
 	private:
 	Vecteur q;
 	Vecteur r;
 	Vecteur s;
-	double parametre=0.000001;
+	double parametre;
 	public:
-	virtual void integre(Oscillateur& O,double t,double dt) override;
 	
-	void affiche_evol(Oscillateur O) const;
-	};
+	IntegrateurNewmark(double parametre=0.000001):parametre(parametre){};			//Constructeur pour definir le
+																			//parametre de l'integrateur
+																			
+	virtual void integre(Oscillateur& O,double t,double dt) override;		//Methode d'integration
+	
+	void affiche_evol(Oscillateur O) const;									//Methode qui teste la
+	};																		//methode integre
 

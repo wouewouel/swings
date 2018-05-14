@@ -13,7 +13,7 @@ int main()
 	Vecteur P(0,1);
 	Vecteur Q(1,2);
 	Oscillateur O1(P,Q);
-	//W.affiche_evol(O1);
+	W.affiche_evol(O1);
 	
 	string cas2 ("verslehaut.txt");
 	Oscillateur O2(0,0,0, 0,2,0);
@@ -25,7 +25,7 @@ int main()
 	
 	IntegrateurNewmark N;
 	Oscillateur O4(P,Q);
-	N.affiche_evol(O4);
+	//N.affiche_evol(O4);
 	
 	
 	int i;

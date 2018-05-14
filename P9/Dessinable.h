@@ -6,7 +6,7 @@ class Dessinable{
 	public:
 		Dessinable(SupportADessin* support):support(support){}
 		
-		virtual ~Dessinable(){}
+		virtual ~Dessinable(){}	// on delete le pointeur dans le destructeur?
 		
-		virtual void dessine()const =0;
+		virtual void dessine()const =0;	//Methode virtuelle pure pour dessiner
 	};

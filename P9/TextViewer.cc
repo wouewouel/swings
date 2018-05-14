@@ -7,11 +7,11 @@ using namespace std;
 void TextViewer::dessine() {} //	que mettre dedans ?
 		
 	void TextViewer::dessine(Pendule const& p){
-		cout << p;
+		cout<<p;
 		}
 
 	void TextViewer::dessine(Ressort const& r){
-		cout << r;
+		cout<<r;
 		} 
 
     void TextViewer::dessine(Systeme const& s){}  //que mettre dedans ?

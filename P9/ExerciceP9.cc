@@ -20,14 +20,13 @@ int main ()
 		Vecteur Q1(1.0);
 		Oscillateur* r1(new Ressort(4,2,1,a1,P1,Q1,text));
 		Oscillateur* p1(new Pendule(5,2,1,5,8,text));
-		IntegrateurEulerCromer integrateur;
+		Integrateur* integrateur(new IntegrateurEulerCromer());
 		Systeme s(text,integrateur);
 		
 		s.ajoute(r1);
 		s.ajoute(p1);
 		r1->dessine();
 		p1->dessine();
-		
 		s.dessine();
 		s.evolue(5,0.2);
 		s.dessine();
@@ -52,6 +51,7 @@ int main ()
 			s2.dessine();
 			s2.evolue(t,dt);
 		}
-			
+		delete integrateur;
+		delete text;
 		return 0;
 }

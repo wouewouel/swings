@@ -9,14 +9,16 @@ class Systeme : public Dessinable{
 	private:
 		std::vector<std::unique_ptr<Oscillateur>>systeme;
 		
-		IntegrateurEulerCromer integrateur;//Integrateur ou integrateur euler cromer?
+		Integrateur* integrateur;	
 		
 	public:
-		Systeme(SupportADessin* vue,IntegrateurEulerCromer integrateur):Dessinable(vue),systeme(0),integrateur(integrateur){}
-
-		void ajoute(Oscillateur* o);
+		Systeme(SupportADessin* vue,Integrateur* integrateur):Dessinable(vue),systeme(0),integrateur(integrateur){}
 		
-		virtual void dessine()const override;
+		Systeme(Systeme const&) = delete;								//On ne peut pas copier de systeme a cause des unique ptr
+
+		void ajoute(Oscillateur* o);									//Ajoute un oscillateur ausysteme
+		
+		virtual void dessine()const override;							//Dessine tout le systeme
 			
-		void evolue(double t,double dt);
+		void evolue(double t,double dt);								//Fait evoluer tout le systeme
 };

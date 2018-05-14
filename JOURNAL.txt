@@ -1,0 +1,111 @@
+# PROGRESSION
+
+Format : [fait/à faire] TACHE	Duree (en minutes)
+                                           1
+
+[V] creer le JOURNAL                                            1
+[V] lire completement le descriptif general                     90
+[V] s'inscrire en binome                                   	1
+[V] fusionner les deux projets (y compris les fichiers JOURNAL)	20
+[V] Makefile                                               	60
+[V] Vecteur finie (pleinement operationnelle et teste)  	180+
+[V] fichier REPONSES                                         	15
+[V] Oscillateur                                            	120
+[V] intégrateur d'Euler-Cromer                            	180+
+[V] Pendule                                               	90+
+[V] Ressort                                               	90+
+[V] Systeme                                               	120+
+[V] exerciceP10                                           	180+
+[V] graphisme: cadre général                              	180+
+[V] graphisme: Pendule                                     	180+
+[V] RessortDouble                                         	90+
+[ ] espace des phases                                     	??
+[V] integrateur Newmark                                   	120+
+[ ] fichier CONCEPTION                                         	??
+[ ] fichier README                                        	??
+[ ] fichier NOMS                                        	??
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# A FAIRE (PROCHAINE ETAPE)
+
+Charles: 
+Ouriel: 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# SUIVI
+
+## Semaine 2 :
+
+Ouriel: Creation de la classe Vecteur ainsi que d'un ensemble de tests pour verifier la fonctionnabilitee
+
+Charles: Prise en main de Qt
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Semaine 3 :
+
+Charles: Mise en place du Makefile
+
+Ouriel: Prise en main de qt
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Semaine 4 :
+
+Charles: Surcharge des opérateurs
+
+Ouriel: Oscillateur
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Semaine 5 :
+Charles: Creation de differents Oscillateurs( Ressort/Pendule)/ quelques retouches sur les autres fichiers
+
+Ouriel: Creation de la classe integrateur ainsi que de la sous classe integrateurEulerCromer accompagnee de tests
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Semaine 6 :
+
+Charles et Ouriel: Mise en place des différentes classes necessaire(dessinable, support a dessin, systeme,textviewer), mise en place des test pour le textviewer
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Semaine 7 :
+
+Ouriel: Graphisme
+
+Charles: Corrections des bugs
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Semaine 8 :
+
+Ouriel: Graphisme
+
+Charles: Optimisation du code
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Semaine 9 :
+Ouriel: Graphisme
+
+Charles: Amelioration du code/ Réponse des anciens exercices
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Semaine 10 :
+
+Ouriel: Graphisme
+
+Charles: Double oscillateur(double ressort)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Semaine 11 :
+
+
+Ouriel: Graphisme
+
+Charles: Integrateur de Newmarck
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Semaine 12 :
+
+
+
+--------------------------------------------------
+## Semaine 13 :
+
+

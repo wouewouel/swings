@@ -1,51 +1,59 @@
 **********************************************************************************************************************************************************************************
 
 
-[Question P1.1] Comment representez-vous ces vecteurs ? Comment sont-ils organises : quels attributs ? quelles methodes ? quels droits d'acces ? 
+[Question P1.1] Comment representez-vous ces vecteurs ? Comment sont-ils organises : quels attributs ? quelles methodes ? quels droits d'acces ?V
 
 
 
-Ces vecteurs sont representes par les coordonnes rentres dans un tableau vector de double.
+Ces vecteurs sont representes par des coordonnes rentrees dans un tableau vector de double.
 	
-Attributs: 	-"coordonnees" est un tableau de double 							--> partie privee
+Attributs: 	-"coordonnees" est un vector de double 							--> partie privee
 
 	
 
-Methodes:	-"dimension_ok(Vecteur autre)" renvoie true si les deux vecteurs ont les memes dimensions	--> partie privee
-		  				-"dimension_3(Vecteur autre)" renvoie true si les deux vecteurs sont de dimensions 3		--> partie privee
-						-->Ces 2 methodes lancent une exception dans le cas contraire
+Methodes:	
+		-"dimension_3(Vecteur autre)" renvoie true si les deux vecteurs sont de dimensions 3		--> partie privee
 
-			
+		-"dimension_ok(Vecteur autre)" renvoie true si les deux vecteurs ont les memes dimensions	--> partie public
+		
+		-->Ces 2 methodes lancent une exception dans le cas contraire
+
 		
 		-"augmente(double new_dim)" augmente le vecteur d'une dimension	de valeur "new_dim"		--> partie publique
 
 		-"set_coord(unsigned int dim, double modif)" verifie si la dimensions a modifier existe et 	--> partie publique
-			 			 fait la modif, dans les cas contraire, elle lance une exception				--> partie publique
-						-"affiche()" affiche le coordonnees du vecteur							--> partie publique
-						-"compare(Vecteur autre)" renvoie un booleens pour dire si les vecteurs sont egaux		--> partie publique
-						-"getcoord() const" renvoie le tableau de double "coordonnees"					--> partie publique
-						-"getvalue(size_t i)" renvoie la valeur numero i des coordonnees				--> partie publique
+		fait la modif, dans les cas contraire, elle lance une exception
 
+		-"affiche()" affiche le coordonnees du vecteur							--> partie publique
+		
+		-"compare(Vecteur autre)" renvoie un booleen pour dire si les vecteurs sont egaux		--> partie publique
+		
+		-"getcoord() const" renvoie le tableau de double "coordonnees"					--> partie publique
+						
+		-"getvalue(size_t i)" renvoie la valeur numero i des coordonnees				--> partie publique
+		
+		-"norme2()" renvoie la norme du vecteur au carre						-->partie publique
+
+		-"norme()" renvoie la norme du vecteur								-->partie publique
+
+		-"normalise() renvoie un vecteur qui est le vecteur sous sa forme unitaire			-->partie publique
 **********************************************************************************************************************************************************************************
 
 
-[Question P1.2] Quel choix avez vous fait pour les operations entre vecteurs de dimensions differentes ?
-
-
+[Question P1.2] Quel choix avez vous fait pour les operations entre vecteurs de dimensions differentes ?V
 
 Nous avons cree une fonction que nous appliquons a chaque fois que nous devons faire une certaine operation et qui lance une exception
-de type string (peut etre devrions nous mettre une struct pour pouvoir differencier les differentes exceptions a venir...)
+de type string.
 
 
 
 **********************************************************************************************************************************************************************************
 
 
-[Question P4.1] Avez-vous ajoute un constructeur de copie ? Pourquoi (justifiez votre choix) ?
+[Question P4.1] Avez-vous ajoute un constructeur de copie ? Pourquoi (justifiez votre choix) ?V
 
 
-
-Oui, au cas ou l'on devrait modifier les constructeurs pour se rappeler de modifier les constructeurs de copie, si le constructeur de copie par défaut devient inefficace.
+Non, puisque le constructeur de copie par défaut suffit, en effet la copie d'un vecteur consiste juste a copier ses coordonnees.
 
 
 **********************************************************************************************************************************************************************************
@@ -55,69 +63,57 @@ Oui, au cas ou l'on devrait modifier les constructeurs pour se rappeler de modif
 a] que cela impliquerait-il au niveau des attributs de la classe ?	
 
 Les attributs de la classe seraient des approximations
-b] quelle serait la difficultÈ majeure (voire l'impossibilite) de sa rÈalisation en C++ ? 
-  (C'est d'ailleurs pour cela qu'on ne vous demande pas de faire un tel constructeur !)
+b] quelle serait la difficultÈ majeure (voire l'impossibilite) de sa realisation en C++ ? 
+  (C'est d'ailleurs pour cela qu'on ne vous demande pas de faire un tel constructeur !)
 
 
 
-La machine devra calculer les nombreux vecteurs en temps reel en fonction des angles et les vecteurs peuvent eêtre errones du fait de l'accumulation des approximations.
+La machine devra calculer les nombreux vecteurs en temps reel en fonction des angles et les vecteurs peuvent etre errones du fait de l'accumulation des approximations.
 
 
 
 **********************************************************************************************************************************************************************************
 
-[Question P4.3] Quels operateurs avez vous introduits ?
+[Question P4.3] Quels operateurs avez vous introduits ?V
 
-Vecteur& operator+=(const Vecteur& autre); //addition entre deux vecteurs
+Vecteur& operator+=(const Vecteur& autre);		//Addition entre deux vecteurs
+
+Vecteur& operator-=(const Vecteur& autre);		//Soustraction entre deux vecteurs		
+
+Vecteur operator-();					//Renvoie l'oppose du vecteur			
+
+Vecteur& operator*=(double scalaire);			//Multiplication scalaire
 		
-
-Vecteur& operator-=(const Vecteur& autre); //on fait vecteur actuel - autre
+double operator*(Vecteur autre);			//Produit scalaire
 		
+Vecteur operator^(const Vecteur& autre); 		//Renvoie le produit vectoriel
 
-Vecteur operator-();//renvoie l'oppose du vecteur
-			
-
-Vecteur& operator*=(double scalaire);//multiplication scalaire
-		
-
-double operator*(Vecteur autre);//produit scalaire
-		
-
-Vecteur operator^(const Vecteur& autre); //renvoie le produit 
-vectoriel
-
-const Vecteur operator+(Vecteur,Vecteur const&); //addition
+const Vecteur operator+(Vecteur,Vecteur const&);	//Addition entre deux vecteurs
 	
-
-const Vecteur operator-(Vecteur,Vecteur const&); //soustraction
+const Vecteur operator-(Vecteur,Vecteur const&);	//Soustraction entre deux vecteurs
 	
-
-const Vecteur operator*(double scalaire,Vecteur v); //multiplication scalaire a gauche
+const Vecteur operator*(double scalaire,Vecteur v);	//Multiplication scalaire a gauche
 	
+const Vecteur operator*(Vecteur v,double scalaire);	//Multiplication scalaire a droite
 
-const Vecteur operator*(Vecteur v,double scalaire); //multiplication scalaire a droite
-
-
-std::ostream& operator <<(std::ostream& out,Vecteur v); //operateur d'affichage
+std::ostream& operator <<(std::ostream& out,Vecteur v);	//Operateur d'affichage
 
 **********************************************************************************************************************************************************************************
 
 [Question P6.1] Comment avez vous concu votre classe Integrateur ? 
 
-La classe Integrateur ne possede qu'une methode  < integre(Oscillateur& O, double t, double dt) > dans l'interface, par ailleurs cette methode n'est pas definie a proprement parler mais est simplement declaree car nous nous en servirons plus tard pour le polymorphisme.
+La classe Integrateur  possede une methode  < integre(Oscillateur& O, double t, double dt) > dans l'interface publique, par ailleurs cette methode n'est pas definie a proprement parler mais est simplement declaree car nous nous en servirons plus tard pour le polymorphisme. Elle possede aussi un destructeur virtuel.
 
 **********************************************************************************************************************************************************************************
 
 [Question P6.2] Quelle est la relation entre les classes Integrateur et IntegrateurEulerCromer ? 
 
-IntegrateurEulerCromer  et une sous classe de la super classe Integrateur.
+IntegrateurEulerCromer  et une sous classe de la super classe Integrateur, puisque qu'un IntegrateurEulerCromer est un integrateur.
 Ici on definit explicitement la fonction <integre(...)> et on a rajoute une fonction < affiche_evol(Oscillateur O) > qui permet de simplifier le programme de test. 
 
 **********************************************************************************************************************************************************************************
 
 [Question P7.1] Comment se situent ces classes par rapport a la classe Oscillateur définie la semaine passee ?
-
-
 
 Les pendules et les ressorts sont des oscillateurs, ainsi la classe Pendule et la classe Ressort sont toutes les deux des sous classes de la super classe Oscillateur.
 
@@ -129,14 +125,16 @@ La methode dessine() est une methode virtuelle pure car tous les differents obje
 
 **********************************************************************************************************************************************************************************
 
-La classe Systeme devra avoir une collections de differents oscillateurs possibles dont nous invoquerons, au travers de l'intÈgrateur, les ´ fonctions f ª de sorte que chacun rÈagisse suivant ses caractÈristiques propres. 
-[Question P8.2] Quelle est la bonne faÁon de le faire dans un cadre de programmation orientÈe-objet ? 
+La classe Systeme devra avoir une collections de differents oscillateurs possibles dont nous invoquerons, au travers de l'integrateur, les ´ fonctions f ª de sorte que chacun rÈagisse suivant ses caractÈristiques propres. 
 
-Nous allons crÈer un tableau de pointeur sur Oscillateur pour verifier la deuxieme condition du polymorphisme.
+[Question P8.2] Quelle est la bonne facon de le faire dans un cadre de programmation orientee-objet ? 
+
+Nous allons creer un tableau de pointeur sur Oscillateur pour verifier la deuxieme condition du polymorphisme.
 
 **********************************************************************************************************************************************************************************
 
 [Question P8.3] A quoi faut-il faire attention pour les classes contenant des pointeurs ? Quelles solutions peut-on envisager ? 
+
 Il faut bien liberer ces pointeurs une fois l'utilisation terminee, et faire attention que chaque pointeur pointe sur un unique oscillateur. 
 On utilisera donc des unique_ptr.
 

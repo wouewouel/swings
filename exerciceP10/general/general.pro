@@ -20,8 +20,8 @@ HEADERS += \
     Pendule.h \
     Ressort.h \
     Integrateur.h \
-    dessinable.h \
     support_a_dessin.h \
     Systeme.h \
     constantes.h \
-    DoubleRessort.h
+    DoubleRessort.h \
+    Dessinable.h

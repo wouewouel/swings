@@ -3,13 +3,9 @@
 
 [Question P1.1] Comment representez-vous ces vecteurs ? Comment sont-ils organises : quels attributs ? quelles methodes ? quels droits d'acces ?V
 
-
-
 Ces vecteurs sont representes par des coordonnes rentrees dans un tableau vector de double.
 	
 Attributs: 	-"coordonnees" est un vector de double 							--> partie privee
-
-	
 
 Methodes:	
 		-"dimension_3(Vecteur autre)" renvoie true si les deux vecteurs sont de dimensions 3		--> partie privee
@@ -17,7 +13,6 @@ Methodes:
 		-"dimension_ok(Vecteur autre)" renvoie true si les deux vecteurs ont les memes dimensions	--> partie public
 		
 		-->Ces 2 methodes lancent une exception dans le cas contraire
-
 		
 		-"augmente(double new_dim)" augmente le vecteur d'une dimension	de valeur "new_dim"		--> partie publique
 
@@ -45,13 +40,10 @@ Methodes:
 Nous avons cree une fonction que nous appliquons a chaque fois que nous devons faire une certaine operation et qui lance une exception
 de type string.
 
-
-
 **********************************************************************************************************************************************************************************
 
 
 [Question P4.1] Avez-vous ajoute un constructeur de copie ? Pourquoi (justifiez votre choix) ?V
-
 
 Non, puisque le constructeur de copie par défaut suffit, en effet la copie d'un vecteur consiste juste a copier ses coordonnees.
 
@@ -59,11 +51,11 @@ Non, puisque le constructeur de copie par défaut suffit, en effet la copie d'un 
 **********************************************************************************************************************************************************************************
 
 
-[Question P4.2] Si l'on souhaitait ajouter un constructeur par coordonnees spheriques (deux angles et une longueur) pour les vecteurs de dimension3,
+[Question P4.2] Si l'on souhaitait ajouter un constructeur par coordonnees spheriques (deux angles et une longueur) pour les vecteurs de dimension 3,  X
 a] que cela impliquerait-il au niveau des attributs de la classe ?	
 
 Les attributs de la classe seraient des approximations
-b] quelle serait la difficultÈ majeure (voire l'impossibilite) de sa realisation en C++ ? 
+b] quelle serait la difficulte majeure (voire l'impossibilite) de sa realisation en C++ ? 
   (C'est d'ailleurs pour cela qu'on ne vous demande pas de faire un tel constructeur !)
 
 
@@ -100,59 +92,59 @@ std::ostream& operator <<(std::ostream& out,Vecteur v);	//Operateur d'affichage
 
 **********************************************************************************************************************************************************************************
 
-[Question P6.1] Comment avez vous concu votre classe Integrateur ? 
+[Question P6.1] Comment avez vous concu votre classe Integrateur ?V
 
 La classe Integrateur  possede une methode  < integre(Oscillateur& O, double t, double dt) > dans l'interface publique, par ailleurs cette methode n'est pas definie a proprement parler mais est simplement declaree car nous nous en servirons plus tard pour le polymorphisme. Elle possede aussi un destructeur virtuel.
 
 **********************************************************************************************************************************************************************************
 
-[Question P6.2] Quelle est la relation entre les classes Integrateur et IntegrateurEulerCromer ? 
+[Question P6.2] Quelle est la relation entre les classes Integrateur et IntegrateurEulerCromer ? V
 
-IntegrateurEulerCromer  et une sous classe de la super classe Integrateur, puisque qu'un IntegrateurEulerCromer est un integrateur.
+IntegrateurEulerCromer  est une sous classe de la super classe Integrateur, puisque qu'un IntegrateurEulerCromer est un integrateur.
 Ici on definit explicitement la fonction <integre(...)> et on a rajoute une fonction < affiche_evol(Oscillateur O) > qui permet de simplifier le programme de test. 
 
 **********************************************************************************************************************************************************************************
 
-[Question P7.1] Comment se situent ces classes par rapport a la classe Oscillateur définie la semaine passee ?
+[Question P7.1] Comment se situent ces classes par rapport a la classe Oscillateur définie la semaine passee ?V
 
 Les pendules et les ressorts sont des oscillateurs, ainsi la classe Pendule et la classe Ressort sont toutes les deux des sous classes de la super classe Oscillateur.
 
 **********************************************************************************************************************************************************************************
 
-[Question P8.1] En termes de POO, quelle est donc la nature de la methode dessine() ? 
+[Question P8.1] En termes de POO, quelle est donc la nature de la methode dessine() ?V 
 
-La methode dessine() est une methode virtuelle pure car tous les differents objets devront la redefinir.
+La methode dessine() est une methode virtuelle car tous les differents objets dessinantes devront la redefinir dans le cadre du polymorphisme.
 
 **********************************************************************************************************************************************************************************
-
-La classe Systeme devra avoir une collections de differents oscillateurs possibles dont nous invoquerons, au travers de l'integrateur, les ´ fonctions f ª de sorte que chacun rÈagisse suivant ses caractÈristiques propres. 
 
 [Question P8.2] Quelle est la bonne facon de le faire dans un cadre de programmation orientee-objet ? 
 
-Nous allons creer un tableau de pointeur sur Oscillateur pour verifier la deuxieme condition du polymorphisme.
+La classe Systeme devra avoir une collections de differents oscillateurs possibles dont nous invoquerons, au travers de l'integrateur grâce a une methode evolue, les fonctions f ª de sorte que chacun reagisse suivant ses caracteristiques propres. 
+
+Nous allons creer un tableau de pointeur sur Oscillateur pour verifier la deuxieme condition du polymorphisme et utiliser des methodes virtuelles.
 
 **********************************************************************************************************************************************************************************
 
-[Question P8.3] A quoi faut-il faire attention pour les classes contenant des pointeurs ? Quelles solutions peut-on envisager ? 
+[Question P8.3] A quoi faut-il faire attention pour les classes contenant des pointeurs ? Quelles solutions peut-on envisager ? V
 
-Il faut bien liberer ces pointeurs une fois l'utilisation terminee, et faire attention que chaque pointeur pointe sur un unique oscillateur. 
+Il faut bien liberer ces pointeurs une fois l'utilisation terminee et s'assurer qu'il pointe bien vers un oscillateur quand on les utilise, et faire attention que chaque pointeur pointe sur un unique oscillateur. 
 On utilisera donc des unique_ptr.
 
 **********************************************************************************************************************************************************************************
 
-[Question P8.4] Comment reprÈsentez vous la classe Systeme ?
+[Question P8.4] Comment representez vous la classe Systeme ?V
 Expliquez votre conception (attributs, interface, ...). 
 
-Il s'agit d'une sous classe de la super classe Dessinable,
-elle possede un tableau de pointeurs sur des oscillateurs en prive,
-ainsi que la definition de la methode <dessine()>
+Il s'agit d'une sous classe de la super classe Dessinable, elle possede un tableau de pointeurs sur des oscillateurs en prive, ainsi que la  methode <dessine()> qui appelle la methode dessine de chaque oscillateur qui la compose.
 Elle possède aussi une méthode évolue qui fait avancer chaque oscillateur d'un pas de temps ainsi qu'une méthode ajoute pour ajouter un pointeur vers un oscillateur au tableau des pointeurs.
+On supprime aussi explicitement le constructeur de copie par defaut a cause des unique_ptr.
+De plus, on rajoute un pointeur vers un integrateur en attribut pour pouvoir choisir l'integrateur utilise dans la fonction evolue.
 
 **********************************************************************************************************************************************************************************
 
-[Question P11.1] Comment representez-vous ces nouveaux oscillateurs ? Ou s'incrivent-ils dans votre conception ? 
+[Question P11.1] Comment representez-vous ces nouveaux oscillateurs ? Ou s'incrivent-ils dans votre conception ? V
 
-On implemente le nouvel oscillateur "Double ressort".
+On implemente le nouvel oscillateur "Double ressort". On le conçoit comme un nouveau type d'oscillateur, et non comme la composition de deux ressorts. Ainsi DoubleRessort est une sous classe de la super classe Oscillateur
 
 **********************************************************************************************************************************************************************************
 
@@ -161,8 +153,9 @@ On implemente le nouvel oscillateur "Double ressort".
 
 **********************************************************************************************************************************************************************************
 
-[Question P13.1] Où cela s'intègre-t-il dans votre projet/conception ? Quels changements cela engendre ? 
-
+[Question P13.1] Où cela s'intègre-t-il dans votre projet/conception ? Quels changements cela engendre ? V
+L'integrateur de Newmarck est un integrateur. Ainsi on le conçoit comme une sous classe de la super classe Integrateur.
+On modifie la classe Systeme pour pouvoir choisir son integrateur. On passera donc par pointeur sur un integrateur pour le polymorphisme.
 
 **********************************************************************************************************************************************************************************
 

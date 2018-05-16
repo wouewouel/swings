@@ -39,7 +39,7 @@ using namespace std;
 			return sortie;
 			}
 			
-		void affiche_get(Oscillateur const& O,double t) {			//methode pour tester les methodes get
+		void affiche_get(Oscillateur const& O,double t) {			//Methode pour tester les methodes get
 	  cout <<" Tests de get() : \n   de son parametre : " 
 		   << O.getP()        << "   de sa vitesse    : "
 		   << O.getQ() 		  << endl;
@@ -47,7 +47,7 @@ using namespace std;
 		   << t << " : " << O.equation_evolution(t) << endl;
    }
 		
-		void affiche_set(Oscillateur& O) {							//methode pour tester les methodes set
+		void affiche_set(Oscillateur& O) {							//Methode pour tester les methodes set
 	  O.setP(Vecteur (-2, -1, 0)); 
 	  cout <<" Tests de set() : \n   de son parametre : " 
 		   << O.getP()        

@@ -1,0 +1,520 @@
+Ressort1:
+##Ressort
+        Raideur (k):    1
+          Masse (m):    1
+Frottement (lambda):    1
+
+A(vecteur unitaire de l'axe):    (1; 0; 0)
+
+P(vecteur position):    (1)
+
+ Q(vecteur vitesse):    (1)
+
+Ressort2:
+##Ressort
+        Raideur (k): 0.33
+          Masse (m): 0.25
+Frottement (lambda): 0.15
+
+A(vecteur unitaire de l'axe):    (0.8; 0; 0.6)
+
+P(vecteur position):    (0.18)
+
+ Q(vecteur vitesse):    (0)
+
+Ressort3:
+##Ressort
+        Raideur (k): 0.33
+          Masse (m): 0.25
+Frottement (lambda): 0.15
+
+A(vecteur unitaire de l'axe):    (0.8; 0; 0.6)
+
+P(vecteur position):    (0.18)
+
+ Q(vecteur vitesse):    (1)
+
+Ressort 1:
+equation_evolution: (-2)
+
+t= 0
+#Parametre (1)
+
+#Vitesse (1)
+
+
+t= 0.1
+#Parametre (1.08)
+
+#Vitesse (0.8)
+
+
+t= 0.2
+#Parametre (1.1412)
+
+#Vitesse (0.612)
+
+
+t= 0.3
+#Parametre (1.18487)
+
+#Vitesse (0.43668)
+
+
+t= 0.4
+#Parametre (1.21232)
+
+#Vitesse (0.274525)
+
+
+t= 0.5
+#Parametre (1.2249)
+
+#Vitesse (0.125841)
+
+
+t= 0.6
+#Parametre (1.22398)
+
+#Vitesse (-0.00923389)
+
+
+t= 0.7
+#Parametre (1.21091)
+
+#Vitesse (-0.130709)
+
+
+t= 0.8
+#Parametre (1.18704)
+
+#Vitesse (-0.238729)
+
+
+t= 0.9
+#Parametre (1.15368)
+
+#Vitesse (-0.33356)
+
+
+t= 1
+#Parametre (1.11212)
+
+#Vitesse (-0.415572)
+
+Ressort 2:
+equation_evolution: (-6.1236)
+
+t= 0
+#Parametre (0.18)
+
+#Vitesse (0)
+
+
+t= 0.01
+#Parametre (0.179388)
+
+#Vitesse (-0.061236)
+
+
+t= 0.02
+#Parametre (0.178167)
+
+#Vitesse (-0.122097)
+
+
+t= 0.03
+#Parametre (0.176341)
+
+#Vitesse (-0.182576)
+
+Ressort 4(grande masse): 
+##Ressort
+        Raideur (k):    1
+          Masse (m):  200
+Frottement (lambda):    0
+
+A(vecteur unitaire de l'axe):    (1; 0; 0)
+
+P(vecteur position):    (1)
+
+ Q(vecteur vitesse):    (0)
+
+
+t= 0
+#Parametre (1)
+
+#Vitesse (0)
+
+
+t= 0.1
+#Parametre (0.99995)
+
+#Vitesse (-0.0005)
+
+
+t= 0.2
+#Parametre (0.99985)
+
+#Vitesse (-0.000999975)
+
+
+t= 0.3
+#Parametre (0.9997)
+
+#Vitesse (-0.0014999)
+
+
+t= 0.4
+#Parametre (0.9995)
+
+#Vitesse (-0.00199975)
+
+
+t= 0.5
+#Parametre (0.99925)
+
+#Vitesse (-0.0024995)
+
+
+t= 0.6
+#Parametre (0.99895)
+
+#Vitesse (-0.00299913)
+
+
+t= 0.7
+#Parametre (0.9986)
+
+#Vitesse (-0.0034986)
+
+
+t= 0.8
+#Parametre (0.998201)
+
+#Vitesse (-0.0039979)
+
+
+t= 0.9
+#Parametre (0.997751)
+
+#Vitesse (-0.004497)
+
+
+t= 1
+#Parametre (0.997251)
+
+#Vitesse (-0.00499588)
+
+Ressort 5(petite masse): 
+##Ressort
+        Raideur (k):    1
+          Masse (m):0.001
+Frottement (lambda):    0
+
+A(vecteur unitaire de l'axe):    (1; 0; 0)
+
+P(vecteur position):    (1)
+
+ Q(vecteur vitesse):    (0)
+
+
+t= 0
+#Parametre (1)
+
+#Vitesse (0)
+
+
+t= 0.1
+#Parametre (-9)
+
+#Vitesse (-100)
+
+
+t= 0.2
+#Parametre (71)
+
+#Vitesse (800)
+
+
+t= 0.3
+#Parametre (-559)
+
+#Vitesse (-6300)
+
+
+t= 0.4
+#Parametre (4401)
+
+#Vitesse (49600)
+
+
+t= 0.5
+#Parametre (-34649)
+
+#Vitesse (-390500)
+
+
+t= 0.6
+#Parametre (272791)
+
+#Vitesse (3.0744e+06)
+
+
+t= 0.7
+#Parametre (-2.14768e+06)
+
+#Vitesse (-2.42047e+07)
+
+
+t= 0.8
+#Parametre (1.69086e+07)
+
+#Vitesse (1.90563e+08)
+
+
+t= 0.9
+#Parametre (-1.33121e+08)
+
+#Vitesse (-1.5003e+09)
+
+
+t= 1
+#Parametre (1.04806e+09)
+
+#Vitesse (1.18118e+10)
+
+Ressort 6(raideur tres grande): 
+##Ressort
+        Raideur (k): 1000
+          Masse (m):    1
+Frottement (lambda):    0
+
+A(vecteur unitaire de l'axe):    (1; 0; 0)
+
+P(vecteur position):    (1)
+
+ Q(vecteur vitesse):    (0)
+
+
+t= 0
+#Parametre (1)
+
+#Vitesse (0)
+
+
+t= 0.1
+#Parametre (-9)
+
+#Vitesse (-100)
+
+
+t= 0.2
+#Parametre (71)
+
+#Vitesse (800)
+
+
+t= 0.3
+#Parametre (-559)
+
+#Vitesse (-6300)
+
+
+t= 0.4
+#Parametre (4401)
+
+#Vitesse (49600)
+
+
+t= 0.5
+#Parametre (-34649)
+
+#Vitesse (-390500)
+
+
+t= 0.6
+#Parametre (272791)
+
+#Vitesse (3.0744e+06)
+
+
+t= 0.7
+#Parametre (-2.14768e+06)
+
+#Vitesse (-2.42047e+07)
+
+
+t= 0.8
+#Parametre (1.69086e+07)
+
+#Vitesse (1.90563e+08)
+
+
+t= 0.9
+#Parametre (-1.33121e+08)
+
+#Vitesse (-1.5003e+09)
+
+
+t= 1
+#Parametre (1.04806e+09)
+
+#Vitesse (1.18118e+10)
+
+Ressort 7(frottement): 
+##Ressort
+        Raideur (k):    1
+          Masse (m):    1
+Frottement (lambda):    1
+
+A(vecteur unitaire de l'axe):    (1; 0; 0)
+
+P(vecteur position):    (1)
+
+ Q(vecteur vitesse):    (0)
+
+
+t= 0
+#Parametre (1)
+
+#Vitesse (0)
+
+
+t= 0.1
+#Parametre (0.99)
+
+#Vitesse (-0.1)
+
+
+t= 0.2
+#Parametre (0.9711)
+
+#Vitesse (-0.189)
+
+
+t= 0.3
+#Parametre (0.944379)
+
+#Vitesse (-0.26721)
+
+
+t= 0.4
+#Parametre (0.910886)
+
+#Vitesse (-0.334927)
+
+
+t= 0.5
+#Parametre (0.871634)
+
+#Vitesse (-0.392523)
+
+
+t= 0.6
+#Parametre (0.827591)
+
+#Vitesse (-0.440434)
+
+
+t= 0.7
+#Parametre (0.779676)
+
+#Vitesse (-0.47915)
+
+
+t= 0.8
+#Parametre (0.728755)
+
+#Vitesse (-0.509202)
+
+
+t= 0.9
+#Parametre (0.67564)
+
+#Vitesse (-0.531158)
+
+
+t= 1
+#Parametre (0.621079)
+
+#Vitesse (-0.545606)
+
+Ressort 8(vitesse de depart): 
+##Ressort
+        Raideur (k):    1
+          Masse (m):    1
+Frottement (lambda):    0
+
+A(vecteur unitaire de l'axe):    (1; 0; 0)
+
+P(vecteur position):    (1)
+
+ Q(vecteur vitesse):    (1)
+
+
+t= 0
+#Parametre (1)
+
+#Vitesse (1)
+
+
+t= 0.1
+#Parametre (1.09)
+
+#Vitesse (0.9)
+
+
+t= 0.2
+#Parametre (1.1691)
+
+#Vitesse (0.791)
+
+
+t= 0.3
+#Parametre (1.23651)
+
+#Vitesse (0.67409)
+
+
+t= 0.4
+#Parametre (1.29155)
+
+#Vitesse (0.550439)
+
+
+t= 0.5
+#Parametre (1.33368)
+
+#Vitesse (0.421284)
+
+
+t= 0.6
+#Parametre (1.36247)
+
+#Vitesse (0.287916)
+
+
+t= 0.7
+#Parametre (1.37764)
+
+#Vitesse (0.151668)
+
+
+t= 0.8
+#Parametre (1.37903)
+
+#Vitesse (0.0139044)
+
+
+t= 0.9
+#Parametre (1.36663)
+
+#Vitesse (-0.123999)
+
+
+t= 1
+#Parametre (1.34056)
+
+#Vitesse (-0.260662)
+

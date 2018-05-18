@@ -14,6 +14,7 @@ using namespace std;
 int main ()
 {
 		SupportADessin* text(new TextViewer());
+		//Test systeme avec Euler Cromer
 		
 		Vecteur a1(1,0,0);
 		Vecteur P1(1.0);
@@ -23,15 +24,29 @@ int main ()
 		Integrateur* integrateur(new IntegrateurEulerCromer());
 		Systeme s(text,integrateur);
 		
-		s.ajoute(r1);
-		s.ajoute(p1);
-		r1->dessine();
-		p1->dessine();
-		s.dessine();
+		
+		//Test ajoute
+		
+		s.ajoute(r1);													//Pour un ressort
+		s.ajoute(p1);													//Pour un pendule
+		
+		
+		//Test dessine
+		cout<<"Test dessin:"<<endl<<endl;
+		r1->dessine();													//Pour un ressort
+		p1->dessine();													//Pour un pendule
+		s.dessine();													//Pour un systeme
+		
+		
+		//Test evolue
+		cout<<"Test evolue:"<<endl<<endl;
 		s.evolue(5,0.2);
 		s.dessine();
 		
-		Systeme s2(text,integrateur);
+		
+		//Test systeme avec Newmarck
+		Integrateur* integrateur2(new IntegrateurNewmark());
+		Systeme s2(text,integrateur2);
 		Vecteur a2(0.8,0,0.6);
  		Vecteur P2(0.18);
  		Vecteur Q2(0.0);
@@ -42,16 +57,26 @@ int main ()
  		Oscillateur* pendule2(new Pendule(1,1,0,M_PI/2,0,text));
 		Oscillateur* doubleressort(new DoubleRessort(1,1,1,1,1,1,a2,P3,Q3,text));
  		
+ 		
+ 		//Test ajoute
  		s2.ajoute(ressort2);
  		s2.ajoute(pendule2);
-		s2.ajoute(doubleressort);
+		s2.ajoute(doubleressort);										//Pour un double ressort
+ 		
+ 		
+ 		//Test dessine	
+ 		cout<<"Test dessin:"<<endl<<endl;								
+ 		doubleressort->dessine();										//Pour un double ressort
+ 		cout<<"Systeme 2:"<<endl<<endl;
  		double dt(0.01);
  		for(double t(0);t<=0.03;t+=dt){
- 			cout<<"t= "<<t<<endl;
+ 			cout<<"t= "<<t<<endl<<endl;
 			s2.dessine();
 			s2.evolue(t,dt);
 		}
 		delete integrateur;
+		delete integrateur2;
 		delete text;
+		
 		return 0;
 }

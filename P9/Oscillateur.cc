@@ -6,10 +6,12 @@ using namespace std;
 
 
 		Vecteur Oscillateur::equation_evolution(double t) const {  
-			//Vecteur evol = (P + Q )* t;
-			//return evol;
-			Vecteur g(0,-9.81); //pour le test de l'integrateur
-			return g;
+			if(getQ().getcoord().size()==2){//Pour le test de l'integrateur en dimension 2
+				Vecteur g(0,-9.81); 		
+				return g;
+			}
+			Vecteur evol = (P + Q )* t; 	//Pour les autres test
+			return evol;
 		}
 		
 		Vecteur Oscillateur::getP() const {return P;}	//Retourne P

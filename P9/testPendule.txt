@@ -1,0 +1,500 @@
+Pendule 1: 
+##Pendule
+           masse(m):    1
+        Longueur(L):    1
+ Frottement(lambda):    1
+
+P(vecteur position):    (1)
+
+ Q(vecteur vitesse):    (1)
+
+Pendule 2: 
+##Pendule
+           masse(m):    1
+        Longueur(L):    1
+ Frottement(lambda):    0
+
+P(vecteur position):    (1.5708)
+
+ Q(vecteur vitesse):    (0)
+
+Pendule 1: 
+(-9.25483)
+
+t= 0
+#Parametre (1)
+
+#Vitesse (1)
+
+
+t= 0.1
+#Parametre (1.00745)
+
+#Vitesse (0.074517)
+
+
+t= 0.2
+#Parametre (0.931217)
+
+#Vitesse (-0.762344)
+
+
+t= 0.3
+#Parametre (0.783896)
+
+#Vitesse (-1.47321)
+
+
+t= 0.4
+#Parametre (0.582044)
+
+#Vitesse (-2.01852)
+
+
+t= 0.5
+#Parametre (0.346448)
+
+#Vitesse (-2.35596)
+
+
+t= 0.6
+#Parametre (0.101102)
+
+#Vitesse (-2.45347)
+
+
+t= 0.7
+#Parametre (-0.129612)
+
+#Vitesse (-2.30713)
+
+
+t= 0.8
+#Parametre (-0.324574)
+
+#Vitesse (-1.94963)
+
+
+t= 0.9
+#Parametre (-0.468756)
+
+#Vitesse (-1.44182)
+
+
+t= 1
+#Parametre (-0.5542)
+
+#Vitesse (-0.854443)
+
+Pendule 2: 
+(-9.81)
+
+t= 0
+#Parametre (1.5708)
+
+#Vitesse (0)
+
+
+t= 0.1
+#Parametre (1.4727)
+
+#Vitesse (-0.981)
+
+
+t= 0.2
+#Parametre (1.27697)
+
+#Vitesse (-1.95728)
+
+
+t= 0.3
+#Parametre (0.987344)
+
+#Vitesse (-2.89624)
+
+
+t= 0.4
+#Parametre (0.615849)
+
+#Vitesse (-3.71495)
+
+Pendule 3(grande masse): 
+##Pendule
+           masse(m):  200
+        Longueur(L):    1
+ Frottement(lambda):    0
+
+P(vecteur position):    (1.5708)
+
+ Q(vecteur vitesse):    (0)
+
+
+t= 0
+#Parametre (1.5708)
+
+#Vitesse (0)
+
+
+t= 0.1
+#Parametre (1.4727)
+
+#Vitesse (-0.981)
+
+
+t= 0.2
+#Parametre (1.27697)
+
+#Vitesse (-1.95728)
+
+
+t= 0.3
+#Parametre (0.987344)
+
+#Vitesse (-2.89624)
+
+
+t= 0.4
+#Parametre (0.615849)
+
+#Vitesse (-3.71495)
+
+
+t= 0.5
+#Parametre (0.187687)
+
+#Vitesse (-4.28163)
+
+
+t= 0.6
+#Parametre (-0.25878)
+
+#Vitesse (-4.46467)
+
+
+t= 0.7
+#Parametre (-0.680143)
+
+#Vitesse (-4.21363)
+
+
+t= 0.8
+#Parametre (-1.03981)
+
+#Vitesse (-3.59667)
+
+
+t= 0.9
+#Parametre (-1.31488)
+
+#Vitesse (-2.75075)
+
+
+t= 1
+#Parametre (-1.49505)
+
+#Vitesse (-1.8017)
+
+Pendule 4(Petite masse): 
+##Pendule
+           masse(m):0.001
+        Longueur(L):    1
+ Frottement(lambda):    0
+
+P(vecteur position):    (1.5708)
+
+ Q(vecteur vitesse):    (0)
+
+
+t= 0
+#Parametre (1.5708)
+
+#Vitesse (0)
+
+
+t= 0.1
+#Parametre (1.4727)
+
+#Vitesse (-0.981)
+
+
+t= 0.2
+#Parametre (1.27697)
+
+#Vitesse (-1.95728)
+
+
+t= 0.3
+#Parametre (0.987344)
+
+#Vitesse (-2.89624)
+
+
+t= 0.4
+#Parametre (0.615849)
+
+#Vitesse (-3.71495)
+
+
+t= 0.5
+#Parametre (0.187687)
+
+#Vitesse (-4.28163)
+
+
+t= 0.6
+#Parametre (-0.25878)
+
+#Vitesse (-4.46467)
+
+
+t= 0.7
+#Parametre (-0.680143)
+
+#Vitesse (-4.21363)
+
+
+t= 0.8
+#Parametre (-1.03981)
+
+#Vitesse (-3.59667)
+
+
+t= 0.9
+#Parametre (-1.31488)
+
+#Vitesse (-2.75075)
+
+
+t= 1
+#Parametre (-1.49505)
+
+#Vitesse (-1.8017)
+
+Pendule 5(fil tres grand): 
+##Pendule
+           masse(m):    1
+        Longueur(L): 1000
+ Frottement(lambda):    0
+
+P(vecteur position):    (1.5708)
+
+ Q(vecteur vitesse):    (0)
+
+
+t= 0
+#Parametre (1.5708)
+
+#Vitesse (0)
+
+
+t= 0.1
+#Parametre (1.5707)
+
+#Vitesse (-0.000981)
+
+
+t= 0.2
+#Parametre (1.5705)
+
+#Vitesse (-0.001962)
+
+
+t= 0.3
+#Parametre (1.57021)
+
+#Vitesse (-0.002943)
+
+
+t= 0.4
+#Parametre (1.56982)
+
+#Vitesse (-0.003924)
+
+
+t= 0.5
+#Parametre (1.56932)
+
+#Vitesse (-0.004905)
+
+
+t= 0.6
+#Parametre (1.56874)
+
+#Vitesse (-0.005886)
+
+
+t= 0.7
+#Parametre (1.56805)
+
+#Vitesse (-0.006867)
+
+
+t= 0.8
+#Parametre (1.56726)
+
+#Vitesse (-0.00784799)
+
+
+t= 0.9
+#Parametre (1.56638)
+
+#Vitesse (-0.00882899)
+
+
+t= 1
+#Parametre (1.5654)
+
+#Vitesse (-0.00980998)
+
+Pendule 6(frottement): 
+##Pendule
+           masse(m):    1
+        Longueur(L):    1
+ Frottement(lambda):    1
+
+P(vecteur position):    (1.5708)
+
+ Q(vecteur vitesse):    (0)
+
+
+t= 0
+#Parametre (1.5708)
+
+#Vitesse (0)
+
+
+t= 0.1
+#Parametre (1.4727)
+
+#Vitesse (-0.981)
+
+
+t= 0.2
+#Parametre (1.28678)
+
+#Vitesse (-1.85918)
+
+
+t= 0.3
+#Parametre (1.02528)
+
+#Vitesse (-2.61496)
+
+
+t= 0.4
+#Parametre (0.706073)
+
+#Vitesse (-3.19209)
+
+
+t= 0.5
+#Parametre (0.355133)
+
+#Vitesse (-3.5094)
+
+
+t= 0.6
+#Parametre (0.00517641)
+
+#Vitesse (-3.49957)
+
+
+t= 0.7
+#Parametre (-0.310293)
+
+#Vitesse (-3.15469)
+
+
+t= 0.8
+#Parametre (-0.564261)
+
+#Vitesse (-2.53968)
+
+
+t= 0.9
+#Parametre (-0.74037)
+
+#Vitesse (-1.76109)
+
+
+t= 1
+#Parametre (-0.832693)
+
+#Vitesse (-0.923233)
+
+Pendule 7(vitesse de depart): 
+##Pendule
+           masse(m):    1
+        Longueur(L):    1
+ Frottement(lambda):    0
+
+P(vecteur position):    (1.5708)
+
+ Q(vecteur vitesse):    (1.5708)
+
+
+t= 0
+#Parametre (1.5708)
+
+#Vitesse (1.5708)
+
+
+t= 0.1
+#Parametre (1.62978)
+
+#Vitesse (0.589796)
+
+
+t= 0.2
+#Parametre (1.59083)
+
+#Vitesse (-0.389498)
+
+
+t= 0.3
+#Parametre (1.4538)
+
+#Vitesse (-1.3703)
+
+
+t= 0.4
+#Parametre (1.21934)
+
+#Vitesse (-2.34459)
+
+
+t= 0.5
+#Parametre (0.892774)
+
+#Vitesse (-3.26563)
+
+
+t= 0.6
+#Parametre (0.48981)
+
+#Vitesse (-4.02964)
+
+
+t= 0.7
+#Parametre (0.0406932)
+
+#Vitesse (-4.49116)
+
+
+t= 0.8
+#Parametre (-0.412414)
+
+#Vitesse (-4.53107)
+
+
+t= 0.9
+#Parametre (-0.826201)
+
+#Vitesse (-4.13787)
+
+
+t= 1
+#Parametre (-1.16785)
+
+#Vitesse (-3.41648)
+

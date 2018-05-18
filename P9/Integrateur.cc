@@ -6,6 +6,7 @@ using namespace std;
 		void IntegrateurEulerCromer::integre(Oscillateur& O, double t, double dt){
 			O.setQ(O.getQ() + dt * O.equation_evolution(t) );			//Methode d'integration
 			O.setP(O.getP() + dt * O.getQ()                 );
+			
 		}		
 
 		void IntegrateurEulerCromer::affiche_evol(Oscillateur O ) const {

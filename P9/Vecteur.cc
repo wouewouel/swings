@@ -11,7 +11,7 @@ using namespace std;
 			}else {
 				string Err_3("Les deux vecteurs ne sont pas de dimensions 3 !");
 				throw Err_3;
-				//jamais de return.. après throw car ça continu jamais apres
+				//jamais de return.. après throw car ça continue jamais apres
 				}
 			}		
 
@@ -130,7 +130,7 @@ using namespace std;
 	
 	Vecteur Vecteur::operator^(const Vecteur& autre){		//Renvoie le produit vectoriel
 		Vecteur result(0);
-			if (dimension_ok(autre) and dimension_3(autre)){
+			if (dimension_3(autre)){
 					result.augmente(coordonnees[1]*autre.getvalue(2)-coordonnees[2]*autre.getvalue(1)); //(U2*V3 - U3*V2)
 					result.augmente(coordonnees[2]*autre.getvalue(0)-coordonnees[0]*autre.getvalue(2)); //(U3*V1 - U1*V3)
 					result.augmente(coordonnees[0]*autre.getvalue(1)-coordonnees[1]*autre.getvalue(0)); //(U1*V2 - U2*V1)

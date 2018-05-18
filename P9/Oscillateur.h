@@ -18,6 +18,9 @@ class Oscillateur:public Dessinable {
 		
 		Oscillateur(double a,double x,SupportADessin* vue=nullptr): Dessinable(vue),P(a),Q(x){}				//Oscillateur de dimension 1
 		
+		Oscillateur(double a,double b,double c,double d,SupportADessin* vue=nullptr):						//Oscillateur de dimension 2
+		Dessinable(vue),P(a,b),Q(c,d){}
+		
 		Oscillateur(Vecteur P,Vecteur Q,SupportADessin* vue=nullptr):Dessinable(vue),P(P),Q(Q){				//Oscillateur de dimension quelconque
 			if (!(P.dimension_ok(Q))){
 				Vecteur nul;

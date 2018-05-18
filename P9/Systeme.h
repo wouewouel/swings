@@ -16,7 +16,7 @@ class Systeme : public Dessinable{
 		
 		Systeme(Systeme const&) = delete;								//On ne peut pas copier de systeme a cause des unique ptr
 
-		void ajoute(Oscillateur* o);									//Ajoute un oscillateur ausysteme
+		void ajoute(Oscillateur* o);									//Ajoute un oscillateur au systeme
 		
 		virtual void dessine()const override;							//Dessine tout le systeme
 			

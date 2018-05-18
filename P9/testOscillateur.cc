@@ -15,14 +15,14 @@ int main ()
 	Vecteur Q(3,4);
 	Oscillateur O3(P,Q);						//Constructeur avec des vecteurs en parametres
 	
-	
+	Oscillateur O3bis(O3);
 	//Test affichage
 	
-	cout<< O;
-	cout<<O1;
-	cout<<O2;
-	cout<<O3;
-	
+	cout<<"Oscillateur O:"<<endl<<O;
+	cout<<"Oscillateur O1:"<<endl<<O1;
+	cout<<"Oscillateur O2:"<<endl<<O2;
+	cout<<"Oscillateur O3:"<<endl<<O3;
+	cout<<"Oscillateur O3bis:"<<endl<<O3bis;
 	
 	//Test des methodes set et get
 	
@@ -31,6 +31,8 @@ int main ()
 		
 		Vecteur P2(1);
 		Vecteur Q2(1,2);
+	
+	//Test exception
 	try{
 		Oscillateur O4(P2,Q2);					//Test erreur avec constructeur
 	}

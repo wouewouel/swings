@@ -3,8 +3,9 @@
 
 
 using namespace std;
-
-void TextViewer::dessine() {} //	que mettre dedans ?
+	
+	//Methode dessin
+	void TextViewer::dessine() {} 
 		
 	void TextViewer::dessine(Pendule const& p){
 		cout<<p;
@@ -17,7 +18,24 @@ void TextViewer::dessine() {} //	que mettre dedans ?
     void TextViewer::dessine(Systeme const& s){
 	   		s.dessine();
 	  	}
-	  //Il faut bien que le système fasse appel au différentes fonctions dessine de ses oscillateurs
-	  void TextViewer::dessine(DoubleRessort const& dr){
+	  	
+	void TextViewer::dessine(DoubleRessort const& dr){
 			cout<< dr;
 		}
+	
+	//Methode dessin de phase	
+	void TextViewer::dessine_phase(Pendule const& p){
+		cout<<"Parametre: "<<p.getP()<<"     "<<"Vitesse: "<<p.getQ()<<endl;
+	}
+	
+	void TextViewer::dessine_phase(Ressort const& r){
+		cout<<"Parametre: "<<r.getP()<<"     "<<"Vitesse: "<<r.getQ()<<endl;
+	}
+	
+	void TextViewer::dessine_phase(Systeme const& s){
+		s.dessine_phase();
+	}
+	
+	void TextViewer::dessine_phase(DoubleRessort const& dr){
+		cout<<"Parametre: "<<dr.getP().getvalue(0)<<"     "<<"Vitesse: "<<dr.getQ().getvalue(0)<<endl;
+	}

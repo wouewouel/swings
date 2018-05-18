@@ -16,6 +16,11 @@ void Systeme::ajoute(Oscillateur* o){			//Ajoute un oscillateur au systeme
 				element->dessine();
 			}
 		}
+	void Systeme::dessine_phase()const{			//Dessine les phases de tout le systeme
+		for(auto const& element:systeme){
+			element->dessine_phase();
+		}
+	}
 		
 	void Systeme::evolue(double t,double dt){	//Fait evoluer tout le systeme
 		for(auto const& element:systeme){

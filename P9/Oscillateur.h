@@ -41,6 +41,7 @@ class Oscillateur:public Dessinable {
 		
 		virtual void dessine()const override{}	//Dessine un oscillateur
 		
+		virtual void dessine_phase()const override{}
 	
 	};
 	

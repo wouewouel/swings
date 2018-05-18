@@ -14,14 +14,14 @@ int main ()
 	Vecteur Q(0.0);
 	Ressort ressort2(0.25,0.33,0.15,a,P,Q);
 	Ressort ressort3(0.25,0.33,0.15,0.18,1,a);
-	
+	Ressort ressort3bis(ressort3);
 	
 	//Test operateur affichage
 	
 	cout<<"Ressort1:"<<endl<<ressort1;
 	cout<<"Ressort2:"<<endl<<ressort2;
 	cout<<"Ressort3:"<<endl<<ressort3;
-	
+	cout<<"Ressort3bis:"<<endl<<ressort3bis;
 	//Test equation evolution
 	
 	cout<<"Ressort 1:"<<endl<<"equation_evolution: ";

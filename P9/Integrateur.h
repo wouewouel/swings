@@ -22,9 +22,6 @@ class IntegrateurEulerCromer : public Integrateur {
 	
 class IntegrateurNewmark : public Integrateur{
 	private:
-	Vecteur q;
-	Vecteur r;
-	Vecteur s;
 	double parametre;
 	public:
 	
@@ -35,4 +32,12 @@ class IntegrateurNewmark : public Integrateur{
 	
 	void affiche_evol(Oscillateur O) const;									//Methode qui teste la
 	};																		//methode integre
-
+		
+																		
+class IntegrateurRungeKutta:public Integrateur{
+	public:
+	
+	virtual void integre(Oscillateur& O,double t,double dt) override;		//Methode d'integration
+	
+	void affiche_evol(Oscillateur O)const;									//Methode qui teste la
+};																			//methode integre

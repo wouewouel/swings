@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include "Oscillateur.h"
 #include "Integrateur.h"
 
@@ -21,12 +22,18 @@ class DoubleRessort:public Oscillateur{	//voir si on rajoute les longueurs en at
 		Vecteur a={1,0,0},Vecteur P={1.0,0},Vecteur Q={1.0,0},SupportADessin* vue=nullptr):	//Q et P doivent etre en dimension 2
 		Oscillateur(P,Q,vue),m1(m1),k1(k1),m2(m2),k2(k2),k3(k3),lambda(lambda){
 			A=a.normalise();
+			if((P.getcoord().size()!=2)or(Q.getcoord().size()!=2)){
+				std::string Err_dim_doubleressort("Erreur dimension des vecteurs");
+				throw Err_dim_doubleressort;
+			}
 		}
 		virtual Vecteur equation_evolution(double t)const override;							//Retourne le vecteur obtenu par l'equation d'evolution
 		
 		void testevolution(double dt,double tlimite);										//Methode qui teste la methode equation_evolution
 		
 		virtual void dessine()const override{support->dessine(*this);}						//Methode pour le dessin
+	
+		virtual void dessine_phase()const override{support->dessine_phase(*this);}			//Methode pour le dessin de phase
 	};
 	
 		std::ostream& operator<<(std::ostream& out,DoubleRessort const& doubleressort);		//Surchage operateur d'affichage

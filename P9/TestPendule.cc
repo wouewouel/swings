@@ -12,13 +12,13 @@ int main ()
 	
     Pendule pendule1(1,1,1);
     Pendule pendule2(1,1,0,M_PI/2,0);
-    
+    Pendule pendule2bis(pendule2);
     
     //Test operateur affichage
     
 	cout<<"Pendule 1: "<<endl<<pendule1;
 	cout<<"Pendule 2: "<<endl<<pendule2;
-	
+	cout<<"Pendule 2bis: "<<endl<<pendule2bis;
 	
 	//Test equation evolution
 	cout<<"Pendule 1: "<<endl;

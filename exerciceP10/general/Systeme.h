@@ -3,23 +3,23 @@
 #include <memory>
 #include "Oscillateur.h"
 #include "Integrateur.h"
-#include "support_a_dessin.h"
 
 class Systeme : public Dessinable{
-	
-	private:
-        std::vector<std::unique_ptr<Oscillateur>> systeme;
 
-        Integrateur& integrateur;//Il faut faire du polymorphisme !!!
-		
-	public:
-        Systeme(SupportADessin* vue,Integrateur& integrateur):
+    private:
+        std::vector<std::unique_ptr<Oscillateur>>systeme;
+
+        Integrateur* integrateur;
+
+    public:
+        Systeme(SupportADessin* vue,Integrateur* integrateur):
             Dessinable(vue),systeme(0),integrateur(integrateur){}
-		
-		void ajoute(Oscillateur* o);
-		
-        virtual void dessine()const ;
-			
-		void evolue(double t,double dt);
 
+        Systeme(Systeme const&) = delete;								//On ne peut pas copier de systeme a cause des unique ptr
+
+        void ajoute(Oscillateur* o);									//Ajoute un oscillateur au systeme
+
+        virtual void dessine()const override;							//Dessine tout le systeme
+
+        void evolue(double t,double dt);								//Fait evoluer tout le systeme
 };

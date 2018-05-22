@@ -2,8 +2,8 @@
 #include <vector>
 #include <memory>
 #include "Oscillateur.h"
-#include "Dessinable.h"
 #include "Integrateur.h"
+
 class Systeme : public Dessinable{
 	
 	private:
@@ -12,7 +12,8 @@ class Systeme : public Dessinable{
 		Integrateur* integrateur;	
 		
 	public:
-		Systeme(SupportADessin* vue,Integrateur* integrateur):Dessinable(vue),systeme(0),integrateur(integrateur){}
+		Systeme(SupportADessin* vue,Integrateur* integrateur):
+			Dessinable(vue),systeme(0),integrateur(integrateur){}
 		
 		Systeme(Systeme const&) = delete;								//On ne peut pas copier de systeme a cause des unique ptr
 

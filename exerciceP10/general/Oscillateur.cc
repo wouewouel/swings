@@ -37,7 +37,7 @@ using namespace std;
 			return sortie;
 			}
 			
-		void affiche_get(Oscillateur const& O, size_t const& t) {
+        void affiche_get(Oscillateur const& O, double t) {
 	  cout <<" Tests de get() : \n   de son parametre : " 
 		   << O.getP()        << "   de sa vitesse    : "
 		   << O.getQ() 		  << endl;

@@ -1,31 +1,30 @@
 #include <iostream>
 #include <vector>
-#include <memory>
 #include "Systeme.h"
-#include "Oscillateur.h"
-#include "Integrateur.h"
+
 
 using namespace std;
 
-void Systeme::ajoute(Oscillateur* o){
-	if(o!=nullptr){
+void Systeme::ajoute(Oscillateur* o){			//Ajoute un oscillateur au systeme
+    if(o!=nullptr){
         o->set_support(support);
-		systeme.push_back(unique_ptr<Oscillateur>(o));
-	}
+        systeme.push_back(unique_ptr<Oscillateur>(o));
+    }
 }
 
+    void Systeme::dessine()const{				//Dessine tout le systeme
+            for(auto const& element:systeme){
+                element->dessine();
+            }
+        }
 
-	void Systeme::dessine()const{
-			for(auto const& element:systeme){
-				element->dessine();
-			}
-		}
-		
-	void Systeme::evolue(double t,double dt){
-		for(auto const& element:systeme){
-            integrateur.integre(*element,t,dt);
-		}
-	}
+
+    void Systeme::evolue(double t,double dt){	//Fait evoluer tout le systeme
+        for(auto const& element:systeme){
+            integrateur->integre(*element,t,dt);
+        }
+    }
+
 
 /*
 Je sais que c'est dangereux car les oscillateurs possèdent un pointeur sur un support a dessin

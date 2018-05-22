@@ -59,7 +59,7 @@ class Oscillateur:public Dessinable {
 
 		std::ostream& operator<<(std::ostream& sortie, Oscillateur const& O) ;
 		
-		void affiche_get(Oscillateur const& O, size_t const& t); //methode pour tester les methodes get
+        void affiche_get(Oscillateur const& O, double t); //methode pour tester les methodes get
 		
 		void affiche_set(Oscillateur& O); //methode pour tester les methodes set
 	

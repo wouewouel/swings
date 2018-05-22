@@ -11,7 +11,6 @@ void VueOpenGL::dessine(Systeme const& a_dessiner)
 {
     prog.setUniformValue("vue_modele", matrice_vue);
     a_dessiner.dessine();
-//J'aimerai pouvoir translater la matrice_vue pour chque oscilateur
 }
 //**********************************************************//
 void VueOpenGL::dessine(Pendule const& P)  {
@@ -49,12 +48,24 @@ void VueOpenGL::dessine(Ressort const& R)  {
     //dessineAxes(origine); // dessine le repère principal
 
     prog.setUniformValue("vue_modele", matrice_vue*origine);
-
+/*
     glBegin(GL_LINES);
       prog.setAttributeValue(CouleurId, 1.0, 0.0, 1.0); //couleur
       prog.setAttributeValue(SommetId,  0.0, 0.0, 0.0);
 
       prog.setAttributeValue(CouleurId, 1.0, 1.0, 0.0); //couleur
+      prog.setAttributeValue(SommetId,  -R.get_P()*R.get_A(), 0.0, 0.0);
+    glEnd();
+
+*/
+    glBegin(GL_LINE_STRIP);
+      prog.setAttributeValue(CouleurId, 1.0, 0.0, 0.0); //couleur
+      prog.setAttributeValue(SommetId,  0.0, 0.0, 0.0);
+      for(double i(0.2); i<1 ; i+=0.2){                                               //pour le fun
+          prog.setAttributeValue(CouleurId, 1-i, i, 2*i ); //couleur                  //
+          prog.setAttributeValue(SommetId,  (-R.get_P()*R.get_A())*(i), 0.0, 0.0);    //
+      }                                                                               //
+      prog.setAttributeValue(CouleurId, 0.0, 1.0, .0); //couleur
       prog.setAttributeValue(SommetId,  -R.get_P()*R.get_A(), 0.0, 0.0);
     glEnd();
 }

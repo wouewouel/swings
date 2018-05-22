@@ -5,7 +5,7 @@
 int main(int argc, char* argv[])
 {
   QApplication a(argc, argv);
-  IntegrateurEulerCromer I;
+  Integrateur* I(new IntegrateurEulerCromer());
   GLWidget w(I);
   w.show();
 

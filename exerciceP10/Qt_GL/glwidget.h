@@ -26,13 +26,13 @@ public:
       Vecteur P3(-1,1);                                                     //oulaaaaa
       Vecteur Q3(0.12,0.11);
 
-      Oscillateur* r1(new Ressort(0.25,0.33,0.015,a2,P2,Q2,&vue));
-      Oscillateur* p1(new Pendule(1,1,0,M_PI/2,0,&vue));
+      Oscillateur* r1(new Ressort(0.25,0.33,0.05,a2,P2,Q2,&vue));
+      Oscillateur* p1(new Pendule(1,1,0.05,M_PI/2,0,&vue));
       Oscillateur* dr(new DoubleRessort(1,2,1,2,0.2,0.001,a2,P3,Q3,&vue));  //oulaaaaa
 
-      c.ajoute(r1);
-      c.ajoute(p1);
-      c.ajoute(dr);
+     c.ajoute(r1);
+     c.ajoute(p1);
+     c.ajoute(dr);
 
       //C'est ici qu'on initialise le système (ça ne marche pas si on le met dans init()..
 

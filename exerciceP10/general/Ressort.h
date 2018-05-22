@@ -35,7 +35,7 @@ class Ressort:public Oscillateur {
 		
     void affiche(std::ostream& out);
 
-	virtual void dessine()const override{support->dessine(*this);};
+    virtual void dessine()const override{support->dessine(*this);};
 
 };
 

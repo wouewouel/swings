@@ -27,6 +27,8 @@ class VueOpenGL : public SupportADessin {
   virtual void dessine(Pendule const& P) override;
   virtual void dessine(Ressort const& R) override;
   virtual void dessine(DoubleRessort const& dr) override;
+  virtual void dessinePhase(Oscillateur const& O) override;
+
 
   //************************************************************************//
 

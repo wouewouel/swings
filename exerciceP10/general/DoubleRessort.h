@@ -40,7 +40,7 @@ class DoubleRessort:public Oscillateur{
 		
 		void testevolution(double dt,double tlimite);
 		
-		virtual void dessine()const override{support->dessine(*this);};
+        virtual void dessine()const override{support->dessine(*this);};
 		
         double get_P1() const {return P.getvalue(0); } //utile pour la partie graphique
         double get_P2() const {return P.getvalue(1); } //utile pour la partie graphique

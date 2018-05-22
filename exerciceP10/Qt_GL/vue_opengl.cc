@@ -91,7 +91,9 @@ void VueOpenGL::dessine(DoubleRessort const& dr) {
     matrice.translate(dr.get_O1()+ dr.get_L1()+dr.get_P1(), dr.get_O2()+ 0.0, dr.get_O3()+0.0);
     matrice.scale(0.05);
     dessineSphere(matrice, 1.0, 0.0, 0.0);
+
      //******************************************************************//
+
     prog.setUniformValue("vue_modele", matrice_vue*origine);
 
     glBegin(GL_LINES);                                                          //deuxième boule
@@ -122,6 +124,24 @@ void VueOpenGL::dessine(DoubleRessort const& dr) {
      //******************************************************************//
 
 }
+
+//******************************************************************//
+  void VueOpenGL::dessinePhase(Oscillateur const& O) {    //dessine l'espace des phases !!
+
+      QMatrix4x4 origine;
+      origine.translate(O.get_O1(),O.get_O2(),O.get_O3()); // met les coord que t'as dans Doubleressort::Origine
+      dessineAxes(origine); // dessine le repère principal
+
+      pos_phase.push_back(O.getP().getvalue(0));
+      pos_phase.push_back(O.getQ().getvalue(0));
+
+      glBegin(GL_LINE_STRIP);
+       for(size_t i(0); i<pos_phase.size() ; i+=2){
+            prog.setAttributeValue(CouleurId, 0, 0, 1 ); //couleur
+            prog.setAttributeValue(SommetId,  pos_phase[i], pos_phase[i+1], 0.0);
+        }
+      glEnd();
+  }
 
 // ======================================================================
 void VueOpenGL::init()

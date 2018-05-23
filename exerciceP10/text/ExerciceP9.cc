@@ -76,6 +76,12 @@ int main ()
             s2.dessine();
             s2.evolue(t,dt);
         }
+        //test Phase
+            cout<<"##Test Portrait de phase :"<<endl<<endl;
+            for(double t(0);t<=0.07;t+=dt){
+                text->dessinePhase(*ressort2);
+                s2.evolue(t,dt);
+        }
         delete integrateur;
         delete integrateur2;
         delete text;

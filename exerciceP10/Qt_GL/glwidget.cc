@@ -44,7 +44,7 @@ void GLWidget::resizeGL(int width, int height)
 void GLWidget::paintGL()
 {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  vue.dessine(c);
+  if(dessine_normal) { vue.dessine(c); }
 }
 
 
@@ -113,6 +113,9 @@ void GLWidget::keyPressEvent(QKeyEvent* event)
   case Qt::Key_Space:
     pause();
     break;
+  case Qt::Key_P:
+    dessine_normal=(not dessine_normal);
+    break;
   };
 
   updateGL(); // redessine
@@ -142,3 +145,33 @@ void GLWidget::pause()
     timerId = 0;
   }
 }
+// ======================================================================
+void GLWidget::mousePressEvent(QMouseEvent* event)
+{
+  lastMousePosition = event->pos();
+}
+
+// ======================================================================
+void GLWidget::mouseMoveEvent(QMouseEvent* event)
+{
+  /* If mouse tracking is disabled (the default), the widget only receives
+   * mouse move events when at least one mouse button is pressed while the
+   * mouse is being moved.
+   *
+   * Pour activer le "mouse tracking" if faut lancer setMouseTracking(true)
+   * par exemple dans le constructeur de cette classe.
+   */
+
+  if (event->buttons() & Qt::LeftButton) {
+    constexpr double petit_angle(.4); // en degrés
+
+    // Récupère le mouvement relatif par rapport à la dernière position de la souris
+    QPointF d = event->pos() - lastMousePosition;
+    lastMousePosition = event->pos();
+
+    vue.rotate(petit_angle * d.manhattanLength(), d.y(), d.x(), 0);
+
+    updateGL();
+  }
+}
+

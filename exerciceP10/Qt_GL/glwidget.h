@@ -17,8 +17,8 @@ class GLWidget : public QGLWidget
  */
 {
 public:
-  GLWidget(Integrateur* I,QWidget* parent = nullptr)
-    : QGLWidget(parent) , c(&vue, I) {
+  GLWidget(Integrateur* I,QWidget* parent = nullptr, bool dessine_normal=true)
+    : QGLWidget(parent) , c(&vue, I), dessine_normal(dessine_normal) {
 
       Vecteur a2(0.8,0,0.6);
       Vecteur P2(0.18);
@@ -49,12 +49,17 @@ private:
   // Méthodes de gestion d'évènements
   virtual void keyPressEvent(QKeyEvent* event) override;
   virtual void timerEvent(QTimerEvent* event)  override;
+  virtual void mousePressEvent(QMouseEvent* event) override;
+  virtual void mouseMoveEvent(QMouseEvent* event)  override;
 
   // Méthodes de gestion interne
   void pause();
 
   // Vue : ce qu'il faut donner au contenu pour qu'il puisse se dessiner sur la vue
   VueOpenGL vue;
+
+  // position de la souris
+  QPointF lastMousePosition;
 
   // Timer
   int timerId;
@@ -63,6 +68,9 @@ private:
 
   // objets à dessiner, faire évoluer
   Systeme c;
+
+  // précise si on dessine le système ou le portrait de phase
+  bool dessine_normal;
 };
 
 #endif // GLWIDGET_H

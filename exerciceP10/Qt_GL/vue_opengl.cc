@@ -126,10 +126,10 @@ void VueOpenGL::dessine(DoubleRessort const& dr) {
 }
 
 //******************************************************************//
-  void VueOpenGL::dessinePhase(Oscillateur const& O) {    //dessine l'espace des phases !!
+  void VueOpenGL::dessinePhase(Oscillateur const& O) {                                                      //dessine l'espace des phases !!
 
       QMatrix4x4 origine;
-      origine.translate(O.get_O1(),O.get_O2(),O.get_O3()); // met les coord que t'as dans Doubleressort::Origine
+      origine.translate(O.get_O1(),O.get_O2(),O.get_O3()-4); // met les coord que t'as dans Doubleressort::Origine
       dessineAxes(origine); // dessine le repère principal
 
       pos_phase.push_back(O.getP().getvalue(0));
@@ -137,10 +137,14 @@ void VueOpenGL::dessine(DoubleRessort const& dr) {
 
       glBegin(GL_LINE_STRIP);
        for(size_t i(0); i<pos_phase.size() ; i+=2){
-            prog.setAttributeValue(CouleurId, 0, 0, 1 ); //couleur
+            prog.setAttributeValue(CouleurId, 0.2, 1, 2 ); //couleur cyan
             prog.setAttributeValue(SommetId,  pos_phase[i], pos_phase[i+1], 0.0);
         }
       glEnd();
+      QMatrix4x4 matrice ;
+      matrice.translate(O.get_O1()+pos_phase[pos_phase.size()-2],O.get_O2()+pos_phase.back(),O.get_O3()-4); // le -4 sert juste a rester dans le cadre
+      matrice.scale(0.02);
+      dessineSphere(matrice, 1.0, 0.0, 0.0);
   }
 
 // ======================================================================

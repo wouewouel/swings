@@ -19,11 +19,11 @@ Format : [fait/à faire] TACHE	Duree (en minutes)
 [V] graphisme: cadre général                              	180+
 [V] graphisme: Pendule                                     	180+
 [V] RessortDouble                                         	90+
-[ ] espace des phases                                     	??
+[V] Espace des phases                                     	120+
 [V] integrateur Newmark                                   	120+
-[ ] fichier CONCEPTION                                         	??
-[ ] fichier README                                        	??
-[ ] fichier NOMS                                        	??
+[V] fichier CONCEPTION                                         	20
+[V] fichier README                                        	30
+[V] fichier NOMS                                        	5
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # A FAIRE (PROCHAINE ETAPE)
@@ -96,16 +96,17 @@ Charles: Double oscillateur(double ressort)
 ## Semaine 11 :
 
 
-Ouriel: Graphisme
+Ouriel:	Graphisme
 
 Charles: Integrateur de Newmarck
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Semaine 12 :
+Ouriel:	Espace des phases
 
+Charles: Integrateur de RungeKutta, plus corrections de code
 
-
---------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Semaine 13 :
 
-
+Ouriel et Charles: Finalisation du projet, et resolution des details

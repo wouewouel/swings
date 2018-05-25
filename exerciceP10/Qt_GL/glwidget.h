@@ -17,8 +17,8 @@ class GLWidget : public QGLWidget
  */
 {
 public:
-  GLWidget(Integrateur* I,QWidget* parent = nullptr, bool dessine_normal=true)
-    : QGLWidget(parent) , c(&vue, I), dessine_normal(dessine_normal) {
+  GLWidget(Integrateur& I,QWidget* parent = nullptr, bool dessine_normal=true, size_t index=0)
+    : QGLWidget(parent) , c(&vue, I), dessine_normal(dessine_normal),index(index) {
 
       Vecteur a2(0.8,0,0.6);
       Vecteur P2(0.18);
@@ -71,6 +71,9 @@ private:
 
   // précise si on dessine le système ou le portrait de phase
   bool dessine_normal;
+
+  // précise le portrait de phase du i-ème oscillateur à afficher si dessine_normal est false
+  size_t index;
 };
 
 #endif // GLWIDGET_H

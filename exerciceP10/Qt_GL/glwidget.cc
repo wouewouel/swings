@@ -45,6 +45,9 @@ void GLWidget::paintGL()
 {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   if(dessine_normal) { vue.dessine(c); }
+  else {
+      vue.dessinePhase(c.get_ref_oscillateur(index));
+  }
 }
 
 
@@ -116,6 +119,11 @@ void GLWidget::keyPressEvent(QKeyEvent* event)
   case Qt::Key_P:
     dessine_normal=(not dessine_normal);
     break;
+  case Qt::Key_I:
+      if (index< c.nb_oscillateur()-1) {++index;} else { index=0; }
+        timerId = startTimer(20);                                       //repars à 0 pour chaque phase
+                                                                        //je cherche un moyen de vider l'écran à phaque fois
+      break;
   };
 
   updateGL(); // redessine

@@ -24,7 +24,7 @@ class SupportADessin{
 
         protected:
 
-        std::vector<double> pos_phase;
+        std::vector<double> pos_phase;          //avoir la position des composantes de P et Q à  chaque pas de temps
 
 
 };

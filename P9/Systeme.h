@@ -9,10 +9,10 @@ class Systeme : public Dessinable{
 	private:
 		std::vector<std::unique_ptr<Oscillateur>>systeme;
 		
-		Integrateur* integrateur;	
+		Integrateur& integrateur;	
 		
 	public:
-		Systeme(SupportADessin* vue,Integrateur* integrateur):
+		Systeme(SupportADessin* vue,Integrateur& integrateur):
 			Dessinable(vue),systeme(0),integrateur(integrateur){}
 		
 		Systeme(Systeme const&) = delete;								//On ne peut pas copier de systeme a cause des unique ptr

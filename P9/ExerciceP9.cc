@@ -21,7 +21,7 @@ int main ()
 		Vecteur Q1(1.0);
 		Oscillateur* r1(new Ressort(4,2,1,a1,P1,Q1,text));
 		Oscillateur* p1(new Pendule(5,2,1,5,8,text));
-		Integrateur* integrateur(new IntegrateurEulerCromer());
+		IntegrateurEulerCromer integrateur;
 		Systeme s(text,integrateur);
 		
 		
@@ -45,7 +45,7 @@ int main ()
 		
 		
 		//Test systeme avec Newmarck
-		Integrateur* integrateur2(new IntegrateurNewmark());
+		IntegrateurNewmark integrateur2;
 		Systeme s2(text,integrateur2);
 		Vecteur a2(0.8,0,0.6);
  		Vecteur P2(0.18);
@@ -74,8 +74,7 @@ int main ()
 			s2.dessine();
 			s2.evolue(t,dt);
 		}
-		delete integrateur;
-		delete integrateur2;
+		
 		delete text;
 		
 		return 0;

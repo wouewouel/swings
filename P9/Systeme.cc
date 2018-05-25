@@ -24,6 +24,6 @@ void Systeme::ajoute(Oscillateur* o){			//Ajoute un oscillateur au systeme
 		
 	void Systeme::evolue(double t,double dt){	//Fait evoluer tout le systeme
 		for(auto const& element:systeme){
-			integrateur->integre(*element,t,dt);
+			integrateur.integre(*element,t,dt);
 		}
 	}

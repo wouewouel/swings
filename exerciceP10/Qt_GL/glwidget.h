@@ -12,9 +12,7 @@
 
 
 class GLWidget : public QGLWidget
-/* La fenêtre hérite de QGLWidget ;
- * les événements (clavier, souris, temps) sont des méthodes virtuelles à redéfinir.
- */
+
 {
 public:
   GLWidget(Integrateur& I,QWidget* parent = nullptr, bool dessine_normal=true, size_t index=0)
@@ -23,12 +21,12 @@ public:
       Vecteur a2(0.8,0,0.6);
       Vecteur P2(0.18);
       Vecteur Q2(0);
-      Vecteur P3(-1,1);                                                     //oulaaaaa
+      Vecteur P3(-1,1);
       Vecteur Q3(0.12,0.11);
 
       Oscillateur* r1(new Ressort(0.25,0.33,0.05,a2,P2,Q2,&vue));
       Oscillateur* p1(new Pendule(1,1,0.05,M_PI/2,0,&vue));
-      Oscillateur* dr(new DoubleRessort(1,2,1,2,0.2,0.001,a2,P3,Q3,&vue));  //oulaaaaa
+      Oscillateur* dr(new DoubleRessort(1,2,1,2,0.2,0.001,a2,P3,Q3,&vue));
 
      c.ajoute(r1);
      c.ajoute(p1);

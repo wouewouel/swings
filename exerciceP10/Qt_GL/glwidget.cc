@@ -109,7 +109,7 @@ void GLWidget::keyPressEvent(QKeyEvent* event)
     vue.rotate(petit_angle, 0.0, 0.0, +1.0);
     break;
 
-  case Qt::Key_Home:
+  case Qt::Key_H:
     vue.initializePosition();
     break;
 
@@ -121,8 +121,7 @@ void GLWidget::keyPressEvent(QKeyEvent* event)
     break;
   case Qt::Key_I:
       if (index< c.nb_oscillateur()-1) {++index;} else { index=0; }
-        timerId = startTimer(20);                                       //repars à 0 pour chaque phase
-                                                                        //je cherche un moyen de vider l'écran à phaque fois
+      vue.init_pos_phase();
       break;
   };
 

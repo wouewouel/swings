@@ -9,17 +9,19 @@
 
 class TextViewer:public SupportADessin{
 	public:
-	
+	TextViewer(std::ostream& flot)
+    : flot(flot){}
+	virtual ~TextViewer() {}
+
 	//Methode de dessin
 	virtual void dessine() override;
 	virtual void dessine(Pendule const& p)override;
 	virtual void dessine(Ressort const& r)override; 
 	virtual void dessine(Systeme const& s)override;
 	virtual void dessine(DoubleRessort const& dr)override; 
+	virtual void dessinePhase(Oscillateur const& O) override;
 	
-	//Methode de dessin de phase
-	virtual void dessine_phase(Pendule const& p)override;
-	virtual void dessine_phase(Ressort const& r)override;
-	virtual void dessine_phase(Systeme const& s) override;
-	virtual void dessine_phase(DoubleRessort const& dr)override;
+	private:
+	std::ostream& flot;
+	
 };

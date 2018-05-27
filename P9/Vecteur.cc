@@ -5,7 +5,7 @@
 #include "Vecteur.h"
 using namespace std;
 
-	bool Vecteur::dimension_3(Vecteur const& autre) const { //On teste ici si les deux vecteurs sont de dimensions 3
+	bool Vecteur::dimension_3(Vecteur const& autre) const {	//On teste ici si les deux vecteurs sont de dimensions 3
 			if((coordonnees.size() == 3) and (autre.getcoord().size()==3)){
 				return true;
 			}else {
@@ -15,7 +15,7 @@ using namespace std;
 				}
 			}		
 
-	bool Vecteur::dimension_ok(Vecteur const& autre) const { //On teste ici si les dimensions sont bonnes
+	bool Vecteur::dimension_ok(Vecteur const& autre) const {//On teste ici si les dimensions sont bonnes
 			if(coordonnees.size() == (autre.getcoord()).size() ){
 				return true;
 			}else {

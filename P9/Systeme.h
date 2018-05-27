@@ -20,8 +20,6 @@ class Systeme : public Dessinable{
 		void ajoute(Oscillateur* o);									//Ajoute un oscillateur au systeme
 		
 		virtual void dessine()const override;							//Dessine tout le systeme
-		
-		virtual void dessine_phase()const override;						//Dessine les phases de tout le systeme
 			
 		void evolue(double t,double dt);								//Fait evoluer tout le systeme
 };

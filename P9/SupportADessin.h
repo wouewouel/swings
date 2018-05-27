@@ -1,8 +1,9 @@
 #pragma once
-
+#include <vector>
 class Pendule;
 class Ressort;
 class Systeme;
+class Oscillateur;
 class DoubleRessort;
 
 class SupportADessin{
@@ -20,11 +21,10 @@ class SupportADessin{
 	
 	virtual void dessine(DoubleRessort const&) = 0;
 	
-	virtual void dessine_phase(Pendule const&) = 0;
+	virtual void dessinePhase(Oscillateur const&) = 0;
 	
-	virtual void dessine_phase(Ressort const&) = 0;
-	
-	virtual void dessine_phase(Systeme const&) = 0;
-	
-	virtual void dessine_phase(DoubleRessort const&) =0;
+	protected:
+
+        std::vector<double> pos_phase;
+
 };

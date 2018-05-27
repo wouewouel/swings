@@ -20,16 +20,24 @@ class Ressort:public Oscillateur{
 	Oscillateur(P,Q,vue),m(m),k(k),lambda(lambda){						//On garde le constructeur avec des vecteurs?
 		A=a.normalise();
 	}
-	void affiche(std::ostream& out)const;								//Methode affichage des attributs du double ressort
+	
+	double get_m() const {return m;}
+	
+    double get_k()const {return k;}
+	
+    double get_lambda()const {return lambda;}
+	
+    double get_A()const {return A.norme();}
+
+    double get_P() const {return P.getvalue(0); } 						//Utile pour la partie graphique
 	
 	virtual Vecteur equation_evolution(double t)const override; 		//Fonction qui renvoie le vecteur de l'equation d'evolution
 	
 	void testevolution(double dt,double tlimite); 						//Fonction qui teste l'equation d'evolution
 		
+	void affiche(std::ostream& out)const;								//Methode affichage des attributs du double ressort
 	
 	virtual void dessine()const override{support->dessine(*this);};		//Methode pour le dessin
-	
-	virtual void dessine_phase()const override{support->dessine_phase(*this);};	//Methode dessin de phase
 };
 	std::ostream& operator<<(std::ostream& out,Ressort const& r);		//Surchage operateur affichage
 	

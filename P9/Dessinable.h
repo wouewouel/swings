@@ -1,14 +1,21 @@
 #pragma once
 #include "SupportADessin.h"
-class Dessinable{
-	protected:
-		SupportADessin* support;
-	public:
-		Dessinable(SupportADessin* support):support(support){}
-		
-		virtual ~Dessinable(){}						//On delete le pointeur dans le destructeur?
-		
-		virtual void dessine()const =0;				//Methode virtuelle pure pour dessiner
-		
-		virtual void dessine_phase()const =0;		//Methode virtuelle pure pour dessin de phase
-	};
+
+class Dessinable {
+ public:
+  Dessinable(SupportADessin* support)
+    : support(support)
+  {}
+  virtual ~Dessinable() {}
+  virtual void dessine() const  = 0;
+
+ protected:
+  /* Nous mettons un pointeur au lieu d'une référence *
+   * au cas où l'on voudrait changer de support (non  *
+   * implémenté ici), ou même copier un dessinable,   *
+   * échanger (swap) deux dessinables, etc.           *
+   * Il n'est pas nécessaire d'implémenter une copie  *
+   * profonde ici ; c'est bien une copie de surface   *
+   * dont nous avons besoin.                          */
+  SupportADessin* support;
+};

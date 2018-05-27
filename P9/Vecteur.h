@@ -12,8 +12,7 @@ class Vecteur{
 														
 		Vecteur():coordonnees({0}){}; 					//Constructeur vecteur nul
 		
-		Vecteur(double x):coordonnees({x}){}; 			//Constructeur vecteur dimension 1 j ai mis un char pour eviter le conflit 
-														//avec le premier constructeur, mais il faut trouver une solution                                                        
+		Vecteur(double x):coordonnees({x}){}; 			//Constructeur vecteur dimension 1                                                       
 		
 		Vecteur(double x,double y):coordonnees({x,y}){};//Constructeur vecteur en dimension 2
 		

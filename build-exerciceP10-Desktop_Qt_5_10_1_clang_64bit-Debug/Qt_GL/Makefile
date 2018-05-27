@@ -38,7 +38,7 @@ DISTNAME      = ex_P10_gl1.0.0
 DISTDIR = /Users/teemolefaible/Desktop/Projet/swings/build-exerciceP10-Desktop_Qt_5_10_1_clang_64bit-Debug/Qt_GL/.tmp/ex_P10_gl1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -stdlib=libc++ -std=c++11 -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.10 -Wl,-rpath,@executable_path/Frameworks -Wl,-rpath,/Users/teemolefaible/Qt/5.10.1/clang_64/lib
-LIBS          = $(SUBLIBS) -F/Users/teemolefaible/Qt/5.10.1/clang_64/lib -L../general -lgeneral -lOpengl32 -framework QtOpenGL -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework OpenGL -framework AGL 
+LIBS          = $(SUBLIBS) -F/Users/teemolefaible/Qt/5.10.1/clang_64/lib -L../general -lgeneral -framework QtOpenGL -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework OpenGL -framework AGL 
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
 SED           = sed

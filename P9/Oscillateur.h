@@ -9,6 +9,8 @@ class Oscillateur:public Dessinable {
 		Vecteur P; //Parametre
 	
 		Vecteur Q; //Vitesse
+		
+		Vecteur Origine;
 	
 	public:
 	
@@ -21,7 +23,8 @@ class Oscillateur:public Dessinable {
 		Oscillateur(double a,double b,double c,double d,SupportADessin* vue=nullptr):						//Oscillateur de dimension 2
 		Dessinable(vue),P(a,b),Q(c,d){}
 		
-		Oscillateur(Vecteur P,Vecteur Q,SupportADessin* vue=nullptr):Dessinable(vue),P(P),Q(Q){				//Oscillateur de dimension quelconque
+		Oscillateur(Vecteur P,Vecteur Q,SupportADessin* vue=nullptr,double xo=0,double yo=0,double zo=0):	//Oscillateur de dimension quelconque
+		Dessinable(vue),P(P),Q(Q),Origine(xo,yo,zo){				
 			if (!(P.dimension_ok(Q))){
 				Vecteur nul;
 				P=nul;
@@ -41,7 +44,11 @@ class Oscillateur:public Dessinable {
 		
 		virtual void dessine()const override{}	//Dessine un oscillateur
 		
-		virtual void dessine_phase()const override{}
+		void set_support(SupportADessin* const& S) {support=S;}
+
+        virtual double get_O1() const {return Origine.getvalue(0);}
+        virtual double get_O2() const {return Origine.getvalue(1);}
+        virtual double get_O3() const {return Origine.getvalue(2);}
 	
 	};
 	

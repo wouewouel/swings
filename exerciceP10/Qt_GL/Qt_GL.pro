@@ -27,5 +27,5 @@ HEADERS += \
 RESOURCES += \
     resource.qrc
 
-LIBS += -lOpengl32
+#LIBS += -lOpengl32
 #enlever le commentaire sous windows pour opengl32

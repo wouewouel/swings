@@ -1,10 +1,12 @@
 #include <iostream>
 #include "TextViewer.h"
 #include "Ressort.h"
+#include "DoubleRessort.h"
 #include "Pendule.h"
 #include "Systeme.h"
 #include "Integrateur.h"
 #include "constantes.h"
+#include "SupportADessin.h"
 #include <cmath>
 
 
@@ -13,7 +15,7 @@ using namespace std;
 
 int main ()
 {
-		SupportADessin* text(new TextViewer());
+		SupportADessin* text(new TextViewer(cout));
 		//Test systeme avec Euler Cromer
 		
 		Vecteur a1(1,0,0);
@@ -74,7 +76,12 @@ int main ()
 			s2.dessine();
 			s2.evolue(t,dt);
 		}
-		
+		//Test Phase
+            cout<<"##Test Portrait de phase :"<<endl<<endl;
+            for(double t(0);t<=0.07;t+=dt){
+                text->dessinePhase(*ressort2);
+                s2.evolue(t,dt);
+        }
 		delete text;
 		
 		return 0;

@@ -12,7 +12,7 @@ class Integrateur {															//Classe abstraite
 	};
 	
 
-class IntegrateurEulerCromer : public Integrateur {
+class IntegrateurEulerCromer :public Integrateur {
 	public:
 		virtual void integre(Oscillateur& O, double t, double dt)override;	//Methode d'integration
 		
@@ -20,13 +20,13 @@ class IntegrateurEulerCromer : public Integrateur {
 	};																		//methode integre
 	
 	
-class IntegrateurNewmark : public Integrateur{
+class IntegrateurNewmark :public Integrateur{
 	private:
 	double parametre;
 	public:
 	
 	IntegrateurNewmark(double parametre=0.000001):parametre(parametre){};	//Constructeur pour definir le
-																			//parametre de l'integrateur
+																			//parametre de l'integrateur que l'on met par defaut si pas de valeur
 																			
 	virtual void integre(Oscillateur& O,double t,double dt) override;		//Methode d'integration
 	

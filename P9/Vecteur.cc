@@ -33,7 +33,7 @@ using namespace std;
 			if(dim <= coordonnees.size() ){
 				coordonnees[dim-1] = modif;
 			}else {
-				string Err_segm_fault("le vecteur ne possède pas autant de dimension(s) !");
+				string Err_segm_fault("Le vecteur ne possède pas autant de dimension(s) !");
 				throw  Err_segm_fault;
 				}
 			}		
@@ -63,12 +63,13 @@ using namespace std;
 		Vecteur retour;
 		retour=*this;
 		if (norm!=0){
-		for(size_t i(0);i<coordonnees.size();++i){
-			retour.set_coord(i+1,retour.getvalue(i)/norm);
+			for(size_t i(0);i<coordonnees.size();++i){
+				retour.set_coord(i+1,retour.getvalue(i)/norm);
+			}
+		}else{
+			string err_normalise("Impossible de normaliser le vecteur nul");
+			throw err_normalise;
 		}
-	}else{
-		cerr<<"Impossible de normaliser le vecteur nul"<<endl;
-	}
 		return retour;
 	}
 	//Surchage operateurs

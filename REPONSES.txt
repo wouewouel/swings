@@ -138,7 +138,7 @@ Expliquez votre conception (attributs, interface, ...).
 Il s'agit d'une sous classe de la super classe Dessinable, elle possede un tableau de pointeurs sur des oscillateurs en prive, ainsi que la  methode <dessine()> qui appelle la methode dessine de chaque oscillateur qui la compose.
 Elle possède aussi une méthode évolue qui fait avancer chaque oscillateur d'un pas de temps ainsi qu'une méthode ajoute pour ajouter un pointeur vers un oscillateur au tableau des pointeurs.
 On supprime aussi explicitement le constructeur de copie par defaut a cause des unique_ptr.
-De plus, on rajoute un pointeur vers un integrateur en attribut pour pouvoir choisir l'integrateur utilise dans la fonction evolue.
+De plus, on rajoute une reference vers un integrateur en attribut pour pouvoir choisir l'integrateur utilise dans la fonction evolue.
 
 **********************************************************************************************************************************************************************************
 
@@ -154,8 +154,8 @@ On implemente le nouvel oscillateur "Double ressort". On le conçoit comme un nou
 **********************************************************************************************************************************************************************************
 
 [Question P13.1] Où cela s'intègre-t-il dans votre projet/conception ? Quels changements cela engendre ? V
-L'integrateur de Newmarck est un integrateur. Ainsi on le conçoit comme une sous classe de la super classe Integrateur.
-On modifie la classe Systeme pour pouvoir choisir son integrateur. On passera donc par pointeur sur un integrateur pour le polymorphisme.
+L'integrateur de Newmarck et de Runge-Kutta sont des integrateurs. Ainsi on les conçoit comme des sous classes de la super classe Integrateur.
+On modifie la classe Systeme pour pouvoir choisir son integrateur. On passera donc par reference sur un integrateur pour le polymorphisme.
 
 **********************************************************************************************************************************************************************************
 

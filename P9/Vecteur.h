@@ -16,7 +16,7 @@ class Vecteur{
 		
 		Vecteur(double x,double y):coordonnees({x,y}){};//Constructeur vecteur en dimension 2
 		
-		Vecteur(double x,double y,double z):coordonnees({x,y,z}){}; 	//Constructeur vecteur R3
+		Vecteur(double x,double y,double z):coordonnees({x,y,z}){}; 	//Constructeur vecteur en dimension 3
 		
 		bool dimension_ok(Vecteur const& autre) const; 	//On teste ici si les dimensions sont bonnes, public car on l'utilise
 														//pour un constructeur d'oscillateur

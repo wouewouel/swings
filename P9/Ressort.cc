@@ -1,10 +1,9 @@
 #include <iostream>
-#include <string>
 #include <iomanip>
 #include "Ressort.h"
 using namespace std;
 
-	void Ressort::affiche(std::ostream& out)const{						//Methode affichage des attributs du double ressort
+	void Ressort::affiche(std::ostream& out)const{						//Methode affichage des attributs du ressort
 		constexpr int col1(5);
 		constexpr int col2(20);
 		out<<"##Ressort"<<endl;

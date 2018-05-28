@@ -14,7 +14,6 @@ class TextViewer:public SupportADessin{
 	virtual ~TextViewer() {}
 
 	//Methode de dessin
-	virtual void dessine() override;
 	virtual void dessine(Pendule const& p)override;
 	virtual void dessine(Ressort const& r)override; 
 	virtual void dessine(Systeme const& s)override;

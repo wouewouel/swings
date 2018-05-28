@@ -12,24 +12,26 @@ class Ressort:public Oscillateur{
 	
 	public:
 	
-	Ressort(double m,double k,double lambda,Vecteur a={1,0,0},Vecteur P={1},Vecteur Q={1},SupportADessin* vue=nullptr):
-	Oscillateur(P,Q,vue),m(m),k(k),lambda(lambda){						//On definit les vecteurs par defaut 
-		A=a.normalise();												//au cas ou on oublie de les mettre en arguments
+	Ressort(double m,double k,double lambda,Vecteur a={1,0,0},Vecteur P={1},Vecteur Q={1},
+	SupportADessin* vue=nullptr,double xo=-2 ,double yo=-2.0,double zo=0):
+	Oscillateur(P,Q,vue,xo,yo,zo),m(m),k(k),lambda(lambda){						//On definit les vecteurs par defaut 
+		A=a.normalise();														//au cas ou on oublie de les mettre en arguments
 	}
-	Ressort(double m,double k,double lambda,double P,double Q,Vecteur a={1,0,0},SupportADessin* vue=nullptr):// constructeurs avec des doubles
-	Oscillateur(P,Q,vue),m(m),k(k),lambda(lambda){						//On garde le constructeur avec des vecteurs?
+	Ressort(double m,double k,double lambda,double P,double Q,Vecteur a={1,0,0},
+	SupportADessin* vue=nullptr,double xo=-2 ,double yo=-2.0,double zo=0):		//Constructeurs avec des doubles
+	Oscillateur(P,Q,vue,xo,yo,zo),m(m),k(k),lambda(lambda){						//On garde le constructeur avec des vecteurs?
 		A=a.normalise();
 	}
 	
-	double get_m() const {return m;}
-	
-    double get_k()const {return k;}
-	
-    double get_lambda()const {return lambda;}
-	
-    double get_A()const {return A.norme();}
-
-    double get_P() const {return P.getvalue(0); } 						//Utile pour la partie graphique
+	double get_m() const {return m;}									//Utile pour la partie graphique
+																		//
+    double get_k()const {return k;}										//
+																		//
+    double get_lambda()const {return lambda;}							//
+																		//
+    double get_A()const {return A.norme();}								//
+																		//
+    double get_P() const {return P.getvalue(0); } 						//
 	
 	virtual Vecteur equation_evolution(double t)const override; 		//Fonction qui renvoie le vecteur de l'equation d'evolution
 	

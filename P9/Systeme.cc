@@ -7,6 +7,7 @@ using namespace std;
 
 void Systeme::ajoute(Oscillateur* o){			//Ajoute un oscillateur au systeme
 	if(o!=nullptr){
+		o->set_support(support);
 		systeme.push_back(unique_ptr<Oscillateur>(o));
 	}
 }

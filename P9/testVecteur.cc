@@ -99,13 +99,16 @@ cout<<"norme de v3 au carre= "<<v3.norme2()<<endl<<endl;
 Vecteur v4(1,2,3);
 cout<<"Version normalisee de v4"<<v4.normalise()<<endl;					
 cout<<"v4= "<<v4<<endl;						//v4 n'est pas modifie
-Vecteur v5;
-cout<<v5<<endl;
-cout<<v5.normalise();
-
 
 //Test des exceptions
-
+Vecteur v5;
+cout<<v5<<endl;
+try{
+	cout<<v5.normalise();						//Test erreur normalise
+}
+catch(string erreur){
+	cerr<<erreur<<endl;
+}
 Vecteur v6(4,5,6);
 Vecteur v7(2,3);
 try{

@@ -11,8 +11,6 @@ class SupportADessin{
 	
 	virtual ~SupportADessin(){}
 	
-	virtual void dessine() =0;
-	
 	virtual void dessine(Pendule const&) = 0;
 	
 	virtual void dessine(Ressort const&) = 0;
@@ -25,6 +23,6 @@ class SupportADessin{
 	
 	protected:
 
-        std::vector<double> pos_phase;
+        std::vector<double> pos_phase;				//Composantes de P et Q à chaque pas de temps
 
 };

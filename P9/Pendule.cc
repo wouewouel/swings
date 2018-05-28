@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <cmath>
 #include <iomanip>
 #include "Pendule.h"
@@ -8,7 +6,7 @@
 using namespace std;
 double g(9.81);
 
-void Pendule::affiche(ostream& out)const{							//Methode affichage des attributs du double ressort
+void Pendule::affiche(ostream& out)const{							//Methode affichage des attributs du pendule
 	constexpr int col1(5);
 	constexpr int col2(20);
 	out<<"##Pendule"<<endl;

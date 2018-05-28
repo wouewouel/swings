@@ -5,14 +5,13 @@
 using namespace std;
 	
 	//Methode dessin
-	void TextViewer::dessine() {} 
 		
 	void TextViewer::dessine(Pendule const& p){
-		cout<<p;
+		flot<<p;
 		}
 
 	void TextViewer::dessine(Ressort const& r){
-		cout<<r;
+		flot<<r;
 		} 
 
     void TextViewer::dessine(Systeme const& s){
@@ -20,7 +19,7 @@ using namespace std;
 	  	}
 	  	
 	void TextViewer::dessine(DoubleRessort const& dr){
-			cout<< dr;
+			flot<< dr;
 		}
 	
 	

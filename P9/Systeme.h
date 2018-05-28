@@ -22,4 +22,9 @@ class Systeme : public Dessinable{
 		virtual void dessine()const override;							//Dessine tout le systeme
 			
 		void evolue(double t,double dt);								//Fait evoluer tout le systeme
+		
+		size_t nb_oscillateur() const {return systeme.size();}			//Retourne le nombre d'oscillateur
+
+        const Oscillateur& get_ref_oscillateur(size_t i) const {return *systeme[i];   }
+        //on garde l'encapsulation, car c'est juste un reference constante
 };

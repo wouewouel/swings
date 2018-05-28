@@ -17,7 +17,6 @@ int main ()
 {
 		SupportADessin* text(new TextViewer(cout));
 		//Test systeme avec Euler Cromer
-		
 		Vecteur a1(1,0,0);
 		Vecteur P1(1.0);
 		Vecteur Q1(1.0);
@@ -26,19 +25,19 @@ int main ()
 		IntegrateurEulerCromer integrateur;
 		Systeme s(text,integrateur);
 		
-		
 		//Test ajoute
 		
 		s.ajoute(r1);													//Pour un ressort
 		s.ajoute(p1);													//Pour un pendule
 		
-		
 		//Test dessine
-		cout<<"Test dessin:"<<endl<<endl;
+		cout<<"Test dessin:"<<endl;
+		cout<<1;
 		r1->dessine();													//Pour un ressort
-		p1->dessine();													//Pour un pendule
-		s.dessine();													//Pour un systeme
-		
+		cout<<2;
+		//p1->dessine();													//Pour un pendule
+		cout<<3;
+		//s.dessine();													//Pour un systeme
 		
 		//Test evolue
 		cout<<"Test evolue:"<<endl<<endl;
@@ -76,6 +75,7 @@ int main ()
 			s2.dessine();
 			s2.evolue(t,dt);
 		}
+		
 		//Test Phase
             cout<<"##Test Portrait de phase :"<<endl<<endl;
             for(double t(0);t<=0.07;t+=dt){

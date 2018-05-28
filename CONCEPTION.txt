@@ -1,1 +1,62 @@
-  
+Conception
+
+Classe Vecteur:
+La classe Vecteur est représentée par un vector de double, qui sont ses coordonnees.
+Elle possede plusieurs constructeur permettant d'initialiser des vecteurs de dimensions differentes. Cette classe est munie de plusieurs méthodes permettant  des modifier les coordonnees du vecteur ou de les connaitre, ainsi que des méthodes en rapport avec sa norme. Differents operateur ont ete surcharges afin de faciliter l'utilisation des vecteurs, comme l'opérateur + ou <<.
+
+
+Classe Support a dessin:
+La classe Support a dessin possede plusieurs méthodes virtuelles pures, ce qui fait d'elle une classe abstraite. Ces méthodes permettent le dessin de plusieurs oscillateurs qu'on définira plus tard. Elle possede un destructeur virtuel, et un vector de vecteurs contenant des vecteurs pour l'affichage des phases.
+
+
+Classe Dessinable:
+La classe Dessinable possede un pointeur vers un support a dessin. Elle possede une methode virtuelle pure ce qui fait d'elle une classe abstraite. Ainsi que d'un destructeur virtuel et un constructeur qui initialise le support.
+
+
+Classe Oscillateur:
+Un oscillateur est un objet dessinable, ainsi Oscillateur est une sous classe de la classe Dessinable.
+La classe Oscillateur est representee par trois vecteurs qui sont sa position, sa vitesse, et la position de son origine.
+Elle est munie de plusieurs constructeurs pour des oscillateurs de differentes dimensions.
+Elle possede différentes methodes pour acceder et modifier ses attributs, necessaire entre autre pour la partie graphique. De plus elle a des methodes pour le dessin et pour son equation d'evolution. On surchargera l'opérateur <<, pour l'affichage.
+
+
+Classe Pendule:
+Un pendule est un oscillateur, ainsi Pendule est une sous classe de la classe Oscillateur.
+Un pendule possede une masse, une longueur et un coefficient de frottement.
+La classe Pendule possede plusieurs méthodes dont des getters utiles a l'affichage graphique. Parmi ces méthodes il y a aussi un constructeur, une methode utile pour faire évoluer le pendule, l'afficher, et le dessiner. On surchargera l'opérateur <<, pour l'affichage.
+
+
+Classe Ressort:
+Un ressort est un oscillateur, ainsi Ressort est une sous classe de la classe Oscillateur.
+Un ressort possede une masse, une longueur, une constante de raideur, un coefficient de frottement et un axe represente par un vecteur unitaire.
+La classe Ressort possede plusieurs méthodes dont des getters utiles a l'affichage graphique. Parmi ces methodes il y a aussi un constructeur, une methode utile pour faire évoluer le ressort, l'afficher, et le dessiner. On surchargera l'opérateur <<, pour l'affichage.
+
+
+Classe DoubleRessort:
+Un double ressort est un oscillateur, ainsi DoubleRessort est une sous classe de la classe Oscillateur.
+Un double ressort possede deux masses, trois longueurs, trois constantes de raideur, un coefficient de frottement et un axe represente par un vecteur unitaire.
+La classe DoubleRessort possede plusieurs méthodes dont des getters utiles a l'affichage graphique. Parmi ces méthodes il y a aussi un constructeur, une methode utile pour faire évoluer le double ressort, l'afficher, et le dessiner. On surchargera l'opérateur <<, pour l'affichage.
+
+
+Classe Integrateur:
+Un integrateur est une classe possédant une methode intègre qui est virtuelle pure, ce qui en fait une classe abstraite. Elle possede aussi un destructeur virtuel. La methode intègre permettra de faire evoluer un oscillateur selon l'intégrateur utilise.
+
+
+Classe IntegrateurEulerCromer:
+Un integrateur d'Euler-Cromer est un integrateur, ainsi IntegrateurEulerCromer est une sous classe de la classe Integrateur. Elle possede une methode integre ,et une methode affiche_evol pour tester la methode integre. La methode integre permet de faire evoluer un oscillateur selon un pas de temps choisi en utilisant l'equation d'evolution de ce dernier.
+
+
+Classe IntegrateurNewmarck:
+Un integrateur de Newmarck est un integrateur, ainsi IntegrateurNewmarck est une sous classe de la classe Integrateur. Elle possede une methode integre ,et une methode affiche_evol pour tester la methode integre. La methode integre permet de faire evoluer un oscillateur selon un pas de temps choisi en utilisant l'equation d'evolution de ce dernier.
+
+
+Classe IntegrateurRungeKutta:
+Un integrateur de Runge-Kutta est un integrateur, ainsi IntegrateurRungeKutta est une sous classe de la classe Integrateur. Elle possede une methode integre ,et une methode affiche_evol pour tester la methode integre. La methode integre permet de faire evoluer un oscillateur selon un pas de temps choisi en utilisant l'equation d'evolution de ce dernier.
+
+
+Classe TextViewer:
+Textviewer est un support a dessin, ainsi TextViewer est la sous classe de la classe SupportADessin. Elle possede un flot en attribut que l'on peut choisir a travers le constructeur. Elle possede plusieurs méthodes pour dessiner les oscillateurs et le système qui consistent a l'afficher sur le flot choisi précédemment. Elle peut aussi dessiner les phases d'un oscillateur.
+
+
+
+

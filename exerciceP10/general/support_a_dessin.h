@@ -26,6 +26,8 @@ class SupportADessin{
 
         std::vector<double> pos_phase;          //avoir la position des composantes de P et Q à  chaque pas de temps
 
+        //on a choisit cette implémentation car à chaque fois on affiche qu'une seule phase donc pas besoinn de stocker
+        //toutes les position dans les oscillateurr : on dupliquerai du code inutilement
 
 };
 

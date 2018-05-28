@@ -14,6 +14,7 @@ class VueOpenGL : public SupportADessin {
   // méthodes de (ré-)initialisation
   void init();
   void initializePosition();
+  void init_pos_phase() { pos_phase.clear(); }
 
   // méthode set
   void setProjection(QMatrix4x4 const& projection)

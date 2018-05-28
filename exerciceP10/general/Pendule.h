@@ -17,24 +17,25 @@ class Pendule:public Oscillateur{
         :	Oscillateur(P,Q,vue,xo,yo,zo),m(m),L(L),lambda(lambda){}
                                         //P et Q sont en dimension 1 donc on les initialise avec des double
                                         //le constructeur d'oscillateur les convertira en vecteur
-    double get_P() const {return P.getvalue(0); }
 
-    double get_Q()const {return Q.getvalue(0);}
+    double get_P() const {return P.getvalue(0); }                //Les getters sont utiles pour la version graphique uniquement
 
-    double get_m() const {return m;}
-	
-    double get_L() const {return L;}
-	
-    double get_lambda() const {return lambda;}
-	
-    void testevolution(double dt,double tfinal);
-	
-    virtual Vecteur equation_evolution(double t) const override;
+    double get_Q()const {return Q.getvalue(0);}                  //
 
-    void affiche(std::ostream& out);
+    double get_m() const {return m;}                             //
 	
-    virtual void dessine()const override{support->dessine(*this);}
+    double get_L() const {return L;}                             //
+	
+    double get_lambda() const {return lambda;}                   //
+	
+    void testevolution(double dt,double tfinal);                 //Fonction qui teste l'equation d'evolution
+	
+    virtual Vecteur equation_evolution(double t) const override; //Fonction qui renvoie le vecteur de l'equation d'evolution
+
+    void affiche(std::ostream& out);                             //Methode affichage des attributs du pendule
+	
+    virtual void dessine()const override{support->dessine(*this);} //Methode pour le dessin
 
    };
 
-std::ostream& operator<<(std::ostream& out,Pendule pendule);
+std::ostream& operator<<(std::ostream& out,Pendule pendule);     //Surchage operateur affichage

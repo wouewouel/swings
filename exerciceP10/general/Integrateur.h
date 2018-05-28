@@ -7,7 +7,7 @@
 class Integrateur {															//Classe abstraite
     public:
         virtual void integre(Oscillateur& O, double t, double dt)=0;		//Methode d'integration virtuelle pure
-
+        virtual void affiche_evol(Oscillateur O) const =0;
         virtual ~Integrateur(){};
     };
 
@@ -16,7 +16,7 @@ class IntegrateurEulerCromer : public Integrateur {
     public:
         virtual void integre(Oscillateur& O, double t, double dt)override;	//Methode d'integration
 
-        void affiche_evol(Oscillateur O) const;								//Methode qui teste la
+        virtual void affiche_evol(Oscillateur O) const override;			//Methode qui teste la
     };																		//methode integre
 
 
@@ -30,7 +30,7 @@ class IntegrateurNewmark : public Integrateur{
 
     virtual void integre(Oscillateur& O,double t,double dt) override;		//Methode d'integration
 
-    void affiche_evol(Oscillateur O) const;									//Methode qui teste la
+        virtual void affiche_evol(Oscillateur O) const override;			//Methode qui teste la
     };																		//methode integre
 
 
@@ -39,5 +39,5 @@ class IntegrateurRungeKutta:public Integrateur{
 
     virtual void integre(Oscillateur& O,double t,double dt) override;		//Methode d'integration
 
-    void affiche_evol(Oscillateur O)const;									//Methode qui teste la
+        virtual void affiche_evol(Oscillateur O) const override;			//Methode qui teste la
 };																			//methode integre

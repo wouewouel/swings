@@ -109,7 +109,7 @@ void GLWidget::keyPressEvent(QKeyEvent* event)
     vue.rotate(petit_angle, 0.0, 0.0, +1.0);
     break;
 
-  case Qt::Key_H:
+  case Qt::Key_H:                                       //remet le point de vue de base tout propre
     vue.initializePosition();
     break;
 
@@ -117,11 +117,14 @@ void GLWidget::keyPressEvent(QKeyEvent* event)
     pause();
     break;
   case Qt::Key_P:
-    dessine_normal=(not dessine_normal);
+    dessine_normal=(not dessine_normal);                // Passage de l'affichage du systeme à l'affcihage du portrait de phase
+    vue.init_pos_phase();                               // numero i tout en réinitialisant le dit sistème
+    c.reset_systeme();
     break;
   case Qt::Key_I:
-      if (index< c.nb_oscillateur()-1) {++index;} else { index=0; }
-      vue.init_pos_phase();
+      if (index< c.nb_oscillateur()-1) {++index;} else { index=0; }     // Permet de changer l'affichage du portrait de phase
+      vue.init_pos_phase();                                             // en live et de passer à l'oscillateur suivant, tout
+      c.reset_systeme();                                                // en réinitialisant le systeme
       break;
   };
 

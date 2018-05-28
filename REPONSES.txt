@@ -53,13 +53,12 @@ Non, puisque le constructeur de copie par défaut suffit, en effet la copie d'un 
 
 [Question P4.2] Si l'on souhaitait ajouter un constructeur par coordonnees spheriques (deux angles et une longueur) pour les vecteurs de dimension 3,  X
 a] que cela impliquerait-il au niveau des attributs de la classe ?	
-
-Les attributs de la classe seraient des approximations
 b] quelle serait la difficulte majeure (voire l'impossibilite) de sa realisation en C++ ? 
   (C'est d'ailleurs pour cela qu'on ne vous demande pas de faire un tel constructeur !)
 
 
-
+a) Au lieu d'avoir 3 vecteurs, on aurait 2 angle et un vecteur, et on aurait d˚ changer toutes les mÈthodes
+b) 
 La machine devra calculer les nombreux vecteurs en temps reel en fonction des angles et les vecteurs peuvent etre errones du fait de l'accumulation des approximations.
 
 
@@ -94,18 +93,18 @@ std::ostream& operator <<(std::ostream& out,Vecteur v);	//Operateur d'affichage
 
 [Question P6.1] Comment avez vous concu votre classe Integrateur ?V
 
-La classe Integrateur  possede une methode  < integre(Oscillateur& O, double t, double dt) > dans l'interface publique, par ailleurs cette methode n'est pas definie a proprement parler mais est simplement declaree car nous nous en servirons plus tard pour le polymorphisme. Elle possede aussi un destructeur virtuel.
+La classe Integrateur  possede une methode   Integrateur::integre(Oscillateur& O, double t, double dt) dans l'interface publique, par ailleurs cette methode est virtuelle pure : nous nous en servirons plus tard pour le polymorphisme. Elle possede aussi un destructeur virtuel et une autre mÈthode virtuelle pure pour l'affichage afin de faire du polymorphisme lorsqu'on aura plusieurs integrateurs.
 
 **********************************************************************************************************************************************************************************
 
 [Question P6.2] Quelle est la relation entre les classes Integrateur et IntegrateurEulerCromer ? V
 
 IntegrateurEulerCromer  est une sous classe de la super classe Integrateur, puisque qu'un IntegrateurEulerCromer est un integrateur.
-Ici on definit explicitement la fonction <integre(...)> et on a rajoute une fonction < affiche_evol(Oscillateur O) > qui permet de simplifier le programme de test. 
+Ici on definit explicitement la fonction IntegrateurEuleurCromer::integre(...) et on a dÈfinit la fonction IntegrateurEuleurCromer::affiche_evo(Oscillateur O) qui permet de simplifier le programme de test. 
 
 **********************************************************************************************************************************************************************************
 
-[Question P7.1] Comment se situent ces classes par rapport a la classe Oscillateur définie la semaine passee ?V
+[Question P7.1] Comment se situent ces classes par rapport a la classe Oscillateur definie la semaine passee ?V
 
 Les pendules et les ressorts sont des oscillateurs, ainsi la classe Pendule et la classe Ressort sont toutes les deux des sous classes de la super classe Oscillateur.
 
@@ -113,13 +112,13 @@ Les pendules et les ressorts sont des oscillateurs, ainsi la classe Pendule et l
 
 [Question P8.1] En termes de POO, quelle est donc la nature de la methode dessine() ?V 
 
-La methode dessine() est une methode virtuelle car tous les differents objets dessinantes devront la redefinir dans le cadre du polymorphisme.
+La methode dessine() est une methode virtuelle pure car tous les differents objets dessinables devront la redefinir dans le cadre du polymorphisme.
 
 **********************************************************************************************************************************************************************************
 
 [Question P8.2] Quelle est la bonne facon de le faire dans un cadre de programmation orientee-objet ? 
 
-La classe Systeme devra avoir une collections de differents oscillateurs possibles dont nous invoquerons, au travers de l'integrateur grâce a une methode evolue, les fonctions f ª de sorte que chacun reagisse suivant ses caracteristiques propres. 
+La classe Systeme devra avoir une collections de differents oscillateurs possibles dont nous invoquerons, au travers de l'integrateur grace a une methode evolue, les fonctions f ª de sorte que chacun reagisse suivant ses caracteristiques propres. 
 
 Nous allons creer un tableau de pointeur sur Oscillateur pour verifier la deuxieme condition du polymorphisme et utiliser des methodes virtuelles.
 
@@ -136,25 +135,40 @@ On utilisera donc des unique_ptr.
 Expliquez votre conception (attributs, interface, ...). 
 
 Il s'agit d'une sous classe de la super classe Dessinable, elle possede un tableau de pointeurs sur des oscillateurs en prive, ainsi que la  methode <dessine()> qui appelle la methode dessine de chaque oscillateur qui la compose.
-Elle possède aussi une méthode évolue qui fait avancer chaque oscillateur d'un pas de temps ainsi qu'une méthode ajoute pour ajouter un pointeur vers un oscillateur au tableau des pointeurs.
+Elle possède aussi une methode evolue qui fait avancer chaque oscillateur d'un pas de temps ainsi qu'une methode ajoute pour ajouter un pointeur vers un oscillateur au tableau des pointeurs.
 On supprime aussi explicitement le constructeur de copie par defaut a cause des unique_ptr.
 De plus, on rajoute une reference vers un integrateur en attribut pour pouvoir choisir l'integrateur utilise dans la fonction evolue.
+
+
+On a aussi rajoute une fonction renvoyant le nombre d'oscillateur du systeme ainsi qu'une autre renvoyant une reference constantes sur un oscillateur du systeme (ce sera utile pour l'espace des phases)
+--> On a choisit cette implÈmentation car on prÈserve au mieux l'encapsulation (c'est juste une rÈfÈrence constante(!) mÍme
+    si ele permet de voir l'interieur du sytËme). On aurait aussi pu voir les choses diffÈremment et mettre un if
+    dans chaque methode dessine() de VueOpenGL (qui ont un accËs direct aux oscillateurs) pour dÈcider si on dessine
+    la phase au lieu de l'oscillateur mais il y aurait eu du copiÈ collÈ et conceptuellement on aurait mit au mÍme
+    endroit la fonction que dessine la phase et le systËme ~
+
+Sinon le moyen de prÈserver une encapsulation totale, serait un Systeme::dessinePhase(size_t index, SupportADessin & sup) qui appelerait dessinePhase du support sur le index-Ëme oscillateur, mais c'est un peu moche et moins pratique, mÍme si Áa encapsule totalement les oscillateurs ...
 
 **********************************************************************************************************************************************************************************
 
 [Question P11.1] Comment representez-vous ces nouveaux oscillateurs ? Ou s'incrivent-ils dans votre conception ? V
 
-On implemente le nouvel oscillateur "Double ressort". On le conçoit comme un nouveau type d'oscillateur, et non comme la composition de deux ressorts. Ainsi DoubleRessort est une sous classe de la super classe Oscillateur
+On implemente le nouvel oscillateur "Double ressort". On le conçcoit comme un nouveau type d'oscillateur, et non comme la composition de deux ressorts. Ainsi DoubleRessort est une sous classe de la super classe Oscillateur
 
 **********************************************************************************************************************************************************************************
 
-[Question P12.1] Comment implémentez-vous la possibilité de tracer les trajectoires dans l'espace des phases ? 
+[Question P12.1] Comment implementez-vous la possibilite de tracer les trajectoires dans l'espace des phases ? 
+
+Dans la classe SupportADessin on a rajoutÈ un vector de double en protected ainsi qu'une methode virtuelle pure SupportADessin::dessinePhase(Oscillateur const&)= 0; car conceptuellement c'est vraiment le support ‡ dessin qui decide ce qu'on afiche. Dans les sous classe textviwer et vueopengl on dÈfinit cette fonction de telle sorte que pour la partie text on affiche les position de P et Q ‡ chaque pas de temps et pour la partie graphique qu'on puisse voir le portrait de phase s'afficher au fur et a mesure.
+
+on a choisit cette implÈmentation car on affiche qu'une seule phase ‡ la fois donc pas besoinn de stocker toutes les position de chaque oscillateurs : on dupliquerai du code inutilement
 
 
 **********************************************************************************************************************************************************************************
 
-[Question P13.1] Où cela s'intègre-t-il dans votre projet/conception ? Quels changements cela engendre ? V
-L'integrateur de Newmarck et de Runge-Kutta sont des integrateurs. Ainsi on les conçoit comme des sous classes de la super classe Integrateur.
+[Question P13.1] Ouù cela s'intègre-t-il dans votre projet/conception ? Quels changements cela engendre ? V
+L'integrateur de Newmarck et de Runge-Kutta sont des integrateurs. 
+Ainsi on les concçoit comme des sous classes de la super classe Integrateur.
 On modifie la classe Systeme pour pouvoir choisir son integrateur. On passera donc par reference sur un integrateur pour le polymorphisme.
 
 **********************************************************************************************************************************************************************************

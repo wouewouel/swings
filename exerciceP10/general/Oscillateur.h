@@ -14,26 +14,22 @@ class Oscillateur:public Dessinable {
 	
 	public:
 	
-        Oscillateur(unsigned int n=1,SupportADessin* vue=nullptr)
-            :Dessinable(vue), P(n), Q(n),Origine(0,0,0) {}  //	Constructeur qui intitialise P et Q à des vect de n dim de 0
-														//  on peut faire =1 pour mettre en
-		                                                //  valeur par defaut
+
 
 		Oscillateur(double a, double b, double c,                          //Oscillateur de dimension 3
-                    double x, double y, double z,SupportADessin* vue=nullptr) :
-            Dessinable(vue), P(a,b,c) , Q(x,y,z) {} // donnes a,b,c a P et x,y,z a Q
+                    double x, double y, double z,SupportADessin* vue=nullptr,
+                    double xo=0,double yo=0,double zo=0) :
+            Dessinable(vue), P(a,b,c) , Q(x,y,z),Origine(xo,yo,zo) {} // donnes a,b,c à P et x,y,z a Q
 		
-        Oscillateur(double a,double x,SupportADessin* vue=nullptr):
-            Dessinable(vue),P(a),Q(x){} //( Oscillateur de dimension 1 ( a corriger plus tard)
+        Oscillateur(double a,double x,SupportADessin* vue=nullptr,double xo=0,double yo=0,double zo=0):
+            Dessinable(vue),P(a),Q(x),Origine(xo,yo,zo) {} //( Oscillateur de dimension 1
 		
         Oscillateur(Vecteur P,Vecteur Q,SupportADessin* vue=nullptr, double xo=0,double yo=0,double zo=0):
             Dessinable(vue),P(P),Q(Q),Origine(xo,yo,zo){
-			if (!(P.dimension_ok(Q))){
-				Vecteur nul;
-				P=nul;
-				Q=nul;
+            if (P.getcoord().size() !=Q.getcoord().size()){
+                throw std::string("Erreur constructeur, vecteurs dimensions différentes");
 			}
-			};//revoir plus tard pour etre sur que dimP=dimQ
+            };
 								
 		virtual Vecteur equation_evolution(double t) const;
 	

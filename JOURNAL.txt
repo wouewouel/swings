@@ -1,4 +1,4 @@
-# PROGRESSION
+﻿# PROGRESSION
 
 Format : [fait/à faire] TACHE	Duree (en minutes)
                                            1
@@ -16,10 +16,10 @@ Format : [fait/à faire] TACHE	Duree (en minutes)
 [V] Ressort                                               	90+
 [V] Systeme                                               	120+
 [V] exerciceP10                                           	180+
-[V] graphisme: cadre général                              	180+
+[V] graphisme: cadre général                              	trop++
 [V] graphisme: Pendule                                     	180+
 [V] RessortDouble                                         	90+
-[V] Espace des phases                                     	120+
+[V] Espace des phases                                     	200+
 [V] integrateur Newmark                                   	120+
 [V] fichier CONCEPTION                                         	20
 [V] fichier README                                        	30
@@ -69,14 +69,14 @@ Charles et Ouriel: Mise en place des différentes classes necessaire(dessinable,
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Semaine 7 :
 
-Ouriel: Graphisme
+Ouriel: Graphisme, gros beug pour le lancement
 
 Charles: Corrections des bugs
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Semaine 8 :
 
-Ouriel: Graphisme
+Ouriel: Début du graphisme qui marche
 
 Charles: Optimisation du code
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -96,13 +96,13 @@ Charles: Double oscillateur(double ressort)
 ## Semaine 11 :
 
 
-Ouriel:	Graphisme
+Ouriel:	Graphisme, réarrangement conceptuel avec les fonctions dessine des oscillateurs
 
 Charles: Integrateur de Newmarck
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Semaine 12 :
-Ouriel:	Espace des phases
+Ouriel:	Espace des phases, arrangement pour tooglez l'affichage
 
 Charles: Integrateur de RungeKutta, plus corrections de code
 

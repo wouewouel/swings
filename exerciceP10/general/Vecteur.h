@@ -10,63 +10,61 @@ class Vecteur{
 
         std::vector<double> coordonnees;
 
-        bool dimension_3(Vecteur autre) const; //on teste ici si les deux vecteurs sont de dimensions 3
+        bool dimension_3(Vecteur const& autre) const; //on teste ici si les deux vecteurs sont de dimensions 3
 
     public:
 
-        bool dimension_ok(Vecteur autre) const; // On teste ici si les dimensions sont bonnes//signaler son passage en public
-                                                // a Ouriel pour les oscillateurs
+        Vecteur(): Vecteur(0){}; 					//Constructeur vecteur nul
 
-        Vecteur():coordonnees(1,0){}; //constructeur vecteur nul de dimension 1
+        Vecteur(double x):coordonnees({x}){}; 			//Constructeur vecteur dimension 1
 
-        Vecteur(double x):coordonnees({x}){}; //constructeur vecteur dimension 1 j ai mis un char pour eviter le conflit
-                                                    //avec le premier constructeur, mais il faut trouver une solution
+        Vecteur(double x,double y):coordonnees({x,y}){};//Constructeur vecteur en dimension 2
 
-        Vecteur(double x,double y):coordonnees({x,y}){}; //constructeur vecteur en dimension 2
+        Vecteur(double x,double y,double z):coordonnees({x,y,z}){}; 	//Constructeur vecteur en dimension 3
 
-        Vecteur(double x,double y,double z):coordonnees({x,y,z}){}; //constructeur vecteur R3
+        bool dimension_ok(Vecteur const& autre) const; 	//On teste ici si les dimensions sont bonnes, public car on l'utilise
+                                                        //pour un constructeur d'oscillateur
 
+        void augmente(double new_dim);					//On rajoute une dimension
 
-        Vecteur(const Vecteur& autre):coordonnees(autre.getcoord()){}; //constructeur de copie
+        void set_coord(size_t dim, double modif); 		//On modifie la coordonnee indiquee
+                                                        //la position indiquee n'est pas celle de C++ ( ne commence pas en 0)
 
+        std::vector <double> getcoord() const ;	  		//On renvoie toutes les coordonnées d'un objet de la classe Vecteur
 
-        void augmente(double new_dim);//on rajoute une dimension
+        double getvalue(size_t i) const ; 				//On renvoie la coordonnées numero i d'un objet de la classe Vecteur
 
-        void set_coord(size_t dim, double modif); //on modifie la coordonnee indiquee
+        double norme2() const ;							//On utilise norme2 pour faciliter norme
 
-        double getvalue(size_t i) const ; //on renvoie la coordonnées numero i d'un objet de la classe Vecteur
+        double norme() const ;							//Norme du vecteur grace a norme2
 
-        bool operator==(Vecteur autre);//operateur comparaison egal
+        Vecteur normalise(); 							//Normalise le vecteur
 
-        bool operator!=(Vecteur autre);//operateur comparaison different
+        //Surchage operateurs
+        //===============================================================================================
+        bool operator==(Vecteur const& autre);					//Operateur comparaison egal
 
-        std::vector <double> getcoord() const ; //on renvoie toutes les coordonnées d'un objet de la classe Vecteur
+        bool operator!=(Vecteur const& autre);					//Operateur comparaison different
 
-        Vecteur& operator+=(const Vecteur& autre); //addition entre deux vecteurs
+        Vecteur& operator+=(const Vecteur& autre); 				//Addition entre deux vecteurs
 
-        Vecteur& operator-=(const Vecteur& autre); //on fait vecteur actuel - autre
+        Vecteur& operator-=(const Vecteur& autre); 				//Soustraction entre deux vecteurs
 
-        const Vecteur operator-() const;//renvoie l'oppose du vecteur
+        const Vecteur operator-()const;							//Renvoie l'oppose du vecteur
 
-        Vecteur& operator*=(double scalaire);//multiplication scalaire
+        Vecteur& operator*=(double scalaire);					//Multiplication scalaire
 
-        double operator*(Vecteur autre);//produit scalaire
+        double operator*(Vecteur autre);						//Produit scalaire
 
-        Vecteur operator^(const Vecteur& autre);//renvoie le produit vectoriel
-
-        double norme2() const ;//on utilise norme2 pour faciliter norme
-
-        double norme() const ;
-
-        Vecteur normalise(); //normalise le vecteur //signaler la modif
+        Vecteur operator^(const Vecteur& autre);				//Renvoie le produit vectoriel
     };
+        std::ostream& operator <<(std::ostream& out,Vecteur v);	//Operateur affichage
 
-    std::ostream& operator <<(std::ostream& out,Vecteur v);
+        const Vecteur operator+(Vecteur,Vecteur const&);		//Operateur addition
 
-    const Vecteur operator+(Vecteur,Vecteur const&);
+        const Vecteur operator-(Vecteur,Vecteur const&);		//Operateur soustraction
 
-    const Vecteur operator-(Vecteur,Vecteur const&);
+        const Vecteur operator*(double scalaire,Vecteur v);		//Multiplication scalaire a gauche
 
-    const Vecteur operator*(double scalaire,Vecteur v);
-
-    const Vecteur operator*(Vecteur v,double scalaire);
+        const Vecteur operator*(Vecteur v,double scalaire);		//Multiplication scalaire a droite
+        //===============================================================================================

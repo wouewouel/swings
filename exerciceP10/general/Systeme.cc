@@ -9,6 +9,8 @@ void Systeme::ajoute(Oscillateur* o){			//Ajoute un oscillateur au systeme
     if(o!=nullptr){
         o->set_support(support);
         systeme.push_back(unique_ptr<Oscillateur>(o));
+        positions_initiales.push_back(o->getP());
+        positions_initiales.push_back(o->getQ());
     }
 }
 
@@ -25,11 +27,11 @@ void Systeme::ajoute(Oscillateur* o){			//Ajoute un oscillateur au systeme
         }
     }
 
-
-/*
-Je sais que c'est dangereux car les oscillateurs possèdent un pointeur sur un support a dessin
-(il faudrait faire une copie profonde mais ça beugue pour faire une copie profonde d'une classe abstraite..)
-mais ici nous ne modifierons rien, c'est juste pour l'affichage
- A TCHEKER AVEC UN ASSISTANT POUR UNE MEILLEUR SOLUTION*/
+    void Systeme::reset_systeme(){
+        for(size_t i(0); i< nb_oscillateur(); ++i){
+            systeme[i]->setP(positions_initiales[2*i]);
+            systeme[i]->setQ(positions_initiales[2*i+1]);
+        }
+    }
 
 

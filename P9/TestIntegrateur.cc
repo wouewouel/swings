@@ -71,7 +71,5 @@ int main()
 	Oscillateur O10bis(3,3,4,4,5,6);
 	cout<<endl<<"Oscillateur 10bis, test RungeKutta:"<<endl;					//Test RungeKutta
 	N.affiche_evol(O10bis);
-	int i;
-	cin >>i;
 	return 0;
 }

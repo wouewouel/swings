@@ -87,10 +87,5 @@ int main()
 			cerr<<erreur<<endl;
 		}
 	
-		
-		
-	
-	int i;
-	cin >>i;
 	return 0;
 }

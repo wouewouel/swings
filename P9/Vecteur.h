@@ -10,7 +10,7 @@ class Vecteur{
 			
 	public:
 														
-		Vecteur():coordonnees({0}){}; 					//Constructeur vecteur nul
+		Vecteur():Vecteur(0){}; 					//Constructeur vecteur nul
 		
 		Vecteur(double x):coordonnees({x}){}; 			//Constructeur vecteur dimension 1                                                       
 		

@@ -1,7 +1,7 @@
 #pragma once
 #include "Vecteur.h"
 #include "Dessinable.h"
-
+#include <string>
 
 class Oscillateur:public Dessinable {
 				
@@ -24,12 +24,10 @@ class Oscillateur:public Dessinable {
 		
 		Oscillateur(Vecteur P,Vecteur Q,SupportADessin* vue=nullptr,double xo=0,double yo=0,double zo=0):	//Oscillateur de dimension quelconque
 		Dessinable(vue),P(P),Q(Q),Origine(xo,yo,zo){				
-			if (!(P.dimension_ok(Q))){
-				Vecteur nul;
-				P=nul;
-				Q=nul;
+			if (P.getcoord().size()!=Q.getcoord().size()){
+				throw std::string("Erreur constructeur, vecteurs dimensions differentes");
 			}
-			};//revoir plus tard pour etre sur que dimP=dimQ
+			}//revoir plus tard pour etre sur que dimP=dimQ
 								
 		virtual Vecteur equation_evolution(double t) const;
 	

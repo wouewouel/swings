@@ -1,0 +1,49 @@
+Oscillateur O:
+ # Oscillateur 
+ # parametre (P) : (1; 2; 0)
+ # vitesse   (Q) : (3; 4; 0)
+
+Oscillateur O1:
+ # Oscillateur 
+ # parametre (P) : (12; 34)
+ # vitesse   (Q) : (23; 12)
+
+Oscillateur O2:
+ # Oscillateur 
+ # parametre (P) : (1)
+ # vitesse   (Q) : (1)
+
+Oscillateur O3:
+ # Oscillateur 
+ # parametre (P) : (1; 2)
+ # vitesse   (Q) : (3; 4)
+
+Oscillateur O3bis:
+ # Oscillateur 
+ # parametre (P) : (1; 2)
+ # vitesse   (Q) : (3; 4)
+
+ Tests de get() : 
+   de son parametre : (1; 2; 0)
+   de sa vitesse    : (3; 4; 0)
+
+ Sa fonction d'evolution donne pour t = 5 : (20; 30; 0)
+
+ Tests de set() : 
+   de son parametre : (-2; -1; 0)
+   donne : 
+ # Oscillateur 
+ # parametre (P) : (-2; -1; 0)
+ # vitesse   (Q) : (3; 4; 0)
+
+   de sa vitesse    : (-6; 12; 0)
+   donne : 
+ # Oscillateur 
+ # parametre (P) : (-2; -1; 0)
+ # vitesse   (Q) : (-6; 12; 0)
+
+
+ # Oscillateur 
+ # parametre (P) : (1)
+ # vitesse   (Q) : (2)
+

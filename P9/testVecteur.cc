@@ -129,6 +129,5 @@ try{
 	catch(string erreur){
 		cerr<<erreur;
 	}
-int i; //revoir pas mal d'erreur
-cin >>i;
+
 }

@@ -65,3 +65,5 @@ Interface texte:
 Pour modifier le contenu du système:
 	-Allez dans le fichier exerciceP9.cc puis rajouter des oscillateurs ou modifiez ceux existant de la même façon que pour l'affichage graphique
   
+
+Si vous voulez voir les résultats des différents tests, un dossier contenant les résultats sous format .txt est a votre disposition.

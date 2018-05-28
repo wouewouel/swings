@@ -53,8 +53,7 @@ int main ()
 		cerr<<erreur<<endl;
 	}
 	cout<<O5;
-	int i;
-	cin >>i;
+
 	return 0;
 } 
 

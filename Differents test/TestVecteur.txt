@@ -1,0 +1,55 @@
+Vecteur 1 : (1; 2; -0.1)
+
+Vecteur 2 : (2.6; 3.5; 4.1)
+
+Vecteur 3 : (1; 2; -0.1)
+
+Le vecteur 1 est different du vecteur 2,
+ et est egal au vecteur 3. 
+
+vect1^vect2= (0; 8.55; -4.36; -1.7)
+
+vect2^vect1= (0; -8.55; 4.36; 1.7)
+
+vect1+vect2= (3.6; 5.5; 4)
+
+vect2=vect1= (3.6; 5.5; 4)
+
+vect1-vect2 =(-1.6; -1.5; -4.2)
+
+vect2-vect1= (1.6; 1.5; 4.2)
+
+-vect1 =(0; -1; -2; 0.1)
+
+vect1*6= (6; 12; -0.6)
+
+6*vect1= (6; 12; -0.6)
+
+vect1*vect2= 9.19
+vect2*vect1= 9.19
+(1; 2; -0.1)
+(2.6; 3.5; 4.1)
+(1; 2; -0.1)
+v+v2= (1)
+
+(1)
+
+(1; 2)
+
+v3= (2)
+
+v3= (2; 4)
+
+v3= (2; 4)
+
+v3= (2; 4)
+
+norme de v3= 4.47214
+norme de v3 au carre= 20
+
+Version normalisee de v4(0.267261; 0.534522; 0.801784)
+
+v4= (1; 2; 3)
+
+(0)
+
